@@ -76,11 +76,8 @@ o no el producto).
 | **ID_Compra** | Identificador de la Compra |
 | **ID_Usuario**| Identificador del Usuario |
 | **ID_Objeto** | Identificador del Objeto  |
-
-
-
-### 🔑 Relacion 1:1 Usuario-Comentario 
 ---
+### 🔑 Relacion 1:1 Usuario-Comentario 
 Un Usuario Puede Realizar un unico comentario para valorar la pagina web
 Y un comentario pertenece a un unico Usuario (Este usuario puede modificar
 siempre que desee el comentario. Esto para evitar saturaciones de comentrarios).
@@ -100,15 +97,12 @@ siempre que desee el comentario. Esto para evitar saturaciones de comentrarios).
 | **Gmail** | Correo Electronico del Usuario | 
 | **Casa** | Casa del Usuario | 
 | **Id_Comentario** | Identificador del Comentario **(R)** | 
-
-
-
+---
 ### 🔑 Relacion 1:N Personaje-Objeto 
 Un Personaje dispone de varios objetos, pero un objeto pertenece a un 
 unico personaje. Para ello, se añadira en la tabla de Objeto una Foreing
 Key del Identificador del Personaje.
 ### Tabla Objetos 🛠️
----
 | Columna | Comentario |
 | :--- | :--- |
 | **Id_Objeto** | Identificador del Objeto |
@@ -116,3 +110,4 @@ Key del Identificador del Personaje.
 | **Descripcion** | Descripcion del Objeto |
 | **Costo** | Costo de Objeto | 
 | **Id_Personaje** | Identificador del Personaje **(R)** | 
+---
