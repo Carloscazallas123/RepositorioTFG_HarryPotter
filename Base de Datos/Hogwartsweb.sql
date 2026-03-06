@@ -1,0 +1,18 @@
+-- codificación UTF-8: Reconocer Tildes, Emojis..etc
+SET NAMES 'utf8mb4';
+
+DROP DATABASE IF EXISTS HOGWARTSWEB;
+CREATE DATABASE HOGWARTSWEB ;
+USE HOGWARTSWEB;
+
+-- Creacion de la Tabla Usuarios
+CREATE TABLE USUARIO(
+    ID_USUARIO INT PRIMARY KEY NOT NULL AUTO_INCREMENT COMMENT 'Identificador del Usuario',
+    NOMBRE VARCHAR(45) NOT NULL COMMENT 'Nombre del Usuario',
+    CORREO VARCHAR(45) NOT NULL COMMENT 'Correo Electronico del Usuario',
+    CONTRASEÑA INT NOT NULL COMMENT 'Contraseña del Usuario',
+    CASA VARCHAR(45) NULL COMMENT 'Casa del Usuario',
+    PUNTOS INT NULL COMMENT 'Puntos del Usuario',
+    CONSTRAINT PK_ID_USUARIO PRIMARY KEY (ID_USUARIO)
+    
+);
