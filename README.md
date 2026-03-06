@@ -1,5 +1,7 @@
 # ⚡ Proyecto Harry Potter (HogwartsWeb) - TFG DAM
-> **Nota:** Toda Modificación a secas de este Proyecto sera escrito en el commit de Github como _"git doc : ....._"
+> Toda Modificación a secas de este Proyecto sera escrito en el commit de Github como _"git doc : ....._"
+
+> La rama master es la que se encargará exclusivamente de Modificar este documento.
 
 Bienvenido al repositorio de mi Proyecto de Fin de Curso (PFC) para el ciclo de Desarrollo de Aplicaciones Multiplataforma, Realizado por Carlos Chacón Cazallas. En este documento, se escribirá todo acerca del Proyecto, tanto de los Fronts, los Backs, la Base de Datos..etc.
 
@@ -63,48 +65,54 @@ comprar objetos unicos de la saga con tus puntos obtenidos.
 | **Valoracion** | Valoracion del Comentario | 
 ## 🔑 Relaciones Entre tablas
 ### 🔑 Relacion N:M Usuario-Objeto 
----
 Un Usuario puede comprar varios objetos y los objetos pueden ser comprado
-por varios usuarios. El Usuario tendrá una lista de identificadores de ese
-objeto y el objeto te
+por varios usuarios. Se creará una tabla aparte que relaciones cada Cliente
+con el objeto (Esta tabla servira tambien para comprobar si ese Cliente tiene
+o no el producto).
 > _(EL Usuario no puede volver a comprar ese producto)._
+### Tabla Usuario_Objeto (Comprar) 🛠️
+| Columna | Comentario |
+| :--- | :--- |
+| **ID_Compra** | Identificador de la Compra |
+| **ID_Usuario**| Identificador del Usuario |
+| **ID_Objeto** | Identificador del Objeto  |
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-## 🛠️ Stack Tecnológico
-Para el desarrollo de esta plataforma se han seleccionado las siguientes tecnologías:
-
-* **Frontend:** [React.js](https://reactjs.org/) (Hooks, Context API, React Router).
-* **Estilos:** CSS3 / SASS o Tailwind (según elijas finalmente).
-* **Backend:** Node.js con Express (para la gestión de la lógica y seguridad).
-* **Base de Datos:** SQL / NoSQL (para guardar usuarios y favoritos).
-* **API:** [HP-API](https://hp-api.onrender.com/) como fuente de datos principal.
-
+### 🔑 Relacion 1:1 Usuario-Comentario 
 ---
+Un Usuario Puede Realizar un unico comentario para valorar la pagina web
+Y un comentario pertenece a un unico Usuario (Este usuario puede modificar
+siempre que desee el comentario. Esto para evitar saturaciones de comentrarios).
+### Tabla Comentarios 🛠️
+| Columna | Comentario |
+| :--- | :--- |
+| **Id_Comentario** | Identificador del Comentario |
+| **Descripcion** | Descripcion del Comentario |
+| **Valoracion**  | Valoracion del Comentario | 
+| **ID_Usuario**  | Identificador del Usuario **(R)** | 
+### Tabla Usuario 🛠️
+| Columna | Comentario |
+| :--- | :--- |
+| **Id_Usuario** | Identificador del Usuario |
+| **Nombre** | Nombre del Usuario | 
+| **Contraseña** | Contraseña del Usuario |
+| **Gmail** | Correo Electronico del Usuario | 
+| **Casa** | Casa del Usuario | 
+| **Id_Comentario** | Identificador del Comentario **(R)** | 
 
-## 🚀 Instalación y Uso
-1.  Clona el repositorio:
-    `git clone https://github.com/tu-usuario/tu-repositorio.git`
-2.  Instala las dependencias:
-    `npm install`
-3.  Lanza el proyecto en local:
-    `npm start`
 
+
+### 🔑 Relacion 1:N Personaje-Objeto 
+Un Personaje dispone de varios objetos, pero un objeto pertenece a un 
+unico personaje. Para ello, se añadira en la tabla de Objeto una Foreing
+Key del Identificador del Personaje.
+### Tabla Objetos 🛠️
 ---
-
-## 📅 Estado del Proyecto
-Actualmente el proyecto se encuentra en fase de **Planificación y Diseño de Base de Datos**.
-
-
-
+| Columna | Comentario |
+| :--- | :--- |
+| **Id_Objeto** | Identificador del Objeto |
+| **Nombre** | Nombre del Objeto | 
+| **Descripcion** | Descripcion del Objeto |
+| **Costo** | Costo de Objeto | 
+| **Id_Personaje** | Identificador del Personaje **(R)** | 
