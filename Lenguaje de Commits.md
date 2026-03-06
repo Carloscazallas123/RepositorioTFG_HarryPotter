@@ -1,5 +1,5 @@
 # 📜 Lenguaje de Commits: **Conventional Commits v1.0.0**.
-
+> Este Documento solo puede modificarlo la rama Master con el git doc.
 ## 🛠️ Diccionario de Tipos
 
 | Tipo | Categoría | Cuándo usarlo |
