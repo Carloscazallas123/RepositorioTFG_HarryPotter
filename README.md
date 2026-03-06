@@ -54,7 +54,6 @@ comprar objetos unicos de la saga con tus puntos obtenidos.
 | **Id_Personaje** | Identificador del Personaje |
 | **Nombre** | Nombre del Personaje | 
 | **Casa** | Casa del Personaje |
-| **Costo** | Costo de Objeto | 
 
 ### Tabla Comentarios 🛠️
 ---
