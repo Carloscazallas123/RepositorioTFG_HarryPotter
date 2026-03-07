@@ -61,3 +61,18 @@ CREATE TABLE COMPRA(
     CONSTRAINT FK_COMPRA_OBJETO FOREIGN KEY (ID_OBJETO) 
                                  REFERENCES OBJETO(ID_OBJETO)
 );
+
+
+-- IMPROTACIONES (CREACION DE OBJETOS Y PERSONAJES)
+
+-- Insertacion de los Personajes
+INSERT INTO PERSONAJE (NOMBRE, DESCRIPCION, CASA) VALUES 
+('Ron Weasley', 'Mejor amigo de Harry y gran jugador de Ajedrez Mágico', 'Gryffindor'),
+('Lord Voldemort', 'El Señor Tenebroso, el mago oscuro más temido', 'Slytherin'),
+('Rubeus Hagrid', 'Guardabosques de Hogwarts y amante de las criaturas', 'Gryffindor'),
+('Minerva McGonagall', 'Profesora de Transfiguración y jefa de Gryffindor', 'Gryffindor'),
+('Sirius Black', 'Padrino de Harry y animago conocido como Canuto', 'Gryffindor'),
+('Nicholas Flamel', 'Famoso alquimista y único fabricante de la Piedra Filosofal', NULL),
+('Helga Hufflepuff', 'Cofundadora de Hogwarts, valoraba la lealtad y el trabajo', 'Hufflepuff'),
+('Rowena Ravenclaw', 'Cofundadora de Hogwarts, conocida por su inteligencia', 'Ravenclaw'),
+('Neville Longbottom', 'Héroe de la guerra, ahora experto en Herbología', 'Gryffindor');
