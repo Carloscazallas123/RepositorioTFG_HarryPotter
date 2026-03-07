@@ -122,3 +122,6 @@ INSERT INTO OBJETO (NOMBRE, DESCRIPCION, COSTE, ID_PERSONAJE) VALUES
 ('Regadera mágica', 'Regadera que nunca se queda sin agua tibia', 30, 
                     (SELECT ID_PERSONAJE FROM PERSONAJE WHERE NOMBRE = 'Neville Longbottom'));
 
+-- Comprobaciones
+SELECT * FROM PERSONAJE;
+SELECT * FROM OBJETO
