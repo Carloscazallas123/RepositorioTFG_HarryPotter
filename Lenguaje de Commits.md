@@ -9,7 +9,7 @@
 | **`docs`** | 📚 Documentación | Cambios en el README, comentarios de código o manuales. |
 | **`style`** | 🎨 Estética | Formateo, espacios, puntos y comas (sin tocar lógica). |
 | **`refactor`** | ♻️ Refactorización | Mejora de código que ni añade función ni arregla fallos. |
-| **`check/test`** | 💾 Testeo | Testeo de algunas funciones |
+| **`check/test`** | 💾 Testeo | Testeo de algunas funciones (Base de Datos,Spring...) |
 | **`perf`** | ⚡ Rendimiento | Cambios que hacen que la app o la BD vayan más rápido. |
 | **`build`** | 📦 Sistema | Cambios en dependencias, npm, scripts de compilación. |
 | **`chore`** | 🧹 Mantenimiento | Tareas mundanas (actualizar .gitignore, mover archivos). |
