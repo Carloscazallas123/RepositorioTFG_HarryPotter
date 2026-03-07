@@ -1,13 +1,13 @@
-# ⚡ Proyecto Harry Potter (HogwartsWeb) - PFC DAM
-> Toda Modificación a secas de este Proyecto sera escrito en el commit de Github como _"git doc : ....._"
+# ⚡ Proyecto HogwartsWeb - PFC DAM
+> Toda Modificación a secas de este Proyecto sera escrito <br> en el commit de Github como _"git doc : ....._"
 
-> La rama master es la que se encargará exclusivamente de Modificar este documento.
+> La rama master es la que se encargará exclusivamente <br> de Modificar este documento.
 
-Bienvenido al repositorio de mi Proyecto de Fin de Curso (PFC) para el ciclo de Desarrollo de Aplicaciones Multiplataforma, Realizado por Carlos Chacón Cazallas. En este documento, se escribirá todo acerca del Proyecto, tanto de los Fronts, los Backs, la Base de Datos..etc.
+Bienvenido al repositorio de mi Proyecto de Fin de Curso (PFC) para el ciclo de Desarrollo de <br> Aplicaciones Multiplataforma, Realizado por Carlos Chacón Cazallas. En este documento, <br>  escribirá todo acerca del Proyecto, tanto de los Fronts, los Backs, la Base de Datos..etc.
 
 
 ## 📖 Descripción del Proyecto
-La aplicación web se tratará de nada más, ni nada menos que la magica y maravillosa saga de Harry Potter, decicada al ambito del entretenimiento para todo fan de Harry Potter (O magos novatos) que desean disfrutar por un ratito.
+La aplicación web se tratará de nada más, ni nada menos que la magica y maravillosa <br> saga de Harry Potter, decicada al ambito del entretenimiento para todo fan de Hogwarts <br> (O magos novatos) que desean disfrutar por un ratito.
 
 ### Características Principales:
 ---
@@ -25,7 +25,7 @@ comprar objetos unicos de la saga con tus puntos obtenidos.
 
 # 🛠️ Implementaciones 
 ## 💾 1º__Base de Datos (SQL)
-> **Nota:** Primero enfocate en todo lo que está en la Base de Datos y cuando
+> **Nota:** Primero enfocate en todo lo que está en la Base de Datos <br> y cuando
 > lo termines, Pasas ya al 2º punto.
 ### 💾 Creacion de Tablas 
 
@@ -64,10 +64,10 @@ comprar objetos unicos de la saga con tus puntos obtenidos.
 | **Valoracion** | Valoracion del Comentario | 
 ## 🔑 Relaciones Entre tablas
 ### 🔑 Relacion N:M Usuario-Objeto 
-Un Usuario puede comprar varios objetos y los objetos pueden ser comprado
+Un Usuario puede comprar varios objetos y los objetos pueden ser comprado <br>
 por varios usuarios. Se creará una tabla aparte que relaciones cada Cliente
-con el objeto (Esta tabla servira tambien para comprobar si ese Cliente tiene
-o no el producto).
+con <br>  el objeto (Esta tabla servira tambien para comprobar si ese Cliente tiene
+o no <br> el producto).
 > _(EL Usuario no puede volver a comprar ese producto)._
 ### Tabla Usuario_Objeto (Comprar) 🛠️
 | Columna | Comentario |
@@ -77,9 +77,9 @@ o no el producto).
 | **ID_Objeto** | Identificador del Objeto  |
 ---
 ### 🔑 Relacion 1:1 Usuario-Comentario 
-Un Usuario Puede Realizar un unico comentario para valorar la pagina web
-Y un comentario pertenece a un unico Usuario (Este usuario puede modificar
-siempre que desee el comentario. Esto para evitar saturaciones de comentrarios).
+Un Usuario Puede Realizar un unico comentario para valorar la pagina <br> web
+y un comentario pertenece a un unico Usuario (Este usuario puede <br> modificar
+siempre que desee el comentario. Esto para evitar saturaciones <br> de comentrarios).
 ### Tabla Comentarios 🛠️
 | Columna | Comentario |
 | :--- | :--- |
@@ -98,8 +98,8 @@ siempre que desee el comentario. Esto para evitar saturaciones de comentrarios).
 | **Id_Comentario** | Identificador del Comentario **(R)** | 
 ---
 ### 🔑 Relacion 1:N Personaje-Objeto 
-Un Personaje dispone de varios objetos, pero un objeto pertenece a un 
-unico personaje. Para ello, se añadira en la tabla de Objeto una Foreing
+Un Personaje dispone de varios objetos, pero un objeto pertenece <br> a un 
+unico personaje. Para ello, se añadira en la tabla de Objeto <br> una Foreing
 Key del Identificador del Personaje.
 ### Tabla Objetos 🛠️
 | Columna | Comentario |
@@ -110,3 +110,23 @@ Key del Identificador del Personaje.
 | **Costo** | Costo de Objeto | 
 | **Id_Personaje** | Identificador del Personaje **(R)** | 
 ---
+## ♻️ 2º__SpringTool (Spring)
+> **Nota:** Primero enfocate en todo lo que está en la Base de Datos y cuando
+> lo termines, Pasas ya al 3º punto.
+
+Una vez hemos comprobado que la base de datos arranca, vamos a <br> empezar con Springtool. Aqui ya hay un salto de curva dificil, porque <br> tenemos que crear lo siguiente:
+> **Nota:** Aun así, tu poco a poco que lo vas a conseguir
+### 🛠️ Entidades (Entitys)
+| Entitys |
+| :--- | 
+| _UsuarioEntity_ | 
+| _ObjetoEntity_ | 
+| _PersonajeEntity_ |
+| _ComentarioEntity_ | 
+### 🛠️ Objetos (DTOS)
+#### ________UsuarioDTO
+| DTO | Descripcion |
+| :--- | :--- |
+| **UsuarioFullDTO** | El DTO por completo del Usuario (Token) |
+| **RegistroDTO** |  El DTO de Registro del Usuario (Pasar al Controlador)| 
+| **SesionDTO** | El DTO de Iniciar Sesion (Pasar al Controlador) |
