@@ -62,6 +62,7 @@ comprar objetos unicos de la saga con tus puntos obtenidos.
 | :--- | :--- |
 | **Id_Comentario** | Identificador del Comentario |
 | **Descripcion** | Descripcion del Comentario |
+| **Fecha** | Fecha del Comentario |
 | **Valoracion** | Valoracion del Comentario | 
 ## 🔑 Relaciones Entre tablas
 ### 🔑 Relacion N:M Usuario-Objeto 
@@ -87,6 +88,7 @@ siempre que desee el comentario. Esto para evitar saturaciones <br> de comentrar
 | **Id_Comentario** | Identificador del Comentario |
 | **Descripcion** | Descripcion del Comentario |
 | **Valoracion**  | Valoracion del Comentario | 
+| **Fecha** | Fecha del Comentario |
 | **ID_Usuario**  | Identificador del Usuario **(R)** | 
 ### Tabla Usuario 🛠️
 | Columna | Comentario |
