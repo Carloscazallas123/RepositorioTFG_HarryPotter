@@ -38,6 +38,7 @@ comprar objetos unicos de la saga con tus puntos obtenidos.
 | **Contraseña** | Contraseña del Usuario |
 | **Gmail** | Correo Electronico del Usuario | 
 | **Casa** | Casa del Usuario | 
+| **Puntos** | La cantidad de puntos que tiene el Usuario | 
 ### Tabla Objetos 🛠️
 ---
 | Columna | Comentario |
