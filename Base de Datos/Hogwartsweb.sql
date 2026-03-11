@@ -39,6 +39,7 @@ CREATE TABLE OBJETO(
 CREATE TABLE COMENTARIO(
     ID_COMENTARIO INT NOT NULL AUTO_INCREMENT COMMENT 'Identificador del Comentario',
     DESCRIPCION VARCHAR(75) NOT NULL COMMENT 'Descripcion del Comentario',
+    FECHA DATE NOT NULL COMMENT 'Fecha del Comentario',
     VALORACION TINYINT NOT NULL COMMENT 'Valoracion del Comentario',
     -- TINYINT: Es como el INT, pero reducido. Ocupa un solo Byte
     CONSTRAINT PK_ID_COMENTARIO PRIMARY KEY (ID_COMENTARIO),
