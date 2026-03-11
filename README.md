@@ -123,10 +123,52 @@ Una vez hemos comprobado que la base de datos arranca, vamos a <br> empezar con 
 | _ObjetoEntity_ | 
 | _PersonajeEntity_ |
 | _ComentarioEntity_ | 
+---
 ### 🛠️ Objetos (DTOS)
 #### ________UsuarioDTO
+> _Con sus respectivos Types_
+
 | DTO | Descripcion |
 | :--- | :--- |
-| **UsuarioFullDTO** | El DTO por completo del Usuario (Token) |
-| **RegistroDTO** |  El DTO de Registro del Usuario (Pasar al Controlador)| 
+| _UsuarioFullDTO_ | El DTO por completo del Usuario (Token) |
+| _RegistroDTO_ |  El DTO de Registro del Usuario (Pasar al Controlador)| 
+| _SesionDTO_ | El DTO de Iniciar Sesion (Pasar al Controlador) |
+
+
+_El Cliente introduce los datos al momento de registrarse y se lo pasa al controlador.<br>_
+_Luego, el controlador comprobará la condicion de las contraseñas. Si es la misma, <br>_
+_Guardará ese registro y le devolverá un SesionDTO para iniciar sesion. Caso contrario,<br>_
+_El DTO Sesion se le devolverá al cliente como nulo, dando un error correspondiente.<br>_
+
+| Variable | Tipo | - | Variable | Tipo |
+| :--- | :--- | :--- | :--- | :--- |
+| _Nombre_ | String | - |_Nombre_| String|
+| _Correo_ |  String | - |_Contraseña_|String |
+| _Contraseña_ | String | - |
+| _RepContraseña_ | String | - |
+
+_Al momento de que el Cliente logre Iniciar Sesion, el controlador <br> debera devolver_
+_El DTO importante, que contendrá lo siguiente:_
+
+| Variable | Tipo |
+| :--- | :--- |
+| _IdUser_ | Int |
+| _Nombre_ |  String | 
+| _Casa_ | Sting |
+| _Puntos_ | Int |
+| _Inventario_ | Array de INTS (IDS) |
+
+> _Inicia SpringTool y haz todo esto antes de continuar_
+
+
+#### ________ComentarioDTO
+> _Con sus respectivos Types_
+
+
+| DTO | Descripcion |
+| :--- | :--- |
+| **ComentarioFullDTO** | El DTO por completo del Comentario (Token) |
+| **CrearComentarioDTO** |  El DTO de Crear el Comentario (Pasar al Controlador)| 
 | **SesionDTO** | El DTO de Iniciar Sesion (Pasar al Controlador) |
+
+_El Cliente le aparecerá un formulario para introducir el comentario_
