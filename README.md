@@ -159,16 +159,3 @@ _El DTO importante, que contendrá lo siguiente:_
 | _Inventario_ | Array de INTS (IDS) |
 
 > _Inicia SpringTool y haz todo esto antes de continuar_
-
-
-#### ________ComentarioDTO
-> _Con sus respectivos Types_
-
-
-| DTO | Descripcion |
-| :--- | :--- |
-| **ComentarioFullDTO** | El DTO por completo del Comentario (Token) |
-| **CrearComentarioDTO** |  El DTO de Crear el Comentario (Pasar al Controlador)| 
-| **SesionDTO** | El DTO de Iniciar Sesion (Pasar al Controlador) |
-
-_El Cliente le aparecerá un formulario para introducir el comentario_
