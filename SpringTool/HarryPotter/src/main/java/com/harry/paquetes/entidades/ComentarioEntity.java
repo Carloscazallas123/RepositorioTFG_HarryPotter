@@ -1,6 +1,7 @@
 package com.harry.paquetes.entidades;
 
 import java.io.Serializable;
+import java.sql.Date;
 
 import jakarta.persistence.*;
 
@@ -16,11 +17,11 @@ public class ComentarioEntity implements Serializable {
 	@Column(name = "ID_COMENTARIO")
 	private int idobjeto;
 
-	@Column(name = "NOMBRE")
-	private String nombre;
-
 	@Column(name = "DESCRIPCION")
 	private String descripcion;
+
+	@Column(name="FECHA")
+	private Date fecha;
 	
 	@Column(name = "VALORACION")
 	private int valoracion;
@@ -38,12 +39,12 @@ public class ComentarioEntity implements Serializable {
 		this.idobjeto = idobjeto;
 	}
 
-	public String getNombre() {
-		return nombre;
+	public Date getfecha() {
+		return fecha;
 	}
 
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
+	public void setfecha(Date fecha) {
+		this.fecha = fecha;
 	}
 
 	public String getDescripcion() {
