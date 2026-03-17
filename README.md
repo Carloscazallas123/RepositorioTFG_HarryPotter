@@ -162,3 +162,11 @@ _El DTO importante, que contendrá lo siguiente:_
 | _Inventario_ | Array de INTS (IDS) |
 
 > _Inicia SpringTool y haz todo esto antes de continuar_
+---
+#### ________ObjetoDTO
+> _Con sus respectivos Types_
+
+_El apartado de Objeto será facil, pues necesitaremos dos DTOs:<br>_
+* _Uno de ellos para mostrar los objetos de la tienda (ObjetoTienDTO)_
+* _Otro para mostrarlos al momento de realizar el inventario(ObjetoInvtDTO)_
+*_Y otro para tener el objeto Completo (ObjetoFullDTO)_
