@@ -1,5 +1,5 @@
 package com.harry.paquetes.dtos.usuario;
-
+//Este DTO sirve para el formulario de Registro
 public class RegistroDTO {
 
 	private String nombre;
