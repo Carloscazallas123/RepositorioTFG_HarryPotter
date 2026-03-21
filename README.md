@@ -143,6 +143,7 @@ _Luego, el controlador comprobará la condicion de las contraseñas. Si es la mi
 _Guardará ese registro y le devolverá un SesionDTO para iniciar sesion. Caso contrario,<br>_
 _El DTO Sesion se le devolverá al cliente como nulo, dando un error correspondiente.<br>_
 
+## RegistroDTO / SesionDTO
 | Variable | Tipo | - | Variable | Tipo |
 | :--- | :--- | :--- | :--- | :--- |
 | _Nombre_ | String | - |_Nombre_| String|
@@ -153,6 +154,7 @@ _El DTO Sesion se le devolverá al cliente como nulo, dando un error correspondi
 _Al momento de que el Cliente logre Iniciar Sesion, el controlador <br> debera devolver_
 _El DTO importante, que contendrá lo siguiente:_
 
+## FullUsuarioDTO
 | Variable | Tipo |
 | :--- | :--- |
 | _IdUser_ | Int |
@@ -167,6 +169,27 @@ _El DTO importante, que contendrá lo siguiente:_
 > _Con sus respectivos Types_
 
 _El apartado de Objeto será facil, pues necesitaremos dos DTOs:<br>_
-* _Uno de ellos para mostrar los objetos de la tienda (ObjetoTienDTO)_
-* _Otro para mostrarlos al momento de realizar el inventario(ObjetoInvtDTO)_
-*_Y otro para tener el objeto Completo (ObjetoFullDTO)_
+* **Uno de ellos para mostrar los objetos de la tienda (ObjetoTienDTO)**
+* **Y Otro para mostrarlos al momento de realizar el inventario(ObjetoInvtDTO)**
+
+_Cuando el Usuario compre un objeto, su Id será guardado en la array <br>_
+_de Ids de inventario y esos IDs, seran usados al momento de revisar<br>_
+_el inventario._
+
+## ObjetoTiendDTO
+| Variable | Tipo |
+| :--- | :--- |
+| _Nombre_ |  String | 
+| _Descripcion_ | Sting |
+| _Costo_ | Int |
+
+## ObjetoInvDTO
+| Variable | Tipo |
+| :--- | :--- |
+| _Nombre_ |  String | 
+| _Descripcion_ | Sting |
+| _Costo_ | Int |
+| _Personaje_ | String |
+
+
+
