@@ -1,5 +1,5 @@
 package com.harry.paquetes.dtos.objeto;
-
+//Este DTO es el DTO completo
 public class ObjetoFullDTO {
 
 	private int id;
