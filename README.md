@@ -200,5 +200,48 @@ _el inventario._
 | _Descripcion_ | Sting |
 | _Costo_ | Int |
 | _Personaje_ | String |
+---
+#### ________ComentarioDTO
+> _Con sus respectivos Types_
+
+_El apartado del comentario funcionara de lo siguiente:<br>_
+_El usuario podrá ver tres comentarios aleatorios de los usuarios<br>_
+_Que han realizado a esta pagina web.Cuando le de al boton de<br>_
+_Comentar, se aparecera un formulario para crear el comentario<br>_
+
+_Ahora, si ya ha hecho un comentario, al pulsarle al boton de<br>_
+_comentar,se le llevara al mismo formulario, pero estara rellenado<br>_
+_por los datos que ha escrito en su comentario (vamos que va a modificar)<br>_
+_el comentario_.
+
+_Por lo tanto, solo vamos a necesitar dos DTOS:<br>_
+
+* **Uno de ellos para mostrar los tres comentarios**
+* **Otro para mostrar el formulario para rellenar el comentario**
+* **Y Otro FullDTO que nos servira más adelante...**
+
+## ComentarioMostDTO
+| Variable | Tipo |
+| :--- | :--- |
+| _Descripcion_ | Sting |
+| _Valor_ | Int |
+| _fecha_ | Date |
+| _Usuario_ |  String | 
+
+## ComentarDTO
+| Variable | Tipo |
+| :--- | :--- |
+| _Descipcion_ |  String | 
+| _Valor_ | Int |
+| _Fecha_ | Date |
+
+## ComentarioFullDTO
+| Variable | Tipo |
+| :--- | :--- |
+| _Id_ |  Int | 
+| _Descripcion_ |  String | 
+| _Valor_ | Int |
+| _Fecha_ | Date |
+| _Usuario_ | String |
 
 
