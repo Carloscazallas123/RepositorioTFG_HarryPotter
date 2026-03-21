@@ -170,7 +170,8 @@ _El DTO importante, que contendrá lo siguiente:_
 
 _El apartado de Objeto será facil, pues necesitaremos dos DTOs:<br>_
 * **Uno de ellos para mostrar los objetos de la tienda (ObjetoTienDTO)**
-* **Y Otro para mostrarlos al momento de realizar el inventario(ObjetoInvtDTO)**
+* **Otro para mostrarlos al momento de realizar el inventario(ObjetoInvtDTO)**
+* **Y Otro FullDTO que nos puede servir mas adelante en el apartado de administrador**
 
 _Cuando el Usuario compre un objeto, su Id será guardado en la array <br>_
 _de Ids de inventario y esos IDs, seran usados al momento de revisar<br>_
@@ -191,5 +192,13 @@ _el inventario._
 | _Costo_ | Int |
 | _Personaje_ | String |
 
+## ObjetoFullDTO
+| Variable | Tipo |
+| :--- | :--- |
+| _Id_ |  Int | 
+| _Nombre_ |  String | 
+| _Descripcion_ | Sting |
+| _Costo_ | Int |
+| _Personaje_ | String |
 
 
