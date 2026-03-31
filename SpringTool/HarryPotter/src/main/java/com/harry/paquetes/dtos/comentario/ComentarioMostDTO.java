@@ -2,17 +2,19 @@ package com.harry.paquetes.dtos.comentario;
 
 import java.sql.Date;
 
-public class ComentarDTO {
+public class ComentarioMostDTO {
 
 	private String Descripcion;
 	private int valor;
 	private Date fecha;
+	private String usuario;
 	
-	public ComentarDTO(String descripcion, int valor, Date fecha) {
-
+	public ComentarioMostDTO(String descripcion, int valor, Date fecha, String usuario) {
+	
 		Descripcion = descripcion;
 		this.valor = valor;
 		this.fecha = fecha;
+		this.usuario = usuario;
 	}
 
 	public String getDescripcion() {
@@ -37,6 +39,14 @@ public class ComentarDTO {
 
 	public void setFecha(Date fecha) {
 		this.fecha = fecha;
+	}
+
+	public String getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(String usuario) {
+		this.usuario = usuario;
 	}
 	
 	
