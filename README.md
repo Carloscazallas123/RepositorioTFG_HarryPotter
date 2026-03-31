@@ -243,5 +243,28 @@ _Por lo tanto, solo vamos a necesitar dos DTOS:<br>_
 | _Valor_ | Int |
 | _Fecha_ | Date |
 | _Usuario_ | String |
+---
+#### ________PersonajesDTO
+> _Con sus respectivos Types_
 
+_El apartado del personaje funcionara de lo siguiente:<br>_
+_habra un apartado de "Personajes". Al principio te mostrará_
+_un texto diciendo que aun no tienes personajes, pero al tiempo_
+_que va adquiriendo ciertos objetos, le apareceran dichos personajes_
+
+_Para ello, vamos a necesitar los siguientes DTOs:
+* **Un DTO para mostrar los Personajes**
+> Nota: _Para la interfaz del usuario, solo se hara este DTO_
+* **UN DTO para crear al Personaje**: _Solo se creara al personaje <br>_
+_Cuando exista tres objetos. Osea que si no asigna tres objetos al <br>_ 
+_personaje, saltara un tecto diciendo que no se puede crear el personaje_
+
+## MostrarPersonajeDTO
+| Variable | Tipo |
+| :--- | :--- |
+| _Nombre_ |  String | 
+| _Casa_ |  String | 
+
+> Nota:_Recuerda, todo a su tiempo. Antes de continuar<br>_
+>_comprueba todos lo que has hecho hasta ahora (Modificaciones Generales)_
 
