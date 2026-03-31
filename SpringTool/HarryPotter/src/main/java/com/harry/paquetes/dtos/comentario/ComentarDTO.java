@@ -1,5 +1,5 @@
 package com.harry.paquetes.dtos.comentario;
-
+// Este DTO sirve para crear el comentario
 import java.sql.Date;
 
 public class ComentarDTO {

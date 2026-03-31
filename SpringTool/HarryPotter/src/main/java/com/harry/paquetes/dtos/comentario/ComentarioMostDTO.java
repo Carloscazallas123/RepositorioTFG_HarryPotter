@@ -1,5 +1,6 @@
 package com.harry.paquetes.dtos.comentario;
-
+// Este DTO sirve para mostrar el comentario
+// en la pagina web 
 import java.sql.Date;
 
 public class ComentarioMostDTO {
