@@ -1,0 +1,5 @@
+-> Apartado Descripción Al Personaje
+-> Base de Datos: Apartado de Usuario Comentario (Null)
+-> Eliminación de los FullDTOS (Menos UsuarioFullDTO)
+-> Implementación de la Array int de Personajes en UsuarioFullDTO.
+-> Implementación de Comentario en FullUsuarioDTO.
