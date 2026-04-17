@@ -26,7 +26,7 @@ public class ComentarioEntity implements Serializable {
 	@Column(name = "VALORACION")
 	private int valoracion;
 	
-	//Relacion 1:1 Comentario <-> Usuario
+	//Relacion 1:N Comentario <-> Usuario
 	@OneToOne
     @JoinColumn(name = "ID_USUARIO", unique = true) 
     private UsuarioEntity usuario;

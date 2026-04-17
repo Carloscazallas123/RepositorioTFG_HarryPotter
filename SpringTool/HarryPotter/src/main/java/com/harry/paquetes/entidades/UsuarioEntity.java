@@ -32,15 +32,9 @@ public class UsuarioEntity implements Serializable {
 	@Column(name = "PUNTOS")
 	private int puntos;
 	
-	//Relacion 1:1 Comentario <-> Usuario
-	@OneToOne(mappedBy = "ID_USUARIO", cascade = CascadeType.ALL) 
-	private UsuarioEntity usuario;
-	
 	//Relacion N:M Objeto <->Usuario
 	@OneToMany(mappedBy = "usuario")
     private List<CompraEntity> compras;
-	
-	
 
 	public List<CompraEntity> getCompras() {
 		return compras;
@@ -96,14 +90,6 @@ public class UsuarioEntity implements Serializable {
 
 	public void setPuntos(int puntos) {
 		this.puntos = puntos;
-	}
-
-	public UsuarioEntity getUsuario() {
-		return usuario;
-	}
-
-	public void setUsuario(UsuarioEntity usuario) {
-		this.usuario = usuario;
 	}
 
 	
