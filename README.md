@@ -246,7 +246,7 @@ _Por lo tanto, solo vamos a necesitar dos DTOS:<br>_
 | _Nombre_ | String |
 | _Casa_ | String |
 
-## PersonajeVentDTO
+## PersonajeVistDTO
 | Variable | Tipo |
 | :--- | :--- |
 | _Nombre_ | String |
