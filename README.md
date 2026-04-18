@@ -240,7 +240,7 @@ _Por lo tanto, solo vamos a necesitar dos DTOS:<br>_
 * **Un DTO para mostrar el personaje con toda su informacion**
 * **Otro para mostrarlo solo en la ventana de Personaje**
 
-## PersonajeVentDTO
+## PersonajeMostDTO
 | Variable | Tipo |
 | :--- | :--- |
 | _Nombre_ | String |
