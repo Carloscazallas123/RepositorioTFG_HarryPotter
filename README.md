@@ -18,7 +18,7 @@ de Minijuegos llenos de diversión, desafio y conocimiento.
 * **🧪 Tienda:** Adentrate en la tienda de Hagrid para 
 comprar objetos unicos de la saga con tus puntos obtenidos.
 
-* **📱 Logros:** Hazañas en HogwartsWeb para obtener una gran cantidad de puntos.
+* **📱 Personajes:** Desbloquea a los personajes de Hogwarts.
 * **📱 Inventario:** Guarda todos los objetos que vas consiguiendo en tu odisea.
 * **📱 Comentarios:** Realiza un comentario en la pagina y cuentanos sobre tu experiencia.
 
