@@ -129,6 +129,7 @@ Una vez hemos comprobado que la base de datos arranca, vamos a <br> empezar con 
 | _ObjetoEntity_ | 
 | _PersonajeEntity_ |
 | _ComentarioEntity_ | 
+| _CompraEntity_ | 
 ---
 ### 🛠️ Objetos (DTOS)
 #### ________UsuarioDTO
@@ -260,4 +261,15 @@ _Por lo tanto, solo vamos a necesitar dos DTOS:<br>_
 _En este apartado vamos a crear los repositorios<br>_
 _para crear las consultar que queramos para cada apartado<br>_
 
+#### ________RepoUsuario
+_Los Repositorios que vamos a emplear para Usuarios serán:_
 
+- **ObtenerAllUsuarios:** Una consulta para obtener <br>
+todos los usuarios. Este se podrá emplear para comprobar <br>
+por ejemplo, al momento de registrar, si ya existe un <br>
+usuario por ese correo. 
+---
+- **ObtenerporSesion:** Una consulta para obtener <br>
+el usuario a traves del nombre y contraseña. <br>
+Este se podrá emplear para obtener, por <br>
+ejemplo, el usuarioFull a traves de esos parametros.
