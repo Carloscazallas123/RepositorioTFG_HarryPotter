@@ -252,3 +252,12 @@ _Por lo tanto, solo vamos a necesitar dos DTOS:<br>_
 | _Nombre_ | String |
 | _Descripcion_ | String |
 | _Casa_ | String |
+| _Objetos_ | Lista de Strings |
+
+> _Una vez creado todo, vamos a empezar a crear los Repositorios_
+
+## 🛠️ Creacion de los Repositorios
+_En este apartado vamos a crear los repositorios<br>_
+_para crear las consultar que queramos para cada apartado<br>_
+
+
