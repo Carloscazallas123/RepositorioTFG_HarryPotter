@@ -54,6 +54,7 @@ comprar objetos unicos de la saga con tus puntos obtenidos.
 | :--- | :--- |
 | **Id_Personaje** | Identificador del Personaje |
 | **Nombre** | Nombre del Personaje | 
+| **Descripcion** | Descripcion del Personaje |
 | **Casa** | Casa del Personaje |
 
 ### Tabla Comentarios 🛠️
@@ -90,6 +91,7 @@ siempre que desee el comentario. Esto para evitar saturaciones <br> de comentrar
 | **Valoracion**  | Valoracion del Comentario | 
 | **Fecha** | Fecha del Comentario |
 | **ID_Usuario**  | Identificador del Usuario **(R)** | 
+
 ### Tabla Usuario 🛠️
 | Columna | Comentario |
 | :--- | :--- |
@@ -104,6 +106,7 @@ siempre que desee el comentario. Esto para evitar saturaciones <br> de comentrar
 Un Personaje dispone de varios objetos, pero un objeto pertenece <br> a un 
 unico personaje. Para ello, se añadira en la tabla de Objeto <br> una Foreing
 Key del Identificador del Personaje.
+
 ### Tabla Objetos 🛠️
 | Columna | Comentario |
 | :--- | :--- |
@@ -171,7 +174,6 @@ _El DTO importante, que contendrá lo siguiente:_
 _El apartado de Objeto será facil, pues necesitaremos dos DTOs:<br>_
 * **Uno de ellos para mostrar los objetos de la tienda (ObjetoTienDTO)**
 * **Otro para mostrarlos al momento de realizar el inventario(ObjetoInvtDTO)**
-* **Y Otro FullDTO que nos puede servir mas adelante en el apartado de administrador**
 
 _Cuando el Usuario compre un objeto, su Id será guardado en la array <br>_
 _de Ids de inventario y esos IDs, seran usados al momento de revisar<br>_
@@ -187,15 +189,6 @@ _el inventario._
 ## ObjetoInvDTO
 | Variable | Tipo |
 | :--- | :--- |
-| _Nombre_ |  String | 
-| _Descripcion_ | Sting |
-| _Costo_ | Int |
-| _Personaje_ | String |
-
-## ObjetoFullDTO
-| Variable | Tipo |
-| :--- | :--- |
-| _Id_ |  Int | 
 | _Nombre_ |  String | 
 | _Descripcion_ | Sting |
 | _Costo_ | Int |
@@ -218,7 +211,6 @@ _Por lo tanto, solo vamos a necesitar dos DTOS:<br>_
 
 * **Uno de ellos para mostrar los tres comentarios**
 * **Otro para mostrar el formulario para rellenar el comentario**
-* **Y Otro FullDTO que nos servira más adelante...**
 
 ## ComentarioMostDTO
 | Variable | Tipo |
@@ -235,14 +227,28 @@ _Por lo tanto, solo vamos a necesitar dos DTOS:<br>_
 | _Valor_ | Int |
 | _Fecha_ | Date |
 
-## ComentarioFullDTO
+#### ________PersonajesDTO
+> _Con sus respectivos Types_
+
+_El apartado del personajes funcionara de lo siguiente:<br>_
+_Cuando el usuario haya comprado 3 objetos de un respectivo<br>_
+_personaje, este se le aparece en el apartado de "personajes"<br>_
+_Donde podra ver su información e iran apareciendo poco a poco<br>_
+
+_Por lo tanto, solo vamos a necesitar dos DTOS:<br>_
+
+* **Un DTO para mostrar el personaje con toda su informacion**
+* **Otro para mostrarlo solo en la ventana de Personaje**
+
+## PersonajeVentDTO
 | Variable | Tipo |
 | :--- | :--- |
-| _Id_ |  Int | 
-| _Descripcion_ |  String | 
-| _Valor_ | Int |
-| _Fecha_ | Date |
-| _Usuario_ | String |
+| _Nombre_ | String |
+| _Casa_ | String |
 
-> Nota:_Recuerda, todo a su tiempo. Antes de continuar<br>_
->_comprueba todos lo que has hecho hasta ahora (Modificaciones Generales)_
+## PersonajeVentDTO
+| Variable | Tipo |
+| :--- | :--- |
+| _Nombre_ | String |
+| _Descripcion_ | String |
+| _Casa_ | String |
