@@ -268,7 +268,7 @@ _Los Repositorios que vamos a emplear para Usuarios serán:_
 todos los usuarios. Este se podrá emplear para comprobar <br>
 por ejemplo, al momento de registrar, si ya existe un <br>
 usuario por ese correo. 
----
+
 - **ObtenerporSesion:** Una consulta para obtener <br>
 el usuario a traves del nombre y contraseña. <br>
 Este se podrá emplear para obtener, por <br>
