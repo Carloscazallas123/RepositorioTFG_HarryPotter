@@ -11,10 +11,10 @@ import com.harry.paquetes.entidades.*;
 public interface RepoUsuarios extends JpaRepository<UsuarioEntity, Integer> {
 
 	//Consulta para obtener todos los usuarios
-	@Query("SELECT FROM ClienteEntity")
+	@Query("SELECT c FROM ClienteEntity c")
     List<UsuarioEntity> ObtenerAllUsuarios();
 	
 	//Consulta para obtener un usuario por su nombre y contraseña
-	@Query("SELECT FROM ClienteEntity c WHERE c.nombre=:nombre AND c.contrasena=:contrasena")
+	@Query("SELECT c FROM ClienteEntity c WHERE c.nombre=:nombre AND c.contrasena=:contrasena")
 	UsuarioEntity ObtenerPorSesion(@Param("nombre")String nombre, @Param("contrasena") String contrasena);
 }
