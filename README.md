@@ -273,3 +273,16 @@ usuario por ese correo.
 el usuario a traves del nombre y contraseña. <br>
 Este se podrá emplear para obtener, por <br>
 ejemplo, el usuarioFull a traves de esos parametros.
+
+#### ________RepoObjetos
+_Los Repositorios que vamos a emplear para Objetos serán:_
+
+- **ObtenerAllObjetos:** Una consulta para obtener <br>
+todos los objetos. Este se podrá emplear para comprobar <br>
+por ejemplo, al momento de registrar, si el usuario <br>
+Ya tiene ese objeto.
+
+- **ObtenerporID:** Una consulta para obtener<br>
+el objeto a traves de su Id. Esto se podrá emplear<br>
+por ejemplo, para obtener cierto producto<br>
+ejemplo, el usuarioFull a traves de esos parametros.
