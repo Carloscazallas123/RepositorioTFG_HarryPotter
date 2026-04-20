@@ -279,10 +279,17 @@ _Los Repositorios que vamos a emplear para Objetos serán:_
 
 - **ObtenerAllObjetos:** Una consulta para obtener <br>
 todos los objetos. Este se podrá emplear para comprobar <br>
-por ejemplo, al momento de registrar, si el usuario <br>
-Ya tiene ese objeto.
+por ejemplo, para mostrar los objetos en la tienda.
 
 - **ObtenerporID:** Una consulta para obtener<br>
 el objeto a traves de su Id. Esto se podrá emplear<br>
 por ejemplo, para obtener cierto producto<br>
 ejemplo, el usuarioFull a traves de esos parametros.
+
+#### ________RepoPersonajes
+_Los Repositorios que vamos a emplear para Personajes serán:_
+
+- **ObtenerporID:** Una consulta para obtener<br>
+el personaje a traves de su Id. Esto se podrá emplear<br>
+por ejemplo, para obtener cierto personaje<br>
+cuando se cumpla la condicion de los tres objetos.
