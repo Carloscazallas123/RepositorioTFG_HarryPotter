@@ -1,5 +1,5 @@
 package com.harry.paquetes.repositorios;
-
+//Repositorio para la entidad ObjetoEntity
 import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
