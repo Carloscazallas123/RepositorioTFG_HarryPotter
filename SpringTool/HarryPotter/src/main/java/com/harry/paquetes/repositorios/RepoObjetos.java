@@ -11,10 +11,10 @@ import com.harry.paquetes.entidades.*;
 public interface RepoObjetos extends JpaRepository<ObjetoEntity, Integer> {
 
 	//Consulta para obtener todos los Objetos
-	@Query("SELECT o FROM ObjetoEntity c")
+	@Query("SELECT o FROM ObjetoEntity o")
     List<ObjetoEntity> ObtenerAllObjetos();
 	
 	//Consulta para obtener un objeto por su ID
-	@Query("SELECT o FROM ObjetoEntity c WHERE c.id=:id")
+	@Query("SELECT o FROM ObjetoEntity o WHERE o.id=:id")
 	ObjetoEntity ObtenerPorid(@Param("id")int id);
 }

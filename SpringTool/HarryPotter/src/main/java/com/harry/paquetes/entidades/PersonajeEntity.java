@@ -1,4 +1,4 @@
-package com.harry.paquetes.entidades;
+awwpackage com.harry.paquetes.entidades;
 
 import java.io.Serializable;
 import java.util.List;
