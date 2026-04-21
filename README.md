@@ -293,3 +293,16 @@ _Los Repositorios que vamos a emplear para Personajes serán:_
 el personaje a traves de su Id. Esto se podrá emplear<br>
 por ejemplo, para obtener cierto personaje<br>
 cuando se cumpla la condicion de los tres objetos.
+
+#### ________RepoComentarios
+_Los Repositorios que vamos a emplear para Comentarios serán:_
+
+- **ObtenerAllComentarios:** Una consulta para obtener<br>
+todos los comentarios. Esto se podrá emplear<br>
+por ejemplo, para obtener todos los comentarios<br>
+y seleccionar tres de forma aleatoria.
+
+- **ObtenerporUsuarioID:** Una consulta para obtener<br>
+cierto comentario a traves del ID del usuario. Esto se <br> 
+podrá emplear por ejemplo, para obtener cierto comentario <br>
+a traves del ID del usuario para que pueda modificar su comentario.
