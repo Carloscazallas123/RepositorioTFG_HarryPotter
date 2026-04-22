@@ -15,6 +15,6 @@ public interface RepoObjetos extends JpaRepository<ObjetoEntity, Integer> {
     List<ObjetoEntity> ObtenerAllObjetos();
 	
 	//Consulta para obtener un objeto por su ID
-	@Query("SELECT o FROM ObjetoEntity o WHERE o.id=:id")
+	@Query("SELECT o FROM ObjetoEntity o WHERE o.idobjeto=:id")
 	ObjetoEntity ObtenerPorid(@Param("id")int id);
 }

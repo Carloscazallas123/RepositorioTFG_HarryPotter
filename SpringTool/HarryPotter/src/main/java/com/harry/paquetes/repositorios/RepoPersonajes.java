@@ -8,7 +8,7 @@ import com.harry.paquetes.entidades.*;
 @Repository
 public interface RepoPersonajes extends JpaRepository<PersonajeEntity, Integer> {
 	
-	//Consulta para obtener un objeto por su ID
-	@Query("SELECT p FROM PersonajeEntity p WHERE p.id=:id")
+	//Consulta para obtener un personaje a traves de su ID
+	@Query("SELECT p FROM PersonajeEntity p WHERE p.idpersonaje=:id")
 	ObjetoEntity ObtenerPorid(@Param("id")int id);
 }
