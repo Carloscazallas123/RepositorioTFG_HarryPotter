@@ -1,5 +1,5 @@
 package com.harry.paquetes.repositorios;
-//Repositorio de los Objetos
+//Repositorio para la entidad ObjetoEntity
 import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -15,6 +15,6 @@ public interface RepoObjetos extends JpaRepository<ObjetoEntity, Integer> {
     List<ObjetoEntity> ObtenerAllObjetos();
 	
 	//Consulta para obtener un objeto por su ID
-	@Query("SELECT o FROM ObjetoEntity o WHERE o.idobjeto=:id")
-	ObjetoEntity ObtenerPorid(@Param("id")int id);
+	@Query("SELECT o FROM ObjetoEntity o WHERE o.idobjeto=:idobjeto")
+	ObjetoEntity ObtenerPorid(@Param("idobjeto")int idobjeto);
 }

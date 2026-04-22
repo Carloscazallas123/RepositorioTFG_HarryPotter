@@ -1,5 +1,5 @@
 package com.harry.paquetes.repositorios;
-//Repositorio para la entidad ObjetoEntity
+//Repositorio para la entidad UsuarioEntity
 import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -11,10 +11,10 @@ import com.harry.paquetes.entidades.*;
 public interface RepoUsuarios extends JpaRepository<UsuarioEntity, Integer> {
 
 	//Consulta para obtener todos los usuarios
-	@Query("SELECT c FROM ClienteEntity c")
+	@Query("SELECT c FROM UsuarioEntity c")
     List<UsuarioEntity> ObtenerAllUsuarios();
 	
 	//Consulta para obtener un usuario por su nombre y contraseña
-	@Query("SELECT c FROM ClienteEntity c WHERE c.nombre=:nombre AND c.contrasena=:contrasena")
-	UsuarioEntity ObtenerPorSesion(@Param("nombre")String nombre, @Param("contrasena") String contrasena);
+	@Query("SELECT c FROM UsuarioEntity c WHERE c.nombre=:nombre AND c.contra=:contra")
+	UsuarioEntity ObtenerPorSesion(@Param("nombre")String nombre, @Param("contra") String contra);
 }
