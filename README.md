@@ -306,3 +306,11 @@ y seleccionar tres de forma aleatoria.
 cierto comentario a traves del ID del usuario. Esto se <br> 
 podrá emplear por ejemplo, para obtener cierto comentario <br>
 a traves del ID del usuario para que pueda modificar su comentario.
+
+## 🖥️ Creacion de los Controladores
+
+#### ________ControladorUsuario
+| Nombre | Metodo | Descripcion |
+| :--- | :--- | :--- |
+| _Registrarse_ | POST | Registro de Usuario |
+| _InicioSesion_ | GET | Inicio de Sesion del Usuario |
