@@ -72,11 +72,3 @@ Para ser un auténtico Maestro de Git, combina todas las herramientas en un solo
   > `feat(frontend): añadir componente del Sombrero Seleccionador. Closes #21`
 * **Refactorización:**
   > `refactor(api): optimizar llamada a HP-API para reducir latencia. Ref #8`
-
----
-
-### 📊 ¿Por qué vincular tus Commits?
-
-1. **Trazabilidad Total:** Haz clic en el ID desde el historial de commits y viaja directamente a la explicación de la tarea original.
-2. **Cierre Automático:** Ahorra tiempo. Al aceptar el **Pull Request**, todos los Issues vinculados con `Closes` o `Fixes` se marcarán como completados automáticamente.
-3. **Comunicación en Equipo:** Tus compañeros verán el progreso de cada tarea en tiempo real dentro del panel de Issues.
