@@ -132,7 +132,7 @@ Una vez hemos comprobado que la base de datos arranca, vamos a <br> empezar con 
 | _CompraEntity_ | 
 ---
 ### 🛠️ Objetos (DTOS)
-#### ________UsuarioDTO
+## | UsuarioDTO | 🔗
 > _Con sus respectivos Types_
 
 | DTO | Descripcion |
@@ -147,7 +147,7 @@ _Luego, el controlador comprobará la condicion de las contraseñas. Si es la mi
 _Guardará ese registro y le devolverá un SesionDTO para iniciar sesion. Caso contrario,<br>_
 _El DTO Sesion se le devolverá al cliente como nulo, dando un error correspondiente.<br>_
 
-## RegistroDTO / SesionDTO
+### ✨ RegistroDTO / SesionDTO
 | Variable | Tipo | - | Variable | Tipo |
 | :--- | :--- | :--- | :--- | :--- |
 | _Nombre_ | String | - |_Nombre_| String|
@@ -158,7 +158,7 @@ _El DTO Sesion se le devolverá al cliente como nulo, dando un error correspondi
 _Al momento de que el Cliente logre Iniciar Sesion, el controlador <br> debera devolver_
 _El DTO importante, que contendrá lo siguiente:_
 
-## FullUsuarioDTO
+### ✨ FullUsuarioDTO
 | Variable | Tipo |
 | :--- | :--- |
 | _IdUser_ | Int |
@@ -169,7 +169,7 @@ _El DTO importante, que contendrá lo siguiente:_
 
 > _Inicia SpringTool y haz todo esto antes de continuar_
 ---
-#### ________ObjetoDTO
+## | ObjetoDTO | 🔗
 > _Con sus respectivos Types_
 
 _El apartado de Objeto será facil, pues necesitaremos dos DTOs:<br>_
@@ -180,22 +180,21 @@ _Cuando el Usuario compre un objeto, su Id será guardado en la array <br>_
 _de Ids de inventario y esos IDs, seran usados al momento de revisar<br>_
 _el inventario._
 
-## ObjetoTiendDTO
+### ✨ ObjetoTiendDTO
 | Variable | Tipo |
 | :--- | :--- |
 | _Nombre_ |  String | 
 | _Descripcion_ | Sting |
 | _Costo_ | Int |
 
-## ObjetoInvDTO
+### ✨ ObjetoInvDTO
 | Variable | Tipo |
 | :--- | :--- |
 | _Nombre_ |  String | 
 | _Descripcion_ | Sting |
 | _Costo_ | Int |
 | _Personaje_ | String |
----
-#### ________ComentarioDTO
+## | ComentarioDTO | 🔗
 > _Con sus respectivos Types_
 
 _El apartado del comentario funcionara de lo siguiente:<br>_
@@ -213,7 +212,7 @@ _Por lo tanto, solo vamos a necesitar dos DTOS:<br>_
 * **Uno de ellos para mostrar los tres comentarios**
 * **Otro para mostrar el formulario para rellenar el comentario**
 
-## ComentarioMostDTO
+### ✨ ComentarioMostDTO
 | Variable | Tipo |
 | :--- | :--- |
 | _Descripcion_ | Sting |
@@ -221,14 +220,14 @@ _Por lo tanto, solo vamos a necesitar dos DTOS:<br>_
 | _fecha_ | Date |
 | _Usuario_ |  String | 
 
-## ComentarDTO
+### ✨ ComentarDTO
 | Variable | Tipo |
 | :--- | :--- |
 | _Descipcion_ |  String | 
 | _Valor_ | Int |
 | _Fecha_ | Date |
 
-#### ________PersonajesDTO
+## | PersonajesDTO |🔗
 > _Con sus respectivos Types_
 
 _El apartado del personajes funcionara de lo siguiente:<br>_
@@ -241,13 +240,13 @@ _Por lo tanto, solo vamos a necesitar dos DTOS:<br>_
 * **Un DTO para mostrar el personaje con toda su informacion**
 * **Otro para mostrarlo solo en la ventana de Personaje**
 
-## PersonajeMostDTO
+### ✨ PersonajeMostDTO 
 | Variable | Tipo |
 | :--- | :--- |
 | _Nombre_ | String |
 | _Casa_ | String |
 
-## PersonajeVistDTO
+### ✨ PersonajeVistDTO 
 | Variable | Tipo |
 | :--- | :--- |
 | _Nombre_ | String |
@@ -258,54 +257,43 @@ _Por lo tanto, solo vamos a necesitar dos DTOS:<br>_
 > _Una vez creado todo, vamos a empezar a crear los Repositorios_
 
 ## 🛠️ Creacion de los Repositorios
-_En este apartado vamos a crear los repositorios<br>_
-_para crear las consultar que queramos para cada apartado<br>_
 
-#### ________RepoUsuario
-_Los Repositorios que vamos a emplear para Usuarios serán:_
+#### <----------------------------------------| RepoUsuario |🔗
+| Nombre | Consulta | Descripcion |
+| :--- | :--- | :--- |
+| **ObtenerAllUsuarios:** | `SELECT c FROM UsuarioEntity c` | Obtener todos los Usuarios **!** |
+| **ObtenerporSesion:** | `SELECT c FROM UsuarioEntity c` <br> `WHERE c.nombre=:nombre AND c.contra=:contra` | Obtener cierto usuario por su <br> Nombre y contraseña |
 
-- **ObtenerAllUsuarios:** Una consulta para obtener <br>
-todos los usuarios. Este se podrá emplear para comprobar <br>
-por ejemplo, al momento de registrar, si ya existe un <br>
-usuario por ese correo. 
+- **!**: Antes de crear el usuario, se recorrerá entre toda la lista de usuarios
+para comprobar si ya hay uno existente.
 
-- **ObtenerporSesion:** Una consulta para obtener <br>
-el usuario a traves del nombre y contraseña. <br>
-Este se podrá emplear para obtener, por <br>
-ejemplo, el usuarioFull a traves de esos parametros.
+#### <----------------------------------------| RepoObjetos |🔗
+| Nombre | Consulta | Descripcion |
+| :--- | :--- | :--- |
+| **ObtenerAllObjetos:** | `SELECT o FROM ObjetoEntity o` | Obtener todos los objetos **!** |
+| **ObtenerporID:** | `SELECT o FROM ObjetoEntity o` <br>` WHERE o.idobjeto=:idobjeto` | Obtener cierto objeto por su ID **!** |
 
-#### ________RepoObjetos
-_Los Repositorios que vamos a emplear para Objetos serán:_
+- **!**: Para mostrarlos en la tienda.
+- **!**: Tras Mostrar los productos en la tienda con el .map<br>
+al darle click al boton de comprar, este recoge su ID <br>
+respectivo para pasarselo al controlador.
 
-- **ObtenerAllObjetos:** Una consulta para obtener <br>
-todos los objetos. Este se podrá emplear para comprobar <br>
-por ejemplo, para mostrar los objetos en la tienda.
+#### <----------------------------------------| RepoPersonajes |🔗
+| Nombre | Consulta | Descripcion |
+| :--- | :--- | :--- |
+| **ObtenerporID:** | `SELECT p FROM PersonajeEntity `<br>` p WHERE p.idpersonaje=:id` | Obtener cierto personaje por su ID **!** |
 
-- **ObtenerporID:** Una consulta para obtener<br>
-el objeto a traves de su Id. Esto se podrá emplear<br>
-por ejemplo, para obtener cierto producto<br>
-ejemplo, el usuarioFull a traves de esos parametros.
+- **!**: Para cuando el usuario tenga 3 objetos de un mismo ID de personaje <br>
+pasarle ese ID a la consulta.
+---
+#### <----------------------------------------| RepoComentarios |🔗
+| Nombre | Consulta | Descripcion |
+| :--- | :--- | :--- |
+| **ObtenerAllComentarios:** | `SELECT c FROM ComentarioEntity c` | Obtener todos los comentarios **!** |
+| **ObtenerporUsuarioID:** | `SELECT c FROM ComentarioEntity c WHERE c.usuario.idusuario=:id` | Obtener por Id del Usuario |
 
-#### ________RepoPersonajes
-_Los Repositorios que vamos a emplear para Personajes serán:_
-
-- **ObtenerporID:** Una consulta para obtener<br>
-el personaje a traves de su Id. Esto se podrá emplear<br>
-por ejemplo, para obtener cierto personaje<br>
-cuando se cumpla la condicion de los tres objetos.
-
-#### ________RepoComentarios
-_Los Repositorios que vamos a emplear para Comentarios serán:_
-
-- **ObtenerAllComentarios:** Una consulta para obtener<br>
-todos los comentarios. Esto se podrá emplear<br>
-por ejemplo, para obtener todos los comentarios<br>
-y seleccionar tres de forma aleatoria.
-
-- **ObtenerporUsuarioID:** Una consulta para obtener<br>
-cierto comentario a traves del ID del usuario. Esto se <br> 
-podrá emplear por ejemplo, para obtener cierto comentario <br>
-a traves del ID del usuario para que pueda modificar su comentario.
+- **!**: Uso para recoger 3 comentarios de forma aleatoria <br>
+para mostrarlos en la pagina principal.
 
 ## 🖥️ Creacion de los Controladores
 
