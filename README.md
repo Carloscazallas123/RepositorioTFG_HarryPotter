@@ -297,8 +297,16 @@ para mostrarlos en la pagina principal.
 
 ## 🖥️ Creacion de los Controladores
 
-#### ________ControladorUsuario
+#### <----------------------------------------| ControladorUsuarios |🔗
 | Nombre | Metodo | Descripcion |
 | :--- | :--- | :--- |
 | _Registrarse_ | POST | Registro de Usuario |
 | _InicioSesion_ | GET | Inicio de Sesion del Usuario |
+
+
+#### <----------------------------------------| ControladorObjetos |🔗
+| Nombre | Metodo | Descripcion |
+| :--- | :--- | :--- |
+| _MostrarTienda_ | GET | Mostrar los Objetos en la tienda |
+| _MostrarInventario_ | GET | Mostrar los Objetos en el Inventario |
+| _CompraObjeto_ | GET | Comprar los objetos |
