@@ -310,3 +310,8 @@ para mostrarlos en la pagina principal.
 | _MostrarTienda_ | GET | Mostrar los Objetos en la tienda |
 | _MostrarInventario_ | GET | Mostrar los Objetos en el Inventario |
 | _CompraObjeto_ | GET | Comprar los objetos |
+
+#### <----------------------------------------| ControladorPersonajes |🔗
+| Nombre | Metodo | Descripcion |
+| :--- | :--- | :--- |
+| _MostrarPersonajes_ | GET | Mostrar los Personajes que ha desbloqueado el Usuario |
