@@ -4,6 +4,7 @@ import java.util.*;
 //Controlador de los Usuarios
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -23,7 +24,7 @@ public class ControladorComentarios {
 	}
 
 	// Controlador para Crear/Editar el Comentario
-	@GetMapping("/Comentar")
+	@PostMapping("/Comentar")
 	public ResponseEntity<ComentarDTO> Comentar(@RequestBody ComentarDTO comentar) {
 		// Insertar servicio e implementacion
 		return null;
