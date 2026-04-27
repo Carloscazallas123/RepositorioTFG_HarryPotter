@@ -34,7 +34,7 @@ public class ControladorObjetos {
 	}
 
 	// Controlador para Comprar el Objeto
-	@GetMapping("/Sesion")
+	@GetMapping("/Comprar/{id}")
 	public ResponseEntity<UsuarioFullDTO> Comprarobjeto(UsuarioFullDTO usuario, @PathVariable int id) {
 		// Insertar servicio e implementacion
 		return null;
