@@ -1,4 +1,5 @@
 package com.harry.paquetes.controladores;
+
 import java.util.*;
 //Controlador de los Usuarios
 import org.springframework.http.ResponseEntity;
@@ -18,26 +19,25 @@ import com.harry.paquetes.dtos.usuario.UsuarioFullDTO;
 @RequestMapping("/Objetos")
 public class ControladorObjetos {
 
-	//Controlador para Mostrar los Objetos de la Tienda
+	// Controlador para Mostrar los Objetos de la Tienda
 	@PostMapping("/Registro")
 	public ResponseEntity<ArrayList<ObjetoTiendDTO>> Mostrartienda(RegistroDTO registro) {
 		// Insertar servicio e implementacion
 		return null;
 	}
 
-	//Controlador para Mostar los Objetos en el Inventario
+	// Controlador para Mostar los Objetos en el Inventario
 	@GetMapping("/Sesion")
 	public ResponseEntity<ArrayList<ObjetoInvDTO>> Mostrarinventario(SesionDTO sesion) {
 		// Insertar servicio e implementacion
 		return null;
 	}
-	
-	//Controlador para Comprar el Objeto
-	@GetMapping("/Sesion")
+
+	// Controlador para Comprar el Objeto
+	@GetMapping("/Comprar/{id}")
 	public ResponseEntity<UsuarioFullDTO> Comprarobjeto(UsuarioFullDTO usuario, @PathVariable int id) {
-			// Insertar servicio e implementacion
-			return null;
+		// Insertar servicio e implementacion
+		return null;
 	}
-	
-	
+
 }

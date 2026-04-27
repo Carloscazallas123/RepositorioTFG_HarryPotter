@@ -314,4 +314,5 @@ para mostrarlos en la pagina principal.
 #### <----------------------------------------| ControladorPersonajes |🔗
 | Nombre | Metodo | Descripcion |
 | :--- | :--- | :--- |
-| _MostrarPersonajes_ | GET | Mostrar los Personajes que ha desbloqueado el Usuario |
+| _MostrarListaPersonajes_ | GET | Mostrar los Personajes que ha desbloqueado el Usuario |
+| _MostrarPersonaje_ | GET | Mostrar el Personaje seleccionado por el usuario|
