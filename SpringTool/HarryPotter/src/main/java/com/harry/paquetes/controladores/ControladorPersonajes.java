@@ -1,4 +1,5 @@
 package com.harry.paquetes.controladores;
+
 import java.util.*;
 //Controlador de los Personajes
 import org.springframework.http.ResponseEntity;
@@ -15,18 +16,18 @@ import com.harry.paquetes.dtos.usuario.UsuarioFullDTO;
 @RequestMapping("/Personajes")
 public class ControladorPersonajes {
 
-	//Controlador para Mostrar los Personajes que tiene el usuario desbloqueados
+	// Controlador para Mostrar los Personajes que tiene el usuario desbloqueados
 	@GetMapping("/Registro")
 	public ResponseEntity<ArrayList<PersonajeMostDTO>> MostrarDesbloqueados(@RequestBody UsuarioFullDTO usuario) {
 		// Insertar servicio e implementacion
 		return null;
 	}
 
-	//Controlador para Mostrar el Personaje Seleccionado
+	// Controlador para Mostrar el Personaje Seleccionado
 	@GetMapping("/Sesion")
 	public ResponseEntity<PersonajeVistDTO> MostrarPersonaje(@PathVariable int id) {
 		// Insertar servicio e implementacion
 		return null;
 	}
-	
+
 }

@@ -15,14 +15,14 @@ import com.harry.paquetes.dtos.usuario.UsuarioFullDTO;
 @RequestMapping("/Usuarios")
 public class ControladorUsuarios {
 
-	//Controlador para Registrar el Usuario
+	// Controlador para Registrar el Usuario
 	@PostMapping("/Registro")
 	public ResponseEntity<UsuarioFullDTO> registrarusuario(RegistroDTO registro) {
 		// Insertar servicio e implementacion
 		return null;
 	}
 
-	//Controlador para Iniciar Sesion el Usuario
+	// Controlador para Iniciar Sesion el Usuario
 	@GetMapping("/Sesion")
 	public ResponseEntity<UsuarioFullDTO> iniciarsesion(SesionDTO sesion) {
 		// Insertar servicio e implementacion
