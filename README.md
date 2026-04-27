@@ -316,3 +316,11 @@ para mostrarlos en la pagina principal.
 | :--- | :--- | :--- |
 | _MostrarListaPersonajes_ | GET | Mostrar los Personajes que ha desbloqueado el Usuario |
 | _MostrarPersonaje_ | GET | Mostrar el Personaje seleccionado por el usuario|
+
+#### <----------------------------------------| ControladorComentarios |🔗
+| Nombre | Metodo | Descripcion |
+| :--- | :--- | :--- |
+| _MostrarComentarios_ | GET | Una Lista de 3 Comentarios Aleatorios mostrados en la pagina |
+| _Comentar_ | GET | Crear/Editar el comentario |
+
+
