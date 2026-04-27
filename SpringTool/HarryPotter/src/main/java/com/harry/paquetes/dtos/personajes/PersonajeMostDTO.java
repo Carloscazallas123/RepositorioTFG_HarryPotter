@@ -4,12 +4,10 @@ package com.harry.paquetes.dtos.personajes;
 public class PersonajeMostDTO {
 
 	private String nombre;
-	private String descripcion;
 	private String casa;
 	
 	public PersonajeMostDTO(String nombre, String descripcion, String casa) {
 		this.nombre = nombre;
-		this.descripcion = descripcion;
 		this.casa = casa;
 	}
 
@@ -19,14 +17,6 @@ public class PersonajeMostDTO {
 
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
-	}
-
-	public String getDescripcion() {
-		return descripcion;
-	}
-
-	public void setDescripcion(String descripcion) {
-		this.descripcion = descripcion;
 	}
 
 	public String getCasa() {
