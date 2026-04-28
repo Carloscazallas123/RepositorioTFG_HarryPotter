@@ -11,5 +11,5 @@ public interface InterfazUsuario {
 	UsuarioFullDTO registrarusuario(RegistroDTO registro);
 	
 	//Metodo para iniciar sesion del usuario
-	UsuarioFullDTO inicarsesionusuario(SesionDTO sesion);
+	UsuarioFullDTO iniciarsesionusuario(SesionDTO sesion);
 }
