@@ -38,7 +38,7 @@ public class ImplementacionUsuario implements InterfazUsuario {
 			repositoriousuarios.save(entidad);
 			// Creacion del DTO
 			usuario = new UsuarioFullDTO(entidad.getIdusuario(), entidad.getNombre(), entidad.getCorreo(),
-					new ArrayList<Integer>());
+					new ArrayList<Integer>(),new ArrayList<Integer>());
 		} else { // Caso contrario, envia un DTO null para fallar
 			usuario = null;
 		}
@@ -93,7 +93,7 @@ public class ImplementacionUsuario implements InterfazUsuario {
 		// Si existe, crea el nuevoDTO
 		if (existe = true) {
 			usuario = new UsuarioFullDTO(entidad.getIdusuario(), entidad.getNombre(), entidad.getCorreo(),
-					new ArrayList<Integer>());
+					new ArrayList<Integer>(), new ArrayList<Integer>());
 		} else {
 			usuario = null;
 		}

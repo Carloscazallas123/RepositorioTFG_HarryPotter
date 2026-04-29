@@ -37,7 +37,7 @@ public class ImplementacionObjetos implements InterfazObjeto {
 	@Override
 	public List<ObjetoInvDTO> mostrarinventario(UsuarioFullDTO usuario) {
 		List<ObjetoEntity> listaentidades = repositorioObjetos.ObtenerAllObjetos();
-		List<Integer>listausuario=usuario.getCompras();
+		List<Integer>listausuario=usuario.getObjetos();
 		List<ObjetoInvDTO>listainventario=new ArrayList<>();
 		for (int i=0;i<listaentidades.size();i++) {
 			for (int e=0;e<listausuario.size();i++) {

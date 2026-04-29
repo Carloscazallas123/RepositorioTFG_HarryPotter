@@ -14,13 +14,15 @@ public class UsuarioFullDTO {
 	private List<Integer> objetos;
 	private List<Integer> personajes;
 
-	public UsuarioFullDTO(int idusuario, String nombre, String correo, List<Integer> objetos) {
+	public UsuarioFullDTO(int idusuario, String nombre, String correo, List<Integer> objetos,
+			List<Integer> personajes) {
 		this.idusuario = idusuario;
 		this.nombre = nombre;
 		this.correo = correo;
 		this.casa = null;
 		this.puntos = 0;
 		this.objetos = objetos;
+		this.personajes=personajes;
 	}
 
 	public int getIdusuario() {
