@@ -11,15 +11,16 @@ public class UsuarioFullDTO {
 	private String correo;
 	private String casa;
 	private int puntos;
-	private List<Integer> compras;
+	private List<Integer> objetos;
+	private List<Integer> personajes;
 
-	public UsuarioFullDTO(int idusuario, String nombre, String correo, List<Integer> compras) {
+	public UsuarioFullDTO(int idusuario, String nombre, String correo, List<Integer> objetos) {
 		this.idusuario = idusuario;
 		this.nombre = nombre;
 		this.correo = correo;
 		this.casa = null;
 		this.puntos = 0;
-		this.compras = compras;
+		this.objetos = objetos;
 	}
 
 	public int getIdusuario() {
@@ -62,12 +63,22 @@ public class UsuarioFullDTO {
 		this.puntos = puntos;
 	}
 
-	public List<Integer> getCompras() {
-		return compras;
+	public List<Integer> getObjetos() {
+		return objetos;
 	}
 
-	public void setCompras(List<Integer> compras) {
-		this.compras = compras;
+	public void setObjetos(List<Integer> objetos) {
+		this.objetos = objetos;
 	}
+
+	public List<Integer> getPersonajes() {
+		return personajes;
+	}
+
+	public void setPersonajes(List<Integer> personajes) {
+		this.personajes = personajes;
+	}
+
+
 
 }
