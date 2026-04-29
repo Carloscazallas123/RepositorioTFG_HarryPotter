@@ -17,4 +17,8 @@ public interface RepoUsuarios extends JpaRepository<UsuarioEntity, Integer> {
 	//Consulta para obtener un usuario por su nombre y contraseña
 	@Query("SELECT c FROM UsuarioEntity c WHERE c.nombre=:nombre AND c.contra=:contra")
 	UsuarioEntity ObtenerPorSesion(@Param("nombre")String nombre, @Param("contra") String contra);
+	
+	//Consulta para obtener un usuario por su nombre y contraseña
+	@Query("SELECT c FROM UsuarioEntity c WHERE c.idusuario=:id")
+	UsuarioEntity ObtenerPorid(@Param ("id") int id);
 }

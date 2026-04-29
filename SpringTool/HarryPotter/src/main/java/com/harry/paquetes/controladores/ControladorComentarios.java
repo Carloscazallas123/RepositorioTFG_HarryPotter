@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.harry.paquetes.dtos.comentario.ComentarDTO;
 import com.harry.paquetes.dtos.comentario.ComentarioMostDTO;
+import com.harry.paquetes.dtos.usuario.UsuarioFullDTO;
 
 @RestController
 @RequestMapping("/Comentarios")
@@ -25,7 +26,7 @@ public class ControladorComentarios {
 
 	// Controlador para Crear/Editar el Comentario
 	@PostMapping("/Comentar")
-	public ResponseEntity<ComentarDTO> Comentar(@RequestBody ComentarDTO comentar) {
+	public ResponseEntity<ComentarDTO> Comentar(@RequestBody UsuarioFullDTO usuario) {
 		// Insertar servicio e implementacion
 		return null;
 	}
