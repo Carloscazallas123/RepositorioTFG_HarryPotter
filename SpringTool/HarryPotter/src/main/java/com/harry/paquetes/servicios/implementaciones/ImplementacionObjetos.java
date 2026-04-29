@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import com.harry.paquetes.dtos.objeto.ObjetoInvDTO;
 import com.harry.paquetes.dtos.objeto.ObjetoTiendDTO;
+import com.harry.paquetes.dtos.usuario.UsuarioFullDTO;
 import com.harry.paquetes.entidades.ObjetoEntity;
 import com.harry.paquetes.repositorios.RepoObjetos;
 import com.harry.paquetes.servicios.interfaces.InterfazObjeto;
@@ -18,7 +19,6 @@ public class ImplementacionObjetos implements InterfazObjeto {
 
 	@Override
 	public List<ObjetoTiendDTO> mostrartienda() {
-		//Creamos dos listas: Una con todas las Entidades y otra para los DTOS
 		List<ObjetoEntity> listaentidades = repositorioObjetos.ObtenerAllObjetos();
 		List<ObjetoTiendDTO> listatienda = new ArrayList<>();
 
@@ -35,9 +35,22 @@ public class ImplementacionObjetos implements InterfazObjeto {
 	}
 
 	@Override
-	public List<ObjetoInvDTO> mostrarinventario() {
-		// TODO Auto-generated method stub
-		return null;
+	public List<ObjetoInvDTO> mostrarinventario(UsuarioFullDTO usuario) {
+		List<ObjetoEntity> listaentidades = repositorioObjetos.ObtenerAllObjetos();
+		List<Integer>listausuario=usuario.getCompras();
+		List<ObjetoInvDTO>listainventario=new ArrayList<>();
+		for (int i=0;i<listaentidades.size();i++) {
+			for (int e=0;e<listausuario.size();i++) {
+				if(listausuario.get(e)==listaentidades.get(i).getIdobjeto()) {
+				listainventario.add( new ObjetoInvDTO(
+									listaentidades.get(i).getNombre(),
+									listaentidades.get(i).getDescripcion(),
+									listaentidades.get(i).getCosto(),
+									listaentidades.get(i).getPersonaje().getNombre()));
+				}
+			}
+		}
+		return listainventario;
 	}
 
 }
