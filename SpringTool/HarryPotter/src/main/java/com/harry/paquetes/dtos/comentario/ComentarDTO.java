@@ -1,15 +1,15 @@
 package com.harry.paquetes.dtos.comentario;
 // Este DTO sirve para crear el comentario
-import java.sql.Date;
+import java.time.*;
 
 public class ComentarDTO {
 
 	private String Descripcion;
 	private int valor;
-	private Date fecha;
+	private LocalDate fecha;
 	private int id;
 	
-	public ComentarDTO(String descripcion, int valor, Date fecha, int id) {
+	public ComentarDTO(String descripcion, int valor, LocalDate fecha, int id) {
 
 		Descripcion = descripcion;
 		this.valor = valor;
@@ -42,13 +42,17 @@ public class ComentarDTO {
 		this.valor = valor;
 	}
 
-	public Date getFecha() {
+
+	public LocalDate getFecha() {
 		return fecha;
 	}
 
-	public void setFecha(Date fecha) {
+
+	public void setFecha(LocalDate fecha) {
 		this.fecha = fecha;
 	}
+
+	
 	
 	
 }

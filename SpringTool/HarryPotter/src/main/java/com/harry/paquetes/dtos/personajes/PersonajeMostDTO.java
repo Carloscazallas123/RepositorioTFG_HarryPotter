@@ -6,7 +6,7 @@ public class PersonajeMostDTO {
 	private String nombre;
 	private String casa;
 	
-	public PersonajeMostDTO(String nombre, String descripcion, String casa) {
+	public PersonajeMostDTO(String nombre, String casa) {
 		this.nombre = nombre;
 		this.casa = casa;
 	}

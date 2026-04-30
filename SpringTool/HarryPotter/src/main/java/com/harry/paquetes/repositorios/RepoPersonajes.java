@@ -10,5 +10,5 @@ public interface RepoPersonajes extends JpaRepository<PersonajeEntity, Integer> 
 	
 	//Consulta para obtener un personaje a traves de su ID
 	@Query("SELECT p FROM PersonajeEntity p WHERE p.idpersonaje=:id")
-	ObjetoEntity ObtenerPorid(@Param("id")int id);
+	PersonajeEntity ObtenerPorid(@Param("id")int id);
 }

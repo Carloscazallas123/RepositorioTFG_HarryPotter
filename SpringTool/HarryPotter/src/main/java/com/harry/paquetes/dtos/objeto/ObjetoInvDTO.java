@@ -9,7 +9,7 @@ public class ObjetoInvDTO {
 	private String personaje;
 	
 	
-	public ObjetoInvDTO(int id, String nombre, String descripcion, int costo, String personaje) {
+	public ObjetoInvDTO(String nombre, String descripcion, int costo, String personaje) {
 		
 		this.nombre = nombre;
 		this.descripcion = descripcion;

@@ -2,19 +2,20 @@ package com.harry.paquetes.dtos.comentario;
 // Este DTO sirve para mostrar el comentario
 // en la pagina web 
 import java.sql.Date;
+import java.time.LocalDate;
 
 public class ComentarioMostDTO {
 
 	private String Descripcion;
 	private int valor;
-	private Date fecha;
+	private LocalDate fecha;
 	private String usuario;
 	
-	public ComentarioMostDTO(String descripcion, int valor, Date fecha, String usuario) {
+	public ComentarioMostDTO(String descripcion, int valor, LocalDate localDate, String usuario) {
 	
 		Descripcion = descripcion;
 		this.valor = valor;
-		this.fecha = fecha;
+		this.fecha = localDate;
 		this.usuario = usuario;
 	}
 
@@ -34,11 +35,11 @@ public class ComentarioMostDTO {
 		this.valor = valor;
 	}
 
-	public Date getFecha() {
+	public LocalDate getFecha() {
 		return fecha;
 	}
 
-	public void setFecha(Date fecha) {
+	public void setFecha(LocalDate fecha) {
 		this.fecha = fecha;
 	}
 
