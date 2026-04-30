@@ -1,41 +1,45 @@
 package com.harry.paquetes.controladores;
 
 import java.util.*;
+
+import org.springframework.beans.factory.annotation.Autowired;
 //Controlador de los Usuarios
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.harry.paquetes.dtos.objeto.ObjetoInvDTO;
 import com.harry.paquetes.dtos.objeto.ObjetoTiendDTO;
-import com.harry.paquetes.dtos.usuario.RegistroDTO;
-import com.harry.paquetes.dtos.usuario.SesionDTO;
 import com.harry.paquetes.dtos.usuario.UsuarioFullDTO;
+import com.harry.paquetes.servicios.interfaces.InterfazObjeto;
 
 @RestController
 @RequestMapping("/Objetos")
 public class ControladorObjetos {
+	
+	@Autowired
+	InterfazObjeto interfazObjetos;
 
 	// Controlador para Mostrar los Objetos de la Tienda
-	@PostMapping("/Registro")
-	public ResponseEntity<ArrayList<ObjetoTiendDTO>> Mostrartienda(RegistroDTO registro) {
-		// Insertar servicio e implementacion
-		return null;
+	@GetMapping("/Tienda")
+	public ResponseEntity<List<ObjetoTiendDTO>> Mostrartienda() {
+		List<ObjetoTiendDTO>listatienda=interfazObjetos.mostrartienda();
+		return ResponseEntity.ok(listatienda);
 	}
 
 	// Controlador para Mostar los Objetos en el Inventario
-	@GetMapping("/Sesion")
-	public ResponseEntity<ArrayList<ObjetoInvDTO>> Mostrarinventario(SesionDTO sesion) {
+	@GetMapping("/Inventario")
+	public ResponseEntity<ArrayList<ObjetoInvDTO>> Mostrarinventario(@RequestBody UsuarioFullDTO usuario) {
 		// Insertar servicio e implementacion
 		return null;
 	}
 
 	// Controlador para Comprar el Objeto
 	@GetMapping("/Comprar/{id}")
-	public ResponseEntity<UsuarioFullDTO> Comprarobjeto(UsuarioFullDTO usuario, @PathVariable int id) {
+	public ResponseEntity<UsuarioFullDTO> Comprarobjeto(@RequestBody UsuarioFullDTO usuario, @PathVariable int id) {
 		// Insertar servicio e implementacion
 		return null;
 	}
