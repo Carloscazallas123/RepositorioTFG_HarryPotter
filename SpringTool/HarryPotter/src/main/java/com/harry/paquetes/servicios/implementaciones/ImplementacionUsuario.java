@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.harry.paquetes.dtos.usuario.RegistroDTO;
 import com.harry.paquetes.dtos.usuario.SesionDTO;
@@ -12,7 +13,7 @@ import com.harry.paquetes.entidades.UsuarioEntity;
 import com.harry.paquetes.repositorios.RepoUsuarios;
 import com.harry.paquetes.servicios.interfaces.InterfazUsuario;
 
-//Implementacion de los Usuarios
+@Service
 public class ImplementacionUsuario implements InterfazUsuario {
 
 	@Autowired

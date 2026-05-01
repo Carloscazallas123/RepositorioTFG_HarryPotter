@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.harry.paquetes.dtos.objeto.ObjetoInvDTO;
 import com.harry.paquetes.dtos.objeto.ObjetoTiendDTO;
@@ -12,6 +13,7 @@ import com.harry.paquetes.entidades.ObjetoEntity;
 import com.harry.paquetes.repositorios.RepoObjetos;
 import com.harry.paquetes.servicios.interfaces.InterfazObjeto;
 
+@Service
 public class ImplementacionObjetos implements InterfazObjeto {
 
 	@Autowired
