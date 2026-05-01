@@ -28,7 +28,8 @@ public class ImplementacionObjetos implements InterfazObjeto {
 		//Rellenando la lista de las tiendas bajo posiciones aleatorias
 		for(int i=0;i<6;i++) {
 			int aleatorio= (int) (Math.random()*listaentidades.size());
-			listatienda.add( new ObjetoTiendDTO(listaentidades.get(aleatorio).getNombre(),
+			listatienda.add( new ObjetoTiendDTO(listaentidades.get(aleatorio).getIdobjeto(),
+												listaentidades.get(aleatorio).getNombre(),
 												listaentidades.get(aleatorio).getDescripcion(),
 												listaentidades.get(aleatorio).getCosto()));
 		}
