@@ -3,18 +3,34 @@ package com.harry.paquetes.dtos.objeto;
 //de la Tienda
 public class ObjetoTiendDTO {
 
-	
+	private int id;
 	private String nombre;
 	private String descripcion;
 	private int costo;
 	
 	
-	public ObjetoTiendDTO(String nombre, String descripcion, int costo) {
-		
+	
+
+
+	public ObjetoTiendDTO(int id, String nombre, String descripcion, int costo) {
+		this.id = id;
 		this.nombre = nombre;
 		this.descripcion = descripcion;
 		this.costo = costo;
 	}
+
+
+	
+	public int getId() {
+		return id;
+	}
+
+
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
 
 
 	public String getNombre() {
