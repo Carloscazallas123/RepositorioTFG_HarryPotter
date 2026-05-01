@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.harry.paquetes.dtos.comentario.ComentarDTO;
 import com.harry.paquetes.dtos.comentario.ComentarioMostDTO;
@@ -14,6 +15,7 @@ import com.harry.paquetes.repositorios.RepoUsuarios;
 import com.harry.paquetes.servicios.interfaces.InterfazComentario;
 import java.time.*;
 
+@Service
 public class ImplementacionComentarios implements InterfazComentario {
 
 	@Autowired

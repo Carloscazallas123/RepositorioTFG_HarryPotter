@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.harry.paquetes.dtos.comentario.ComentarDTO;
 import com.harry.paquetes.dtos.comentario.ComentarioMostDTO;
 import com.harry.paquetes.dtos.usuario.UsuarioFullDTO;
-import com.harry.paquetes.servicios.interfaces.InterfazComentario;
+import com.harry.paquetes.servicios.interfaces.*;
 
 @RestController
 @RequestMapping("/Comentarios")

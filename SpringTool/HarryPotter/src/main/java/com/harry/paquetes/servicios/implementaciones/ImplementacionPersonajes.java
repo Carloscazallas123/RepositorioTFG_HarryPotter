@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.harry.paquetes.dtos.personajes.PersonajeMostDTO;
 import com.harry.paquetes.dtos.personajes.PersonajeVistDTO;
@@ -14,6 +15,7 @@ import com.harry.paquetes.repositorios.RepoObjetos;
 import com.harry.paquetes.repositorios.RepoPersonajes;
 import com.harry.paquetes.servicios.interfaces.InterfazPersonaje;
 
+@Service
 public class ImplementacionPersonajes implements InterfazPersonaje {
 
 	@Autowired
