@@ -8,9 +8,6 @@
   --hp-transition: all 0.3s ease-in-out;
   --hp-font-magic: 'Cinzel', serif;
 }
-/* ============================================================
-   3. FOOTER (Sin espacios vacíos excesivos)
-   ============================================================ */
 .hp-footer-custom {
   width: 100%;
   background-color: var(--hp-purple);
