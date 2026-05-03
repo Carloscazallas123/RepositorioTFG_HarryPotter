@@ -20,7 +20,7 @@ html, body {
 .NavBar {
   width: 100%;
   background-color: #1a0a2e;
-  border-bottom: 2px solid #e2e212;
+  border-bottom: 2px solid #a72424;
   margin: 0; 
 }
 
@@ -32,21 +32,29 @@ html, body {
   padding: 15px 60px; 
 }
 
+.ImagenLogo {
+  width: 100px;
+  height: auto;
+}
+
 .btn-hp-login {
-  border: 2px solid #e2e212;
+  border: 2px solid #d4af37;
   background: transparent;
-  color: #e2e212;
+  color: #d4af37;
   padding: 10px 25px;
   font-family: 'Cinzel', serif;
+  font-size: 22px;
   font-weight: bold;
   cursor: pointer;
   transition: all 0.3s ease;
+  height: 50px;
+  width: 250px;
 }
 
 .btn-hp-login:hover {
-  background-color: #e2e212;
+  background-color: #d4af37;
   color: #1a0a2e;
-  box-shadow: 0 0 15px rgba(226, 226, 18, 0.4);
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
 }
 
 .ContendorIzquierda{
@@ -59,16 +67,20 @@ html, body {
   color: white;
   text-decoration: none;
   font-family: 'Cinzel', serif;
-  font-size: 1.1rem;
+  font-size: 22px;
   letter-spacing: 1.5px;
   transition: color 0.3s;
 }
 
+.PalabrasFooter{
+  text-align: left;
+}
+
 .Enlaces:hover {
-  color: #e2e212;
+  color: #d4af37;
 }
 
 .hp-nav-icon {
-  color: #e2e212;
+  color: #d4af37;
   font-size: 1.5rem;
 }

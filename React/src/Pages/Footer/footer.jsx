@@ -1,17 +1,16 @@
 import React from 'react';
-import './../../Style/footer.css';
+import './../../Style';
 
 const Footer = () => {
   return (
-    <footer className="hp-footer-custom">
       <div className="footer-container">
         
         {/* COLUMNA 1: LOGO Y REDES */}
         <div className="footer-column brand-col">
           <div className="social-links">
-            <span className="social-icon">f</span>
-            <span className="social-icon">ig</span>
-            <span className="social-icon">yt</span>
+            <img src="./../../../public/Iconos/Facebook_Icono.png" alt="Facebook" className='ImagenesIconos' />
+            <img src="./../../../public/Iconos/Instagram_Icono.png" alt="Instagram" className='ImagenesIconos' />
+            <a href=""><img src="./../../../public/Iconos/YouTube_Icono.png" alt="YouTube" className='ImagenesIconos' /></a>
           </div>
         </div>
 
@@ -49,7 +48,6 @@ const Footer = () => {
         </div>
 
       </div>
-    </footer>
   );
 };
 

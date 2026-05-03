@@ -1,0 +1,120 @@
+/* src/Style/Casas.css */
+
+.casasSection {
+  background-image: url('/Backgrounds/FondoCasas.jpg'); 
+  background-size: cover;
+  background-position: center;
+  padding: 60px 20px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 2px solid #a72424;
+}
+
+.casasTitle {
+  color: #d4af37;
+  text-align: center;
+  font-size: 3.2rem;
+  margin-bottom: 40px;
+  font-family: 'Cinzel', serif;
+  text-shadow: 3px 3px 15px rgba(0,0,0,0.9);
+}
+
+.casasGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  /* Mantenemos el hueco central para que se vea el escudo de Hogwarts */
+  column-gap: 400px; 
+  row-gap: 50px;
+  max-width: 1400px;
+  width: 95%;
+  justify-items: center;
+}
+
+.cardContainer {
+  /* --- MODIFICACIÓN AQUÍ: Más anchas para que no parezcan tan delgadas --- */
+  width: 320px; 
+  height: 400px; 
+  perspective: 1500px;
+  cursor: pointer;
+}
+
+.innerCard {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-style: preserve-3d;
+}
+
+.cardContainer:hover .innerCard {
+  transform: rotateY(180deg);
+}
+
+.commonFace {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  border-radius: 12px;
+  padding: 25px; /* Un poco más de aire interno */
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  
+  /* FONDO PERGAMINO */
+  background-color: #f4e4bc;
+  background-image: url('https://www.transparenttextures.com/patterns/old-map.png');
+  
+  /* Borde envejecido más marcado */
+  border: 3px solid #5d4037;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+}
+
+.frontFace {
+  z-index: 2;
+  transform: rotateY(0deg);
+}
+
+.backFace {
+  transform: rotateY(180deg);
+  background-color: #ebe0c5;
+  justify-content: center; /* Centramos mejor el texto en la cara trasera */
+}
+
+/* Brillo mágico según la casa */
+.cardContainer:hover .commonFace {
+  box-shadow: 0 0 35px var(--color-casa);
+  border-color: var(--color-casa);
+}
+
+.frontFace img {
+  width: 85%;
+  height: auto;
+  max-height: 220px;
+  object-fit: contain;
+  filter: drop-shadow(0 8px 12px rgba(0,0,0,0.4));
+}
+
+.backFace h3 {
+  font-family: 'Cinzel', serif;
+  color: #3e2723;
+  font-size: 2rem;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #5d4037;
+  padding-bottom: 8px;
+}
+
+.backFace p {
+  color: #4e342e;
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  line-height: 1.5;
+  text-align: center;
+  font-style: italic;
+  padding: 0 10px; /* Evita que el texto toque los bordes */
+}

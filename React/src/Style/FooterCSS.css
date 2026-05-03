@@ -8,12 +8,16 @@
   --hp-transition: all 0.3s ease-in-out;
   --hp-font-magic: 'Cinzel', serif;
 }
-.hp-footer-custom {
-  width: 100%;
-  background-color: var(--hp-purple);
-  border-top: 1px solid rgba(226, 226, 18, 0.2);
-  padding: 40px 0 30px 0; /* Padding reducido para evitar espacio abajo */
-  margin-top: 60px;
+
+.ImagenesIconos {
+  width: 95px;
+  height: 75px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--hp-white);
+  transition: var(--hp-transition);
 }
 
 .footer-container {
@@ -46,6 +50,7 @@
 .social-links {
   display: flex;
   gap: 15px;
+  padding-right: 100px;
 }
 
 .social-icon {

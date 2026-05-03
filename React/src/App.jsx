@@ -13,13 +13,14 @@ const Comentarios = () => <h1 style={{color: 'white', textAlign: 'center'}}>🦉
 function App() {
   return (
     <Router>
-       <Navbar />
-      <div>
+       <div>
+          <Navbar />
           <Bienvenida/>
           <Secciones/>
           <Casas/>
+          <Footer/>
       </div>
-      <Footer/>
+      
     </Router>
     
   );

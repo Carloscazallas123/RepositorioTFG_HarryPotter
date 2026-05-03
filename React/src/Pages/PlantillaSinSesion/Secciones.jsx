@@ -1,47 +1,31 @@
 import React from 'react';
+import './../../Style/SinIniciarSesion/SeccionesCSS.css';
 
 const Secciones = () => {
-  const containerStyle = {
-    padding: '50px 20px',
-    backgroundColor: '#060b1d',
-    textAlign: 'center'
-  };
-
-  const gridStyle = {
-    display: 'grid',
-    gridTemplateColumns: 'repeat(3, 1fr)',
-    gap: '20px',
-    maxWidth: '1200px',
-    margin: '0 auto'
-  };
-
-  const cardStyle = {
-    backgroundColor: 'rgba(255, 255, 255, 0.05)',
-    border: '1px solid #d4af37',
-    borderRadius: '15px',
-    padding: '30px',
-    color: 'white'
-  };
+  const cardsData = [
+    { id: 1, title: 'Cuestionario', desc: 'Evalúa tus conocimientos mágicos y descubre tu nivel.', img: '/Imagenes/Sombrero Seleccionador.png' },
+    { id: 2, title: 'Minijuegos', desc: 'Gana puntos para tu casa superando desafíos únicos.', img: '/Imagenes/Minijuegos.png' },
+    { id: 3, title: 'Tienda', desc: 'Canjea tus puntos por productos exclusivos del mundo mágico.', img: '/Imagenes/Tienda.png' }
+  ];
 
   return (
-    <section style={containerStyle}>
-      <h2 style={{ color: '#d4af37', marginBottom: '40px', fontSize: '2.5rem' }}>Manual Orientativo</h2>
-      <div style={gridStyle}>
-        <div style={cardStyle}>
-          <div style={{ fontSize: '4rem' }}>🎩</div>
-          <h3>Cuestionario</h3>
-          <p>Evalúa tus conocimientos mágicos.</p>
-        </div>
-        <div style={cardStyle}>
-          <div style={{ fontSize: '4rem' }}>🎮</div>
-          <h3>Minijuegos</h3>
-          <p>Gana puntos superando desafíos.</p>
-        </div>
-        <div style={cardStyle}>
-          <div style={{ fontSize: '4rem' }}>🦉</div>
-          <h3>Tienda</h3>
-          <p>Productos exclusivos de la saga.</p>
-        </div>
+    <section className="seccionesContainer">
+      <div className="tituloWrapper">
+        <img src="/Iconos/Libro_Icono.png" alt="Libro mágico" className="imagenLibro" />
+        <h2 className="tituloManual">Manual Orientativo</h2>
+        <img src="/Iconos/Libro_Icono.png" alt="Libro mágico" className="imagenLibro" />
+      </div>
+
+      <div className="seccionesGrid">
+        {cardsData.map((card) => (
+          <div key={card.id} className="seccionCard">
+            <div className="imageContainerSeccion">
+              <img src={card.img} alt={card.title} />
+            </div>
+            <h3>{card.title}</h3>
+            <p>{card.desc}</p>
+          </div>
+        ))}
       </div>
     </section>
   );
