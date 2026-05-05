@@ -6,6 +6,7 @@ const CartaCasa = ({ imagen, titulo, descripcion, colorTitulo }) => {
   return (
     <div className="cardContainer">
       <div className="innerCard">
+        
         {/* CARA FRONTAL */}
         <div className="commonFace frontFace" style={{ border: `2px solid ${colorTitulo}88` }}>
           <img src={imagen} alt={titulo} />

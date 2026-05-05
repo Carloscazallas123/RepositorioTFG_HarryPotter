@@ -39,7 +39,7 @@ const Footer = () => {
         {/* COLUMNA 4: CONTACTO */}
         <div className="footer-column contact-col">
           <div>
-            <img src="" alt="" />
+            <img src="./../../public/Iconos/Gafas_Icono.png" alt="GafasIcono" className='GafasIcono'/>
           </div>
           <h4 className="contact-title">Correo Electrónico:</h4>
           <a href="mailto:Hogwartsweb@gmail.com" className="footer-email">

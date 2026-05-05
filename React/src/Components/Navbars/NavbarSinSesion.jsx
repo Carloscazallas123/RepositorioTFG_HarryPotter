@@ -1,4 +1,5 @@
 import React from 'react';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import { FaBolt } from 'react-icons/fa'; 
 import './../../Style/Navbars/NavbarSinSesion.css';
 
@@ -9,16 +10,15 @@ const Navbar = () => {
         
         {/* SECCIÓN IZQUIERDA: Botón de acceso */}
         <div className="ContendorDerecha">
-          <button className="btn-hp-login">INICIAR SESIÓN</button>
+          <Link to="/login" className="btn-hp-login">INICIAR SESIÓN</Link>
         </div>
 
         {/* SECCIÓN DERECHA: Menú de navegación */}
         <div className="ContendorIzquierda">
-          <a href="/personajes" className="Enlaces">PERSONAJES</a>
-          <a href="/inventario" className="Enlaces">INVENTARIO</a>
+          <Link to='/login' className="Enlaces">PERSONAJES</Link>
+          <Link to='/login' className="Enlaces">INVENTARIO</Link>
           <img src="./../../../../public/Iconos/Logo HogwartWeb.png" alt="Logo HogwartWeb" className='ImagenLogo'/>
         </div>
-
       </div>
     </nav>
   );

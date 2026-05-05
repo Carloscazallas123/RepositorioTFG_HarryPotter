@@ -1,5 +1,9 @@
 /* src/Style/Casas.css */
 
+*{
+  cursor: url('./../../assets/Varita.svg'), auto;
+}
+
 .casasSection {
   background-image: url('/Backgrounds/FondoCasas.jpg'); 
   background-size: cover;
@@ -37,7 +41,6 @@
   width: 320px; 
   height: 400px; 
   perspective: 1500px;
-  cursor: pointer;
 }
 
 .innerCard {

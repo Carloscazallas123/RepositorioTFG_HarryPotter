@@ -2,8 +2,8 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box; 
+  cursor: url('./../../assets/Varita.svg'), auto;
 }
-
 html, body {
   width: 100%;
   min-height: 100vh;
@@ -45,7 +45,6 @@ html, body {
   font-family: 'Cinzel', serif;
   font-size: 22px;
   font-weight: bold;
-  cursor: pointer;
   transition: all 0.3s ease;
   height: 50px;
   width: 250px;

@@ -3,7 +3,6 @@ package com.harry.paquetes.controladores;
 import org.springframework.beans.factory.annotation.Autowired;
 //Controlador de los Usuarios
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -28,9 +27,9 @@ public class ControladorUsuarios {
 	}
 
 	// Controlador para Iniciar Sesion el Usuario
-	@GetMapping("/Sesion")
+	@PostMapping("/Sesion")
 	public ResponseEntity<UsuarioFullDTO> iniciarsesion(@RequestBody SesionDTO sesion) {
-		UsuarioFullDTO usuario= interfazusuario.iniciarsesionusuario(null);
+		UsuarioFullDTO usuario= interfazusuario.iniciarsesionusuario(sesion);
 		return ResponseEntity.ok(usuario);
 	}
 }

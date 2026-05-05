@@ -1,5 +1,7 @@
 /* src/Style/Bienvenida.css */
-
+*{
+  cursor: url('./../../assets/Varita.svg'), auto;
+}
 .heroSection {
   display: flex;
   justify-content: space-between;

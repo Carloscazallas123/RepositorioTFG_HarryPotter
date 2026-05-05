@@ -1,10 +1,10 @@
 import React from 'react';
-import './../../Style/SinIniciarSesion/BienvenidaCSS.css'; 
-import Navbar from './Components/Navbars/NavbarSinSesion';
-import Footer from './Components/Footer';
-import Bienvenida from './Components/PlantillaSinSesion/Bienvenida';
-import Secciones from './Components/PlantillaSinSesion/Secciones';
-import Casas from './Components/PlantillaSinSesion/Casas';
+import Navbar from './../Components/Navbars/NavbarSinSesion';
+import Footer from './../Components/Footer';
+import Bienvenida from './../Components/PlantillaPrincipal/Bienvenida';
+import Secciones from './../Components/PlantillaPrincipal/Secciones';
+import Casas from './../Components/PlantillaPrincipal/Casas';
+import Comentarios from './../Components/PlantillaPrincipal/Comentarios'
 
 const SinSesion = () => {
   return (
@@ -13,6 +13,7 @@ const SinSesion = () => {
         <Bienvenida/>
         <Secciones/>
         <Casas/>
+        <Comentarios/>
         <Footer/>
     </div>
   );

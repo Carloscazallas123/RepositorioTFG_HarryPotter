@@ -1,4 +1,5 @@
--- Insertacion de los Personajes
+USE HOGWARTSWEB;
+
 INSERT INTO PERSONAJE (NOMBRE, DESCRIPCION, CASA) VALUES 
 ('Ron Weasley', 'Mejor amigo de Harry y gran jugador de Ajedrez Mágico', 'Gryffindor'),
 ('Lord Voldemort', 'El Señor Tenebroso, el mago oscuro más temido', 'Slytherin'),
@@ -54,16 +55,32 @@ INSERT INTO OBJETO (NOMBRE, DESCRIPCION, COSTE, ID_PERSONAJE) VALUES
                         (SELECT ID_PERSONAJE FROM PERSONAJE WHERE NOMBRE = 'Neville Longbottom')),
 ('Regadera mágica', 'Regadera que nunca se queda sin agua tibia', 30, 
                     (SELECT ID_PERSONAJE FROM PERSONAJE WHERE NOMBRE = 'Neville Longbottom'));
+                    
+INSERT INTO USUARIO (NOMBRE, CORREO, CONTRASEÑA, CASA, PUNTOS) VALUES 
+('Juan Pablo Morales', 'juan.pablo@hogwarts.edu', 1234, 'Gryffindor', 150),
+('Carlos Chacon Gomez', 'carlos.ch@hogwarts.edu', 5678, 'Slytherin', 120),
+('Maria Sanchez Chacon', 'maria.s@hogwarts.edu', 9012, 'Ravenclaw', 200),
+('Luna Lovegood', 'luna.l@hogwarts.edu', 1111, 'Ravenclaw', 300),
+('Cedric Diggory', 'cedric.d@hogwarts.edu', 2222, 'Hufflepuff', 250),
+('Draco Malfoy', 'draco.m@hogwarts.edu', 9999, 'Slytherin', 500),
+('Neville Longbottom', 'neville.l@hogwarts.edu', 4444, 'Gryffindor', 50),
+('Cho Chang', 'cho.c@hogwarts.edu', 7777, 'Ravenclaw', 180),
+('Gregory Goyle', 'gregory.g@hogwarts.edu', 0000, 'Slytherin', 10),
+('Hannah Abbott', 'hannah.a@hogwarts.edu', 5555, 'Hufflepuff', 90);
 
--- Insertando reseñas basadas en la imagen de la web
-INSERT INTO COMENTARIO (DESCRIPCION, FECHA, VALORACION, ID_USUARIO) 
-VALUES 
-('Esta pagina web tiene un diseño muy interesante y tiene mucho potencial.', '2026-01-17', 5, 1),
+INSERT INTO COMENTARIO (DESCRIPCION, FECHA, VALORACION, ID_USUARIO) VALUES 
+-- Las originales con ajustes
+('Diseño muy interesante y con mucho potencial a futuro.', '2026-01-17', 5, 1),
+('Los minijuegos son el punto fuerte, muy entretenidos.', '2026-01-17', 4, 2),
+('¡Me encanta! Me ha tocado Ravenclaw en el cuestionario.', '2026-01-17', 5, 3),
+('La estética de los pergaminos es simplemente mágica.', '2026-02-10', 5, 4),
+('Buena tienda, aunque me faltan puntos para la varita.', '2026-03-05', 4, 5),
 
-('Los minijuegos son el punto fuerte de esta pagina. Entretenidos y sencillos.', '2026-01-17', 4, 2),
+-- Nuevas reseñas variadas (5, 3, 1, 0)
+('Mi padre se enterará de que esta web no es de oro puro.', '2026-03-10', 1, 6),
+('Está bien, pero me pierdo un poco entre tanto hechizo.', '2026-03-12', 3, 7),
+('Las fotos de las casas son preciosas. ¡Gran trabajo!', '2026-03-15', 5, 8),
+('No entiendo nada. ¿Donde estan los pasteles de caldero?', '2026-03-16', 0, 9),
+('Un sitio acogedor para descansar después de Herbología.', '2026-03-18', 4, 10);
 
-('Estoy muy emocionada!!! Me ha tocado Ravenclaw en el cuestionario.', '2026-01-17', 5, 3),
-
-('Me encanta la estética de los pergaminos, parece el Mapa del Merodeador.', '2026-02-10', 5, 4),
-
-('La tienda tiene productos exclusivos muy chulos. ¡Quiero más puntos!', '2026-03-05', 4, 5);
+SELECT * FROM USUARIO;

@@ -97,6 +97,7 @@ public class ImplementacionUsuario implements InterfazUsuario {
 					new ArrayList<Integer>(), new ArrayList<Integer>());
 		} else {
 			usuario = null;
+			System.out.println("Usuario no encontrado");
 		}
 
 		return usuario;
