@@ -24,10 +24,9 @@
   display: grid;
   grid-template-columns: 1.8fr 1fr 1fr 1.5fr;
   gap: 40px;
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 0 60px;
-  align-items: start; /* Alinea todo arriba para evitar estiramientos */
+  padding: 50px;
+  align-items: start; 
+  background-color: #1a0a2e;
 }
 
 /* --- COLUMNA MARCA: Arreglo de espacio --- */
@@ -51,6 +50,7 @@
   display: flex;
   gap: 15px;
   padding-right: 100px;
+  padding: 20px;
 }
 
 .social-icon {

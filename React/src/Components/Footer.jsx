@@ -1,5 +1,5 @@
 import React from 'react';
-import './../../Style';
+import './../Style/FooterCSS.css';
 
 const Footer = () => {
   return (
@@ -38,7 +38,9 @@ const Footer = () => {
 
         {/* COLUMNA 4: CONTACTO */}
         <div className="footer-column contact-col">
-          <div className="footer-magic-icons">⚡ 👓</div>
+          <div>
+            <img src="" alt="" />
+          </div>
           <h4 className="contact-title">Correo Electrónico:</h4>
           <a href="mailto:Hogwartsweb@gmail.com" className="footer-email">
             Hogwartsweb@gmail.com

@@ -1,6 +1,6 @@
 import React from 'react';
-import { FaBolt } from 'react-icons/fa'; // Icono de rayo
-import './../../../Style/Navbar.css';
+import { FaBolt } from 'react-icons/fa'; 
+import './../../Style/Navbars/NavbarSinSesion.css';
 
 const Navbar = () => {
   return (

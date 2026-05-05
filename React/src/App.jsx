@@ -1,9 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Navbar from './Pages/Footer/Navbar/navbar';
-import Footer from './Pages/Footer/footer';
-import Bienvenida from './Pages/PlantillaSinSesion/Bienvenida';
-import Secciones from './Pages/PlantillaSinSesion/Secciones';
-import Casas from './Pages/PlantillaSinSesion/Casas';
+import SinSesion from './Pages/PaginaSinSesion';
 
 // De momento creamos mini-paginas temporales para probar
 const Home = () => <h1 style={{color: 'white', textAlign: 'center'}}>🏰 Bienvenido al Castillo</h1>;
@@ -13,14 +9,10 @@ const Comentarios = () => <h1 style={{color: 'white', textAlign: 'center'}}>🦉
 function App() {
   return (
     <Router>
-       <div>
-          <Navbar />
-          <Bienvenida/>
-          <Secciones/>
-          <Casas/>
-          <Footer/>
-      </div>
-      
+      {/* Rutas principales de la aplicación */}
+      <Routes>
+        <Route path="/" element={<SinSesion/>} />
+      </Routes>
     </Router>
     
   );
