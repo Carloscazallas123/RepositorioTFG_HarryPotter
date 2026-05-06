@@ -1,5 +1,5 @@
 import React from 'react';
-import Navbar from './../Components/Navbars/NavbarConSesion';
+import Navbar from './../Components/Navbars/NavbarSinSesion';
 import Footer from './../Components/Footer';
 import Bienvenida from './../Components/PlantillaPrincipal/Bienvenida';
 import Secciones from './../Components/PlantillaPrincipal/Secciones';

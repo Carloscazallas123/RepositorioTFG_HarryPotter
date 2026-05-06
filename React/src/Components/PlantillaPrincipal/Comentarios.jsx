@@ -12,7 +12,6 @@ const Reseñas = () => {
             setListaComentarios(datos);
             setCargando(false);
         };
-        console.log( "Despues: " + listaComentarios);
         cargarDatos();
     }, []);
 
@@ -28,7 +27,7 @@ const Reseñas = () => {
                     <p className="loadingText">Lanzando hechizos de búsqueda...</p>
                 ) : listaComentarios.length > 0 ? (
                     listaComentarios.map((com) => (
-                        <div key={com} className="reseñaCard">
+                        <div key={com.id} className="reseñaCard">
                             <div className="reseñaHeader">
                                 <img 
                                 src={`https://ui-avatars.com/api/?name=${com.usuario?.nombre || 'Mago'}&background=7d6b4a&color=fff&bold=true`} 

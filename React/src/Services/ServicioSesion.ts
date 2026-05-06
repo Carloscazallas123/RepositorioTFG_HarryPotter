@@ -1,6 +1,6 @@
 // src/Services/AuthService.ts
 import { alertaError } from '../Utils/Alertas';
-import { SesionDTO } from './../Type/Usuario';
+import { SesionDTO,RegistroDTO } from './../Type/Usuario';
 
 const API_URL = '/api/Usuarios';
 
@@ -20,6 +20,28 @@ export const loginUsuario = async (datosSesion: SesionDTO) => {
         }
     } catch (error) {
         console.error("Error de autenticación:", error);
+        throw error;
+    }
+};
+
+export const registrarUsuario = async (datos: RegistroDTO) => {
+    try {
+        const response = await fetch(`${API_URL}/Registro`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(datos)
+        });
+
+        if (!response.ok) {
+            const errorData = await response.json().catch(() => ({}));
+            throw new Error(errorData.mensaje || 'Error al escribir en el pergamino');
+        }
+
+        console.log(response.json())
+    } catch (error) {
+        console.error("Error en RegistroService:", error);
         throw error;
     }
 };

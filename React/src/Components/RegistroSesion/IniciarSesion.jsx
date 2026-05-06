@@ -12,15 +12,14 @@ const IniciarSesion = () => {
     const manejarEnvio = async (e) => {
         e.preventDefault();
         const datosParaEnviar = { nombre: nombre, contraseña: pass };
-
         try {
             const resultado = await loginUsuario(datosParaEnviar);
             await alertaExito('¡Alohomora!', 'Has entrado con éxito al castillo.');
-            localStorage.setItem('Usuario', resultado.token);
-            navigate('/'); 
+            navigate('/home'); 
         } catch (err) {
             await alertaError('¡Alohomora!', 'No se pudo iniciar sesión. Por favor, inténtalo de nuevo.');
         }
+        LocalStorage.setItem('usuario', JSON.stringify(datosParaEnviar));
     };
 
     return (

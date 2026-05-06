@@ -1,6 +1,6 @@
 export interface RegistroDTO {
     nombre: String;
-    email: number;
+    email: String;
     contraseña: String;
     repcontraseña: String;
 };

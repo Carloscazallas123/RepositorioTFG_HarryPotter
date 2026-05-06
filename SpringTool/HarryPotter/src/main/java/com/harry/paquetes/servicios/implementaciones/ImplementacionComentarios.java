@@ -28,7 +28,7 @@ public class ImplementacionComentarios implements InterfazComentario {
 		List<ComentarioMostDTO> listacomentarios = new ArrayList<>();
 		List<ComentarioEntity> listaentidades = repocomentarios.ObtenerAllComentarios();
 
-		for (int i = 0; i < 3; i++) {
+		for (int i = listacomentarios.size(); i < 3; i++) {
 			int aleatorio = (int) (Math.random() * listaentidades.size()-1);
 			listacomentarios.add(new ComentarioMostDTO(
 					listaentidades.get(aleatorio).getId(),
@@ -36,7 +36,7 @@ public class ImplementacionComentarios implements InterfazComentario {
 					listaentidades.get(aleatorio).getValoracion(), 
 					listaentidades.get(aleatorio).getFecha(),
 					listaentidades.get(aleatorio).getUsuario().getNombre()));
-
+					listaentidades.remove(aleatorio);
 		}
 		return listacomentarios;
 	}
