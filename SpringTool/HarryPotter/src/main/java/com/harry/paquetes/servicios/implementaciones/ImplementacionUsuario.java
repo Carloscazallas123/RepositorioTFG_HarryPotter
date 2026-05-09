@@ -9,12 +9,22 @@ import org.springframework.stereotype.Service;
 import com.harry.paquetes.dtos.usuario.RegistroDTO;
 import com.harry.paquetes.dtos.usuario.SesionDTO;
 import com.harry.paquetes.dtos.usuario.UsuarioFullDTO;
+import com.harry.paquetes.entidades.CompraEntity;
+import com.harry.paquetes.entidades.PersonajeEntity;
 import com.harry.paquetes.entidades.UsuarioEntity;
+import com.harry.paquetes.repositorios.RepoCompras;
+import com.harry.paquetes.repositorios.RepoPersonajes;
 import com.harry.paquetes.repositorios.RepoUsuarios;
 import com.harry.paquetes.servicios.interfaces.InterfazUsuario;
 
 @Service
 public class ImplementacionUsuario implements InterfazUsuario {
+
+	@Autowired
+	private RepoPersonajes repositoriopersonajes;
+
+	@Autowired
+	private RepoCompras repositoriocompras;
 
 	@Autowired
 	private RepoUsuarios repositoriousuarios;
@@ -57,14 +67,10 @@ public class ImplementacionUsuario implements InterfazUsuario {
 		// Usamos un metodo externo para obtener el DTO
 		usuario = comprobarexistenciaS(listausuarios, sesion);
 
-		// Si nos devuelve el DTO nulo, salta el mensaje de no encontrado
-		// Por lo que devolverá nulo. Caso contrario, salta el mensaje de
-		// encontrado
 		if (usuario == null) {
 			System.out.println("Usuario No encontrado");
-		} else {
-			System.out.println("Usuario Encontrado");
 		}
+
 		return usuario;
 	}
 
@@ -96,13 +102,40 @@ public class ImplementacionUsuario implements InterfazUsuario {
 		}
 		// Si existe, crea el nuevoDTO
 		if (existe = true) {
+			// Obtener los Objetos
+			List<CompraEntity> listaentidadesO = repositoriocompras.ObtenerPorid(entidad.getIdusuario());
+			List<Integer> listacompras = rellenarlistaobjetos(listaentidadesO);
+
+			// Obtener los Personajes
+			List<PersonajeEntity> listaentidadesP = repositoriopersonajes.findPersonajesConTresObjetos(listacompras);
+			List<Integer> listapersonajes = rellenarlistapersonajes(listaentidadesP);
 			usuario = new UsuarioFullDTO(entidad.getIdusuario(), entidad.getNombre(), entidad.getCorreo(),
-					new ArrayList<Integer>(), new ArrayList<Integer>());
+					entidad.getCasa(), entidad.getPuntos(), listacompras, listapersonajes);
 		} else {
 			usuario = null;
 			System.out.println("Usuario no encontrado");
 		}
 
 		return usuario;
+	}
+
+	// ------------- Procesos SubExternos --------------
+
+	public List<Integer> rellenarlistaobjetos(List<CompraEntity> listaentidades) {
+		List<Integer> listacompras = new ArrayList<>();
+		for (int i = 0; i < listaentidades.size(); i++) {
+			listacompras.add(listaentidades.get(i).getObjeto().getIdobjeto());
+		}
+
+		return listacompras;
+	}
+	
+	public List<Integer> rellenarlistapersonajes(List<PersonajeEntity> listaentidades) {
+		List<Integer> listapersonajes = new ArrayList<>();
+		for (int i = 0; i < listaentidades.size(); i++) {
+			listapersonajes.add(listaentidades.get(i).getIdpersonaje());
+		}
+
+		return listapersonajes;
 	}
 }

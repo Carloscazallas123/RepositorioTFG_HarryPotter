@@ -19,7 +19,6 @@ const IniciarSesion = () => {
         } catch (err) {
             await alertaError('¡Alohomora!', 'No se pudo iniciar sesión. Por favor, inténtalo de nuevo.');
         }
-        LocalStorage.setItem('usuario', JSON.stringify(datosParaEnviar));
     };
 
     return (

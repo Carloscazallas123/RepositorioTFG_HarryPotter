@@ -61,7 +61,9 @@ public class ImplementacionComentarios implements InterfazComentario {
 			entidad.setValoracion(0);
 			entidad.setFecha(LocalDate.now());
 			entidad.setUsuario(repoUsuarios.ObtenerPorid(usuario.getIdusuario()));
-			comentario = new ComentarDTO(entidad.getDescripcion(), entidad.getValoracion(), entidad.getFecha(),
+			comentario = new ComentarDTO(entidad.getDescripcion(), 
+					entidad.getValoracion(), 
+					entidad.getFecha(),
 					entidad.getUsuario().getIdusuario());
 		}
 

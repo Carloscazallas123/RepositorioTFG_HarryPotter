@@ -14,7 +14,9 @@ export const loginUsuario = async (datosSesion: SesionDTO) => {
             },
             body: JSON.stringify(datosSesion)
         });
-        console.log('Respuesta del servidor:', await response.json());
+        const data = await response.json();
+        console.log('Respuesta del servidor:', data);
+        localStorage.setItem('usuario', JSON.stringify(data));
         if (!response.ok) {
              alertaError('Credenciales no encontradas en el Libro de Escolarización');
         }

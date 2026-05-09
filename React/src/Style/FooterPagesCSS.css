@@ -1,0 +1,124 @@
+/* CONTENEDOR PRINCIPAL: Fondo morado casi negro */
+.footer-page-container {
+  min-height: 100vh;
+  background-color: #0f0a1a; /* Morado base extremadamente oscuro */
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 60px 20px;
+  font-family: 'Georgia', serif;
+}
+
+/* LA TARJETA (Papiro místico morado) */
+.footer-content-card {
+  background-color: #1a0a2e; /* El morado oscuro de tu Navbar */
+  max-width: 850px;
+  width: 100%;
+  padding: 50px;
+  border-radius: 8px;
+  border: 2px solid #d4af37; /* Dorado */
+  /* Resplandor sutil en tono amatista/dorado */
+  box-shadow: 0 0 40px rgba(101, 7, 7, 0.2), 0 0 20px rgba(212, 175, 55, 0.1);
+  position: relative;
+  color: #f5e6c5; /* Texto durazno para máxima lectura */
+}
+
+/* BOTÓN VOLVER */
+.back-btn-footer {
+  display: inline-block;
+  text-decoration: none;
+  color: #d4af37;
+  font-family: 'Cinzel', serif;
+  font-weight: bold;
+  margin-bottom: 30px;
+  transition: 0.3s ease;
+}
+
+.back-btn-footer:hover {
+  color: #a72424;
+  transform: translateY(-2px);
+  text-shadow: 0 0 8px rgba(212, 175, 55, 0.5);
+}
+
+/* TÍTULOS PRINCIPALES (H2) */
+.footer-content-card h2 {
+  color: #d4af37;
+  font-family: 'Cinzel', serif;
+  font-size: 32px;
+  text-align: left;
+  margin-bottom: 35px;
+  border-bottom: 2px solid #650707; /* Separador Granate */
+  padding-bottom: 15px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+/* SUBTÍTULOS (H3) */
+.footer-content-card h3 {
+  color: #e5cf8d; /* Dorado suave */
+  font-family: 'Cinzel', serif;
+  font-size: 20px;
+  margin-top: 35px;
+  margin-bottom: 15px;
+  border-left: 4px solid #650707; /* Detalle Granate lateral */
+  padding-left: 15px;
+  text-align: left;
+}
+
+/* PÁRRAFOS Y TEXTO */
+.footer-content-card p {
+  color: #f5e6c5;
+  line-height: 1.8;
+  margin-bottom: 20px;
+  text-align: justify;
+  font-size: 17px;
+  text-align: left;
+}
+
+/* LISTAS Y ENLACES */
+.footer-content-card ul {
+  list-style: none;
+  padding-left: 10px;
+  text-align: left;
+}
+
+.footer-content-card li {
+  margin-bottom: 12px;
+  padding-left: 25px;
+  position: relative;
+  color: #f5e6c5;
+}
+
+.footer-content-card li::before {
+  content: '⚡'; /* Rayo de HP en dorado */
+  position: absolute;
+  left: 0;
+  color: #d4af37;
+  font-size: 14px;
+}
+
+/* Estilo para los links en el Mapa del Sitio */
+.footer-content-card a {
+  color: #f5e6c5;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: 0.3s;
+}
+
+.footer-content-card a:hover {
+  color: #d4af37;
+  border-bottom: 1px solid #d4af37;
+}
+
+/* ENFASIS */
+.footer-content-card strong {
+  color: #ffffff;
+  text-shadow: 0 0 5px rgba(212, 175, 55, 0.3);
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+  .footer-content-card {
+    padding: 30px 20px;
+  }
+}

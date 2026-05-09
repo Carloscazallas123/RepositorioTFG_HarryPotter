@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './../Style/FooterCSS.css';
 
 const Footer = () => {
@@ -8,31 +9,31 @@ const Footer = () => {
         {/* COLUMNA 1: LOGO Y REDES */}
         <div className="footer-column brand-col">
           <div className="social-links">
-            <img src="./../../../public/Iconos/Facebook_Icono.png" alt="Facebook" className='ImagenesIconos' />
-            <img src="./../../../public/Iconos/Instagram_Icono.png" alt="Instagram" className='ImagenesIconos' />
-            <a href=""><img src="./../../../public/Iconos/YouTube_Icono.png" alt="YouTube" className='ImagenesIconos' /></a>
+            <a href="https://www.facebook.com/harrypotter/" target='_blank'><img src="./../../../public/Iconos/Facebook_Icono.png" alt="Facebook" className='ImagenesIconos'/></a>
+            <a href="https://www.instagram.com/harrypotterspain/?hl=es" target='_blank'><img src="./../../../public/Iconos/Instagram_Icono.png" alt="Instagram" className='ImagenesIconos'/></a>
+            <a href="https://www.youtube.com/@harrypotter" target='_blank'><img src="./../../../public/Iconos/YouTube_Icono.png" alt="YouTube" className='ImagenesIconos'/></a>
           </div>
         </div>
 
         {/* COLUMNA 2: CONTENIDO DE LA SAGA */}
         <div className="footer-column">
           <ul className="footer-list">
-            <li><a href="#">Resumen de Películas</a></li>
-            <li><a href="#">Curiosidades de la saga</a></li>
-            <li><a href="#">Reddit de la comunidad</a></li>
-            <li><a href="#">Harry Potter HBO</a></li>
-            <li><a href="#">Acerca de nosotros</a></li>
+            <li><a href="https://youtu.be/JahBsWRSfgw?si=k9beC0UQ5-6V6CVK" target='_blank'>Resumen de Películas</a></li>
+            <li><a href="https://youtu.be/AcuP_gASZRc?si=rssVUMBKFM9IVDis" target='_blank'>Curiosidades de la saga</a></li>
+            <li><a href="https://www.reddit.com/r/harrypotter/" target='_blank'>Reddit de la comunidad</a></li>
+            <li><a href="https://youtu.be/OtxWSFyruO4?si=3Wu3lEJW1JnBZhpw" target='_blank'>Harry Potter HBO</a></li>
+            <li> <Link to='/nosotros'>Acerca de Nosotros</Link></li>
           </ul>
         </div>
 
         {/* COLUMNA 3: LEGAL Y GUÍAS */}
         <div className="footer-column divider-left">
           <ul className="footer-list mt-title">
-            <li><a href="#">Accesibilidad</a></li>
-            <li><a href="#">Propiedad intelectual</a></li>
-            <li><a href="#">Mapa del sitio</a></li>
-            <li><a href="#">Guía de Estilo</a></li>
-            <li><a href="#">Política de Cookies</a></li>
+            <li><Link to='/accesibilidad'>Accesibilidad</Link></li>
+            <li><Link to='/intelectual'>Propiedad Intelectual</Link></li>
+            <li><Link to='/mapa'>Mapa del Sitio</Link></li>
+            <li><Link to='/estilo'>Guia de Estilo</Link></li>
+            <li><Link to='/cookies'>Politica de Cookies</Link></li>
           </ul>
         </div>
 

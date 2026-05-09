@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import { FaBolt } from 'react-icons/fa'; 
-import './../../Style/Navbars/NavbarSinSesion.css';
+import './../../Style/Navbars/NavbarSinSesionCSS.css';
 
 const Navbar = () => {
   return (

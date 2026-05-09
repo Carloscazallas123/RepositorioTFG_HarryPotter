@@ -14,6 +14,7 @@ public class UsuarioFullDTO {
 	private List<Integer> objetos;
 	private List<Integer> personajes;
 
+	//Constructor para Usuarios Nuevos
 	public UsuarioFullDTO(int idusuario, String nombre, String correo, List<Integer> objetos,
 			List<Integer> personajes) {
 		this.idusuario = idusuario;
@@ -21,8 +22,20 @@ public class UsuarioFullDTO {
 		this.correo = correo;
 		this.casa = null;
 		this.puntos = 0;
+		this.objetos = new ArrayList<Integer>();
+		this.personajes = new ArrayList<Integer>();
+	}
+
+	//Constructor para Usuarios Existentes
+	public UsuarioFullDTO(int idusuario, String nombre, String correo, String casa, int puntos, List<Integer> objetos,
+			List<Integer> personajes) {
+		this.idusuario = idusuario;
+		this.nombre = nombre;
+		this.correo = correo;
+		this.casa = casa;
+		this.puntos = puntos;
 		this.objetos = objetos;
-		this.personajes=personajes;
+		this.personajes = personajes;
 	}
 
 	public int getIdusuario() {
@@ -80,7 +93,5 @@ public class UsuarioFullDTO {
 	public void setPersonajes(List<Integer> personajes) {
 		this.personajes = personajes;
 	}
-
-
 
 }

@@ -1,12 +1,13 @@
 import React from 'react';
-import Navbar from '../Components/Navbars/NavbarSinSesion';
+import Navbar from '../Components/Navbars/NavbarConSesion';
 import Footer from '../Components/Footer';
 import Bienvenida from '../Components/PlantillaPrincipal/Bienvenida';
 import Secciones from '../Components/PlantillaPrincipal/Secciones';
 import Casas from '../Components/PlantillaPrincipal/Casas';
 import Comentarios from '../Components/PlantillaPrincipal/Comentarios'
 
-const SinSesion = () => {
+const ConSesion = () => {
+  console.log(localStorage.getItem('usuario'));
   return (
     <div>
         <Navbar/>
@@ -19,4 +20,4 @@ const SinSesion = () => {
   );
 };
 
-export default SinSesion;
+export default ConSesion;
