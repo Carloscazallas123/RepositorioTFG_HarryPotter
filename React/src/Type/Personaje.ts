@@ -9,3 +9,4 @@ export interface PersonajeVistDTO {
     casa: String;
     objetos: String[];
 };
+

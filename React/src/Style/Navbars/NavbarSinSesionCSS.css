@@ -1,0 +1,85 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; 
+  cursor: url('./../../assets/Varita.svg'), auto;
+}
+html, body {
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+#root {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.NavBar {
+  width: 100%;
+  background-color: #1a0a2e;
+  border-bottom: 2px solid #a72424;
+  margin: 0; 
+}
+
+.ContenedorNav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 15px 60px; 
+}
+
+.ImagenLogo {
+  width: 100px;
+  height: auto;
+}
+
+.btn-hp-login {
+  border: 2px solid #d4af37;
+  background: transparent;
+  color: #d4af37;
+  padding: 10px 25px;
+  font-family: 'Cinzel', serif;
+  font-size: 22px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  height: 50px;
+  width: 250px;
+}
+
+.btn-hp-login:hover {
+  background-color: #d4af37;
+  color: #1a0a2e;
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
+}
+
+.ContendorIzquierda{
+  display: flex;
+  align-items: center;
+  gap: 40px; 
+}
+
+.Enlaces{
+  color: white;
+  text-decoration: none;
+  font-family: 'Cinzel', serif;
+  font-size: 22px;
+  letter-spacing: 1.5px;
+  transition: color 0.3s;
+}
+
+.PalabrasFooter{
+  text-align: left;
+}
+
+.Enlaces:hover {
+  color: #d4af37;
+}
+
+.hp-nav-icon {
+  color: #d4af37;
+  font-size: 1.5rem;
+}

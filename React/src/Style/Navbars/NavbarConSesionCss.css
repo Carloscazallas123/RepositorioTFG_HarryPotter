@@ -1,0 +1,66 @@
+/* Estilos para integrar la sesión en el Navbar original */
+.hp-session-container {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  height: 50px; /* Misma altura que tu botón de login original */
+}
+
+.hp-nav-avatar {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  border: 2px solid #d4af37;
+  box-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+}
+
+.hp-user-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hp-user-name {
+  color: #d4af37;
+  font-family: 'Cinzel', serif;
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 1;
+}
+
+.hp-user-tags {
+  display: flex;
+  gap: 10px;
+  margin-top: 4px;
+}
+
+.hp-tag-casa {
+  color: white;
+  font-size: 12px;
+  font-family: 'Cinzel', serif;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.hp-tag-puntos {
+  color: #d4af37;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.btn-hp-logout-small {
+  background: transparent;
+  border: 1px solid #a72424; /* Rojo del borde inferior de tu Nav */
+  color: #a72424;
+  padding: 5px 10px;
+  font-family: 'Cinzel', serif;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-left: 10px;
+}
+
+.btn-hp-logout-small:hover {
+  background-color: #a72424;
+  color: white;
+}

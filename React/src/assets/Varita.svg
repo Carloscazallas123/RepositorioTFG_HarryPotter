@@ -1,0 +1,27 @@
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="tipGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#fff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#e2e212;stop-opacity:0" />
+    </radialGradient>
+  </defs>
+
+  <path d="M5 27L12 20L24 8" stroke="#3e2723" stroke-width="3.5" stroke-linecap="round"/>
+  <path d="M12 20L24 8" stroke="#5d4037" stroke-width="2" stroke-linecap="round"/>
+  
+  <circle cx="26" cy="6" r="4" fill="url(#tipGlow)">
+    <animate attributeName="r" values="3;5;3" dur="2s" repeatCount="indefinite" />
+  </circle>
+  <circle cx="26" cy="6" r="1.5" fill="#fff" />
+
+  <circle cx="26" cy="6" r="1" fill="#e2e212">
+    <animate attributeName="cx" values="26;30;28" dur="1s" repeatCount="indefinite" />
+    <animate attributeName="cy" values="6;2;0" dur="1s" repeatCount="indefinite" />
+    <animate attributeName="opacity" values="1;0" dur="1s" repeatCount="indefinite" />
+  </circle>
+  <circle cx="26" cy="6" r="0.8" fill="#fff">
+    <animate attributeName="cx" values="26;22;24" dur="1.2s" repeatCount="indefinite" />
+    <animate attributeName="cy" values="6;3;1" dur="1.2s" repeatCount="indefinite" />
+    <animate attributeName="opacity" values="1;0" dur="1.2s" repeatCount="indefinite" />
+  </circle>
+</svg>

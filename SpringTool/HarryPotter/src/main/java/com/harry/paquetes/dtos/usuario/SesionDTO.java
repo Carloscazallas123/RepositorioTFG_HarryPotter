@@ -3,12 +3,12 @@ package com.harry.paquetes.dtos.usuario;
 public class SesionDTO {
 
 	private String nombre;
-	private String contraseña;
+	private String contrasena;
 	
 	
-	public SesionDTO(String nombre, String contraseña) {
+	public SesionDTO(String nombre, String contrasena) {
 		this.nombre = nombre;
-		this.contraseña = contraseña;
+		this.contrasena = contrasena;
 	}
 
 
@@ -23,12 +23,12 @@ public class SesionDTO {
 
 
 	public String getContraseña() {
-		return contraseña;
+		return contrasena;
 	}
 
 
-	public void setContraseña(String contraseña) {
-		this.contraseña = contraseña;
+	public void setContraseña(String contrasena) {
+		this.contrasena = contrasena;
 	}
 	
 	

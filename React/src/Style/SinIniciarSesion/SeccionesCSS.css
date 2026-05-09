@@ -1,0 +1,100 @@
+/* src/Style/Secciones.css */
+
+*{
+  cursor: url('./../../assets/Varita.svg'), auto;
+}
+
+.seccionesContainer {
+  padding: 80px 20px;
+  background-color: #1a0a2e; /* Fondo oscuro místico */
+  text-align: center;
+  border: 2px solid #a72424;
+}
+
+.tituloWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 50px;
+}
+
+.tituloManual {
+  color: #d4af37;
+  font-size: 3rem;
+  font-family: 'Cinzel', serif;
+  text-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+}
+
+.imagenLibro {
+  width: 100px;
+  height: 100px;
+  filter: drop-shadow(0 0 8px rgba(212, 175, 55, 0.6));
+  animation: floatBook 4s ease-in-out infinite;
+}
+
+/* Animación de los libros laterales */
+@keyframes floatBook {
+  0% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(5deg); }
+  100% { transform: translateY(0px) rotate(0deg); }
+}
+
+.seccionesGrid {
+  display: flex;
+  justify-content: center;
+  gap: 35px;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Estilo de Tarjeta tipo Pergamino */
+.seccionCard {
+  background-color: #f4e4bc;
+  background-image: url('https://www.transparenttextures.com/patterns/old-map.png');
+  border: 3px solid #5d4037;
+  border-radius: 12px;
+  padding: 25px;
+  width: 320px; /* Consistente con las cartas de las casas */
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+}
+
+.seccionCard:hover {
+  transform: translateY(-15px);
+  box-shadow: 0 15px 30px rgba(212, 175, 55, 0.4);
+  border-color: #d4af37;
+}
+
+.imageContainerSeccion {
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 20px;
+  height: 220px;
+  border: 1px solid rgba(0,0,0,0.1);
+}
+
+.imageContainerSeccion img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: sepia(0.2);
+}
+
+.seccionCard h3 {
+  color: #3e2723;
+  font-family: 'Cinzel', serif;
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+  border-bottom: 2px solid #5d4037;
+  padding-bottom: 5px;
+}
+
+.seccionCard p {
+  color: #4e342e;
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  line-height: 1.4;
+  font-style: italic;
+}

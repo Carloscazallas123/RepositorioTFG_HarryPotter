@@ -28,14 +28,17 @@ public class ImplementacionComentarios implements InterfazComentario {
 		List<ComentarioMostDTO> listacomentarios = new ArrayList<>();
 		List<ComentarioEntity> listaentidades = repocomentarios.ObtenerAllComentarios();
 
-		for (int i = 0; i < 3; i++) {
-			int aleatorio = (int) (Math.random() * listaentidades.size());
-			listacomentarios.add(new ComentarioMostDTO(listaentidades.get(aleatorio).getDescripcion(),
-					listaentidades.get(aleatorio).getValoracion(), listaentidades.get(aleatorio).getFecha(),
+		for (int i = listacomentarios.size(); i < 3; i++) {
+			int aleatorio = (int) (Math.random() * listaentidades.size()-1);
+			listacomentarios.add(new ComentarioMostDTO(
+					listaentidades.get(aleatorio).getId(),
+					listaentidades.get(aleatorio).getDescripcion(),
+					listaentidades.get(aleatorio).getValoracion(), 
+					listaentidades.get(aleatorio).getFecha(),
 					listaentidades.get(aleatorio).getUsuario().getNombre()));
-
+					listaentidades.remove(aleatorio);
 		}
-		return null;
+		return listacomentarios;
 	}
 
 	@Override
@@ -58,7 +61,9 @@ public class ImplementacionComentarios implements InterfazComentario {
 			entidad.setValoracion(0);
 			entidad.setFecha(LocalDate.now());
 			entidad.setUsuario(repoUsuarios.ObtenerPorid(usuario.getIdusuario()));
-			comentario = new ComentarDTO(entidad.getDescripcion(), entidad.getValoracion(), entidad.getFecha(),
+			comentario = new ComentarDTO(entidad.getDescripcion(), 
+					entidad.getValoracion(), 
+					entidad.getFecha(),
 					entidad.getUsuario().getIdusuario());
 		}
 

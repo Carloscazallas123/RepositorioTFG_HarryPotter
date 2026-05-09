@@ -9,12 +9,22 @@ import org.springframework.stereotype.Service;
 import com.harry.paquetes.dtos.usuario.RegistroDTO;
 import com.harry.paquetes.dtos.usuario.SesionDTO;
 import com.harry.paquetes.dtos.usuario.UsuarioFullDTO;
+import com.harry.paquetes.entidades.CompraEntity;
+import com.harry.paquetes.entidades.PersonajeEntity;
 import com.harry.paquetes.entidades.UsuarioEntity;
+import com.harry.paquetes.repositorios.RepoCompras;
+import com.harry.paquetes.repositorios.RepoPersonajes;
 import com.harry.paquetes.repositorios.RepoUsuarios;
 import com.harry.paquetes.servicios.interfaces.InterfazUsuario;
 
 @Service
 public class ImplementacionUsuario implements InterfazUsuario {
+
+	@Autowired
+	private RepoPersonajes repositoriopersonajes;
+
+	@Autowired
+	private RepoCompras repositoriocompras;
 
 	@Autowired
 	private RepoUsuarios repositoriousuarios;
@@ -23,24 +33,26 @@ public class ImplementacionUsuario implements InterfazUsuario {
 	public UsuarioFullDTO registrarusuario(RegistroDTO registro) {
 		// Primero obtenemos todos los usuarios
 		List<UsuarioEntity> listausuarios = repositoriousuarios.ObtenerAllUsuarios();
-		boolean existente;
+		boolean existente = false;
 		UsuarioFullDTO usuario = null;
 		// Usamos un metodo externo para comprobar si existe o no
 		existente = comprobarexistenciaR(listausuarios, registro);
 
 		// Si no existe, crea la nueva entidad y el DTO
-		if (existente = false) {
+		if (existente == false) {
 			// Creacion de la Entidad
 			UsuarioEntity entidad = new UsuarioEntity();
 			entidad.setContra(registro.getContraseña());
 			entidad.setNombre(registro.getNombre());
+			entidad.setCorreo(registro.getEmail());
 			entidad.setPuntos(0);
 			entidad.setCasa(null);
 			repositoriousuarios.save(entidad);
 			// Creacion del DTO
-			usuario = new UsuarioFullDTO(entidad.getIdusuario(), entidad.getNombre(), entidad.getCorreo(),
-					new ArrayList<Integer>(),new ArrayList<Integer>());
-		} else { // Caso contrario, envia un DTO null para fallar
+			usuario = new UsuarioFullDTO(entidad.getIdusuario(), entidad.getNombre(), registro.getEmail(),
+					new ArrayList<Integer>(), new ArrayList<Integer>());
+		} else if (existente == true) { // Caso contrario, envia un DTO null para fallar
+			System.out.println("Usuario no encontrado");
 			usuario = null;
 		}
 
@@ -55,14 +67,10 @@ public class ImplementacionUsuario implements InterfazUsuario {
 		// Usamos un metodo externo para obtener el DTO
 		usuario = comprobarexistenciaS(listausuarios, sesion);
 
-		//Si nos devuelve el DTO nulo, salta el mensaje de no encontrado
-		//Por lo que devolverá nulo. Caso contrario, salta el mensaje de
-		//encontrado
-		if(usuario==null) {
+		if (usuario == null) {
 			System.out.println("Usuario No encontrado");
-		} else {
-			System.out.println("Usuario Encontrado");
 		}
+
 		return usuario;
 	}
 
@@ -74,6 +82,7 @@ public class ImplementacionUsuario implements InterfazUsuario {
 		for (int i = 0; i < Lista.size(); i++) {
 			if (Lista.get(i).getCorreo().equals(registo.getEmail())) {
 				existe = true;
+				System.out.println("Correo ya existente");
 			}
 		}
 		return existe;
@@ -93,12 +102,40 @@ public class ImplementacionUsuario implements InterfazUsuario {
 		}
 		// Si existe, crea el nuevoDTO
 		if (existe = true) {
+			// Obtener los Objetos
+			List<CompraEntity> listaentidadesO = repositoriocompras.ObtenerPorid(entidad.getIdusuario());
+			List<Integer> listacompras = rellenarlistaobjetos(listaentidadesO);
+
+			// Obtener los Personajes
+			List<PersonajeEntity> listaentidadesP = repositoriopersonajes.findPersonajesConTresObjetos(listacompras);
+			List<Integer> listapersonajes = rellenarlistapersonajes(listaentidadesP);
 			usuario = new UsuarioFullDTO(entidad.getIdusuario(), entidad.getNombre(), entidad.getCorreo(),
-					new ArrayList<Integer>(), new ArrayList<Integer>());
+					entidad.getCasa(), entidad.getPuntos(), listacompras, listapersonajes);
 		} else {
 			usuario = null;
+			System.out.println("Usuario no encontrado");
 		}
 
 		return usuario;
+	}
+
+	// ------------- Procesos SubExternos --------------
+
+	public List<Integer> rellenarlistaobjetos(List<CompraEntity> listaentidades) {
+		List<Integer> listacompras = new ArrayList<>();
+		for (int i = 0; i < listaentidades.size(); i++) {
+			listacompras.add(listaentidades.get(i).getObjeto().getIdobjeto());
+		}
+
+		return listacompras;
+	}
+	
+	public List<Integer> rellenarlistapersonajes(List<PersonajeEntity> listaentidades) {
+		List<Integer> listapersonajes = new ArrayList<>();
+		for (int i = 0; i < listaentidades.size(); i++) {
+			listapersonajes.add(listaentidades.get(i).getIdpersonaje());
+		}
+
+		return listapersonajes;
 	}
 }
