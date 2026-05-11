@@ -3,19 +3,31 @@ package com.harry.paquetes.dtos.objeto;
 //Que ha comprado el usuario en su inventario
 public class ObjetoInvDTO {
 	
+	private int id;
 	private String nombre;
 	private String descripcion;
 	private int costo;
 	private String personaje;
 	
 	
-	public ObjetoInvDTO(String nombre, String descripcion, int costo, String personaje) {
-		
+	public ObjetoInvDTO(int id,String nombre, String descripcion, int costo, String personaje) {
+		this.id=id;
 		this.nombre = nombre;
 		this.descripcion = descripcion;
 		this.costo = costo;
 		this.personaje = personaje;
 	}
+	
+
+	public int getId() {
+		return id;
+	}
+
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
 
 	public String getNombre() {
 		return nombre;

@@ -1,0 +1,145 @@
+/* Importamos una fuente más acorde si puedes, si no, usará serif */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Quicksand:wght@300;500&display=swap');
+
+.inventario-container {
+    padding: 3rem 2rem;
+    min-height: 100vh;
+    background-image: url(./../../../public/Backgrounds/Castillo\ de\ Hogwarts.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #e2e8f0;
+    font-family: 'Quicksand', sans-serif;
+}
+
+/* Encabezado Estilo "Gringotts" */
+.inventario-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 4rem;
+    text-align: center;
+}
+
+.inventario-header h2 {
+    font-family: 'Cinzel', serif;
+    font-size: 3rem;
+    color: #d4af37;
+    text-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+    padding: 15px;
+    border-radius: 10px;
+    letter-spacing: 3px;
+    background-color: #1a0a2e83;
+}
+
+.stat-pill.gold {
+    background: linear-gradient(135deg, rgba(212, 175, 55, 0.2), rgba(0, 0, 0, 0.5));
+    border: 1px solid #d4af37;
+    box-shadow: 0 0 10px rgba(212, 175, 55, 0.2);
+    color: #d4af37;
+    padding: 0.6rem 1.5rem;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+/* Grid con mejor espaciado */
+.objetos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 2.5rem;
+}
+
+/* Tarjeta Estilo Pergamino Oscuro */
+.objeto-item {
+    background: linear-gradient(145deg, #161b22, #0d1117);
+    border: 1px solid #30363d;
+    border-radius: 20px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    position: relative;
+}
+
+.objeto-item::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    border-radius: 20px;
+    padding: 2px; 
+    background: linear-gradient(45deg, transparent, #4a3b2a, transparent);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+}
+
+.objeto-item:hover {
+    transform: scale(1.05);
+    border-color: #d4af37;
+    box-shadow: 0 0 25px rgba(212, 175, 55, 0.2);
+}
+
+.objeto-icon {
+    font-size: 3rem;
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.2));
+    margin-bottom: 1.5rem;
+}
+
+.objeto-nombre {
+    font-family: 'Cinzel', serif;
+    color: #ffffff;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    letter-spacing: 1px;
+}
+
+.objeto-descripcion {
+    font-style: italic;
+    color: #8b949e;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+/* Detalles Inferiores */
+.objeto-detalles {
+    margin-top: auto;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 1rem;
+    border-radius: 12px;
+    border-left: 3px solid #d4af37;
+}
+
+.objeto-costo, .objeto-personaje {
+    display: block;
+    margin: 0.3rem 0;
+    color: #c9d1d9;
+}
+
+.objeto-costo strong, .objeto-personaje strong {
+    color: #d4af37;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    margin-right: 8px;
+}
+
+/* Efecto de Carga */
+.loading-magic {
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Cinzel', serif;
+    font-size: 2rem;
+    color: #d4af37;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { opacity: 0.5; }
+    50% { opacity: 1; text-shadow: 0 0 20px #d4af37; }
+    100% { opacity: 0.5; }
+}

@@ -47,11 +47,13 @@ const NavbarConSesion = () => {
         <div className="ContendorIzquierda">
           <Link to='/personajes' className="Enlaces">PERSONAJES</Link>
           <Link to='/inventario' className="Enlaces">INVENTARIO</Link>
+          <Link to={'/home'}>
           <img 
             src="/Iconos/Logo HogwartWeb.png" 
             alt="Logo HogwartWeb" 
             className='ImagenLogo'
           />
+          </Link>
         </div>
       </div>
     </nav>

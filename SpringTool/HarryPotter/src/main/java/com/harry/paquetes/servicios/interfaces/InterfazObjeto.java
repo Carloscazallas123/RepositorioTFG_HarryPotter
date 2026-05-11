@@ -4,7 +4,6 @@ import java.util.List;
 
 import com.harry.paquetes.dtos.objeto.ObjetoInvDTO;
 import com.harry.paquetes.dtos.objeto.ObjetoTiendDTO;
-import com.harry.paquetes.dtos.usuario.UsuarioFullDTO;
 
 //Interfaz para las implentaciones de los Objetos
 public interface InterfazObjeto {
@@ -13,5 +12,5 @@ public interface InterfazObjeto {
 	List<ObjetoTiendDTO>mostrartienda();
 	
 	//Metodo para mostrar los objetos en el apartado inventario
-	List<ObjetoInvDTO>mostrarinventario(UsuarioFullDTO usuario);
+	List<ObjetoInvDTO>mostrarinventario(List<Integer> listaobjetosusuario);
 }

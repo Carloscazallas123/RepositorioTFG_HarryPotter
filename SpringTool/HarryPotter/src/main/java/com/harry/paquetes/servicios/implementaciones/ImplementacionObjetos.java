@@ -38,20 +38,16 @@ public class ImplementacionObjetos implements InterfazObjeto {
 	}
 
 	@Override
-	public List<ObjetoInvDTO> mostrarinventario(UsuarioFullDTO usuario) {
-		List<ObjetoEntity> listaentidades = repositorioObjetos.ObtenerAllObjetos();
-		List<Integer>listausuario=usuario.getObjetos();
+	public List<ObjetoInvDTO> mostrarinventario(List<Integer> listaobjetosusuario) {
 		List<ObjetoInvDTO>listainventario=new ArrayList<>();
-		for (int i=0;i<listaentidades.size();i++) {
-			for (int e=0;e<listausuario.size();i++) {
-				if(listausuario.get(e)==listaentidades.get(i).getIdobjeto()) {
-				listainventario.add( new ObjetoInvDTO(
-									listaentidades.get(i).getNombre(),
-									listaentidades.get(i).getDescripcion(),
-									listaentidades.get(i).getCosto(),
-									listaentidades.get(i).getPersonaje().getNombre()));
-				}
-			}
+		for (int i=0;i<listaobjetosusuario.size();i++) {
+			ObjetoEntity entidad=repositorioObjetos.ObtenerPorid(listaobjetosusuario.get(i));
+			listainventario.add( new ObjetoInvDTO(
+					entidad.getIdobjeto(),
+					entidad.getNombre(),
+					entidad.getDescripcion(),
+					entidad.getCosto(),
+					entidad.getPersonaje().getNombre()));
 		}
 		return listainventario;
 	}

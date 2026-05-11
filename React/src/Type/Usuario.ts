@@ -11,11 +11,11 @@ export interface SesionDTO {
 };
 
 export interface UsuarioFullDTO {
-    id?: number;
-    nombre?: String;
-    email?: String;
-    casa?: String;
-    puntos?: number;
-    objetos?: number[];
-    personajes?: number[];
+    id: number;
+    nombre: string;
+    email: string;
+    casa: string;
+    puntos: number;
+    objetos: number[];
+    personajes: number[];
 }

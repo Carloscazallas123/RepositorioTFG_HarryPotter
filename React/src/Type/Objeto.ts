@@ -1,7 +1,6 @@
 export interface ObjetoInvDTO {
     nombre: String;
-    descripcon: String;
-    contraseña?: string;
+    descripcion: String;
     costo: number;
     personaje: String;
 };
@@ -9,6 +8,6 @@ export interface ObjetoInvDTO {
 export interface ObjetTiendDTO {
     id: number;
     nombre: String;
-    descripcon: String;
+    descripcion: String;
     costo: number;
 };

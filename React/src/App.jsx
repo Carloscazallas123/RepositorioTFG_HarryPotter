@@ -12,6 +12,8 @@ import PoliticaCookies from './Components/PaginasFooter/PoliticaCookes';
 import MapaDelSitio from './Components/PaginasFooter/MapaSitio';
 import GuiaEstilo from './Components/PaginasFooter/GuiaEstilo'; 
 import PropiedadIntelectual from './Components/PaginasFooter/Intelectual';
+{/* Importe de las Rutas del NavBar */}
+import PaginaInventario from './Pages/PaginaInventario';
 
 function App() {
   return (
@@ -31,6 +33,10 @@ function App() {
         <Route path='/mapa' element={<MapaDelSitio/>}/>
         <Route path='/estilo' element={<GuiaEstilo/>}/>
         <Route path='/intelectual' element={<PropiedadIntelectual/>}/>
+      </Routes>
+      {/* Rutas del NavBar */}
+      <Routes>
+        <Route path='/inventario' element={<PaginaInventario/>}/>
       </Routes>
     </Router>
     
