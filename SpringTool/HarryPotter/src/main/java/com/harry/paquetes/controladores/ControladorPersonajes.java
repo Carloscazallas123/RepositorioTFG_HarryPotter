@@ -5,8 +5,8 @@ import java.util.*;
 import org.springframework.beans.factory.annotation.Autowired;
 //Controlador de los Personajes
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -23,14 +23,14 @@ public class ControladorPersonajes {
 	InterfazPersonaje interfazpersonaje;
 	
 	// Controlador para Mostrar los Personajes que tiene el usuario desbloqueados
-	@GetMapping("/Personajes")
-	public ResponseEntity<List<PersonajeMostDTO>> MostrarDesbloqueados(@RequestBody UsuarioFullDTO usuario) {
-		List<PersonajeMostDTO>listapersonajes=interfazpersonaje.mostrarbesbloqueados(usuario);
+	@PostMapping("/ListaPersonajes")
+	public ResponseEntity<List<PersonajeMostDTO>> MostrarDesbloqueados(@RequestBody List<Integer>listapersonajesids) {
+		List<PersonajeMostDTO>listapersonajes=interfazpersonaje.mostrarbesbloqueados(listapersonajesids);
 		return ResponseEntity.ok(listapersonajes);
 	}
 
 	// Controlador para Mostrar el Personaje Seleccionado
-	@GetMapping("/MostarPersonaje")
+	@PostMapping("/MostarPersonaje")
 	public ResponseEntity<PersonajeVistDTO> MostrarPersonaje(@PathVariable int id) {
 		PersonajeVistDTO personajevista=interfazpersonaje.mostrarpersonaje(id);
 		return ResponseEntity.ok(personajevista);

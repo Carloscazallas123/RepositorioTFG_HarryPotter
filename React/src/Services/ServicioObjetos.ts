@@ -5,6 +5,9 @@ const API_URL = '/api/Objetos';
 const ObjetoService = {
     getListaUsuario: async (): Promise<[ObjetoInvDTO]> => {
         const token = localStorage.getItem('usuario');
+        if (!token) {
+            throw new Error('Token de usuario no encontrado');
+        }
         const usuario: UsuarioFullDTO = JSON.parse(token);
         const response = await fetch(`${API_URL}/Inventario`, {
         method: 'POST',

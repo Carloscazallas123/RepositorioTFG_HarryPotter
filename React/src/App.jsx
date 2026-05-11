@@ -14,6 +14,7 @@ import GuiaEstilo from './Components/PaginasFooter/GuiaEstilo';
 import PropiedadIntelectual from './Components/PaginasFooter/Intelectual';
 {/* Importe de las Rutas del NavBar */}
 import PaginaInventario from './Pages/PaginaInventario';
+import PaginaPersonajes from './Pages/PaginaPersonajes';
 
 function App() {
   return (
@@ -37,6 +38,7 @@ function App() {
       {/* Rutas del NavBar */}
       <Routes>
         <Route path='/inventario' element={<PaginaInventario/>}/>
+        <Route path='/personajes' element={<PaginaPersonajes/>}/>
       </Routes>
     </Router>
     

@@ -24,11 +24,10 @@ public class ImplementacionPersonajes implements InterfazPersonaje {
 	@Autowired
 	RepoObjetos repoobjetos;
 	@Override
-	public List<PersonajeMostDTO> mostrarbesbloqueados(UsuarioFullDTO usuario) {
-		List<Integer>listausuario=usuario.getPersonajes();
+	public List<PersonajeMostDTO> mostrarbesbloqueados(List<Integer>listapersonajesids) {
 		List<PersonajeMostDTO>listadesbloqueados=new ArrayList<>();
-		for (int i=0;i<listausuario.size();i++) {
-			PersonajeEntity entidad= repositoriopersonajes.ObtenerPorid(listausuario.get(i));
+		for (int i=0;i<listapersonajesids.size();i++) {
+			PersonajeEntity entidad= repositoriopersonajes.ObtenerPorid(listapersonajesids.get(i));
 			listadesbloqueados.add(new PersonajeMostDTO(
 								   entidad.getNombre(),
 								   entidad.getCasa()));

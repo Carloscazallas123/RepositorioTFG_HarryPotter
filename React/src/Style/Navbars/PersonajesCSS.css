@@ -1,0 +1,147 @@
+.personajes-container {
+    padding: 4rem 2rem;
+    margin: 0 auto;
+    min-height: 100vh;
+    background-image: url(./../../../public//Backgrounds/Castillo\ de\ Hogwarts.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: 'Quicksand', sans-serif;
+}
+
+.personajes-header {
+    text-align: center;
+    margin-bottom: 4rem;
+    position: relative;
+}
+
+.personajes-header h2 {
+    font-family: 'Cinzel', serif;
+    color: #d4af37;
+    font-size: 3.5rem;
+    margin: 0;
+    text-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
+    letter-spacing: 4px;
+}
+
+.count-badge {
+    color: #8b949e;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    background: rgba(129, 20, 20, 0.866);
+    padding: 5px 15px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.personajes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2.5rem;
+}
+
+/* Tarjeta Estilo Reliquia */
+.personaje-card {
+    background: #1a0a2e;
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.personaje-card::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, transparent 100%);
+    pointer-events: none;
+}
+
+.personaje-card:hover {
+    transform: translateY(-12px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+}
+
+.card-inner {
+    display: flex;
+    flex-direction: column; /* Cambiado a columna para mejor impacto visual */
+    align-items: center;
+    text-align: center;
+    gap: 1.5rem;
+}
+
+.pj-avatar {
+    font-size: 2.5rem;
+    background: linear-gradient(135deg, #232931, #111418);
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: 2px solid rgba(212, 175, 55, 0.2);
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.5);
+}
+
+.pj-nombre {
+    font-family: 'Cinzel', serif;
+    margin: 0;
+    font-size: 1.6rem;
+    color: #ffffff;
+    letter-spacing: 1px;
+}
+
+.pj-casa-tag {
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    font-weight: 700;
+    padding: 6px 16px;
+    border-radius: 8px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* --- GRYFFINDOR (Rojo y Oro) --- */
+.personaje-card.gryffindor { border-bottom: 4px solid #d4af37; }
+.personaje-card.gryffindor .pj-casa-tag { background: rgba(116, 0, 1, 0.2); color: #ff4d4d; }
+.personaje-card.gryffindor .pj-avatar { border-color: #d4af37; }
+.personaje-card:hover.gryffindor { 
+    border-color: #d4af37; 
+    box-shadow: 0 0 20px rgba(174, 0, 1, 0.3); 
+}
+
+/* --- SLYTHERIN (Verde y Plata) --- */
+.personaje-card.slytherin { border-bottom: 4px solid #d4af37; }
+.personaje-card.slytherin .pj-casa-tag { background: rgba(26, 71, 42, 0.2); color: #2ecc71; }
+.personaje-card.slytherin .pj-avatar { border-color: #d4af37; }
+.personaje-card:hover.slytherin { 
+    border-color: #d4af37; 
+    box-shadow: 0 0 20px rgba(42, 98, 61, 0.3); 
+}
+
+/* --- RAVENCLAW (Azul y Bronce) --- */
+.personaje-card.ravenclaw { border-bottom: 4px solid #d4af37; }
+.personaje-card.ravenclaw .pj-casa-tag { background: rgba(14, 26, 64, 0.2); color: #3498db; }
+.personaje-card.ravenclaw .pj-avatar { border-color: #d4af37; }
+.personaje-card:hover.ravenclaw { 
+    border-color: #d4af37; 
+    box-shadow: 0 0 20px rgba(52, 152, 219, 0.3); 
+}
+
+/* --- HUFFLEPUFF (Amarillo y Negro) --- */
+.personaje-card.hufflepuff { border-bottom: 4px solid #d4af37; }
+.personaje-card.hufflepuff .pj-casa-tag { background: rgba(236, 185, 57, 0.2); color: #f1c40f; }
+.personaje-card.hufflepuff .pj-avatar { border-color: #d4af37; }
+.personaje-card:hover.hufflepuff { 
+    border-color: #d4af37; 
+    box-shadow: 0 0 20px rgba(241, 196, 15, 0.3); 
+}
+
+

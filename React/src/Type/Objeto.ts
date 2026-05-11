@@ -1,4 +1,5 @@
 export interface ObjetoInvDTO {
+    id: number;
     nombre: String;
     descripcion: String;
     costo: number;
