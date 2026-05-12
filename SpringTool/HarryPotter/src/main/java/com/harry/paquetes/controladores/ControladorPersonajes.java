@@ -5,6 +5,7 @@ import java.util.*;
 import org.springframework.beans.factory.annotation.Autowired;
 //Controlador de los Personajes
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -12,7 +13,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import com.harry.paquetes.dtos.personajes.PersonajeMostDTO;
 import com.harry.paquetes.dtos.personajes.PersonajeVistDTO;
-import com.harry.paquetes.dtos.usuario.UsuarioFullDTO;
 import com.harry.paquetes.servicios.interfaces.InterfazPersonaje;
 
 @RestController
@@ -30,7 +30,7 @@ public class ControladorPersonajes {
 	}
 
 	// Controlador para Mostrar el Personaje Seleccionado
-	@PostMapping("/MostarPersonaje")
+	@GetMapping("/MostrarPersonaje/{id}")
 	public ResponseEntity<PersonajeVistDTO> MostrarPersonaje(@PathVariable int id) {
 		PersonajeVistDTO personajevista=interfazpersonaje.mostrarpersonaje(id);
 		return ResponseEntity.ok(personajevista);

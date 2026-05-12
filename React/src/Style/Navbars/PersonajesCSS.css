@@ -87,11 +87,19 @@
     box-shadow: inset 0 0 10px rgba(0,0,0,0.5);
 }
 
+.pj-enlace {
+    font-family: 'Cinzel', serif;
+    margin: 0;
+    font-size: 1.2rem;
+    color: #d4af37;
+    letter-spacing: 1px;
+}
+
 .pj-nombre {
     font-family: 'Cinzel', serif;
     margin: 0;
-    font-size: 1.6rem;
-    color: #ffffff;
+    font-size: 1.5rem;
+    color: #d4af37;
     letter-spacing: 1px;
 }
 

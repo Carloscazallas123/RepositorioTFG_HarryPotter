@@ -4,6 +4,7 @@ export interface PersonajeMostDTO {
 };
 
 export interface PersonajeVistDTO {
+    id: number,
     nombre: String;
     descripcion: String;
     casa: String;

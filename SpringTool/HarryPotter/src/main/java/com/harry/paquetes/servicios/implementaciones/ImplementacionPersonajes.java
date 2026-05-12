@@ -29,8 +29,9 @@ public class ImplementacionPersonajes implements InterfazPersonaje {
 		for (int i=0;i<listapersonajesids.size();i++) {
 			PersonajeEntity entidad= repositoriopersonajes.ObtenerPorid(listapersonajesids.get(i));
 			listadesbloqueados.add(new PersonajeMostDTO(
-								   entidad.getNombre(),
-								   entidad.getCasa()));
+					entidad.getIdpersonaje(),
+					entidad.getNombre(),
+					entidad.getCasa()));
 		}
 		return listadesbloqueados;
 	}
@@ -39,7 +40,8 @@ public class ImplementacionPersonajes implements InterfazPersonaje {
 	public PersonajeVistDTO mostrarpersonaje(int id) {
 		PersonajeEntity entidad= repositoriopersonajes.ObtenerPorid(id);
 		List<String>objetos=rellenarlistaobjetos(id);
-		PersonajeVistDTO personaje= new PersonajeVistDTO(entidad.getNombre(),
+		PersonajeVistDTO personaje= new PersonajeVistDTO(entidad.getIdpersonaje(), 
+														 entidad.getNombre(),
 														 entidad.getDescripcion(),
 														 entidad.getCasa(),objetos);
 		return personaje;

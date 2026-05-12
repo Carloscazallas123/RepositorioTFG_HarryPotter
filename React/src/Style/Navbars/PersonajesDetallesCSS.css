@@ -1,0 +1,163 @@
+.detalle-page-container {
+    min-height: 100vh;
+    padding: 2rem;
+    background-image: url('./../../../public//Backgrounds//Castillo\ de\ Hogwarts.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Quicksand', sans-serif;
+}
+
+/* Botón Volver */
+.back-btn {
+    align-self: flex-start;
+    background: transparent;
+    color: #d4af37;
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    padding: 0.8rem 1.5rem;
+    border-radius: 30px;
+    font-family: 'Cinzel', serif;
+    transition: all 0.3s ease;
+    margin-bottom: 2rem;
+}
+
+.back-btn:hover {
+    background: rgba(212, 175, 55, 0.1);
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.2);
+    transform: translateX(-5px);
+}
+
+/* Contenedor de la Vista */
+.detalle-view {
+    width: 100%;
+    max-width: 800px;
+    background: #1a0a2e;
+    backdrop-filter: blur(15px);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+    animation: fadeInScale 0.5s ease-out;
+}
+
+@keyframes fadeInScale {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+/* Encabezado */
+.view-header {
+    padding: 3rem;
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+}
+
+.view-header h1 {
+    font-family: 'Cinzel', serif;
+    font-size: 3rem;
+    color: #d4af37;
+    margin: 0;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+.casa-tag {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 5px 20px;
+    border-radius: 20px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.9rem;
+}
+
+/* Contenido Principal */
+.view-content {
+    padding: 3rem;
+}
+
+.bio-text {
+    font-size: 1.15rem;
+    line-height: 1.8;
+    color: #c9d1d9;
+    margin-bottom: 3rem;
+    text-align: justify;
+    text-align: center;
+}
+
+/* Sección de Inventario */
+.inventory-section h3 {
+    font-family: 'Cinzel', serif;
+    color: #d4af37;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-left: 4px solid #d4af37;
+    padding-left: 15px;
+    align-items: center;
+}
+
+.items-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    text-align: center;
+}
+
+.item-badge {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 10px 20px;
+    border-radius: 12px;
+    color: #e6edf3;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.item-badge:hover {
+    background: rgba(212, 175, 55, 0.1);
+    border-color: #d4af37;
+    transform: translateY(-3px);
+}
+
+/* --- ESTILOS TEMÁTICOS POR CASA --- */
+
+/* Gryffindor */
+.detalle-view.gryffindor { border-top: 6px solid #740001; }
+.detalle-view.gryffindor .casa-tag { background: #740001; color: #fff; }
+.detalle-view.gryffindor .back-btn:hover { color: #ae0001; border-color: #ae0001; }
+
+/* Slytherin */
+.detalle-view.slytherin { border-top: 6px solid #1a472a; }
+.detalle-view.slytherin .casa-tag { background: #1a472a; color: #fff; }
+.detalle-view.slytherin .back-btn:hover { color: #2ecc71; border-color: #2ecc71; }
+
+/* Ravenclaw */
+.detalle-view.ravenclaw { border-top: 6px solid #0e1a40; }
+.detalle-view.ravenclaw .casa-tag { background: #0e1a40; color: #fff; }
+.detalle-view.ravenclaw .back-btn:hover { color: #3498db; border-color: #3498db; }
+
+/* Hufflepuff */
+.detalle-view.hufflepuff { border-top: 6px solid #ecb939; }
+.detalle-view.hufflepuff .casa-tag { background: #ecb939; color: #000; }
+.detalle-view.hufflepuff .back-btn:hover { color: #ecb939; border-color: #ecb939; }
+
+/* Loader Mágico */
+.magic-loader {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #d4af37;
+    font-family: 'Cinzel', serif;
+    font-size: 1.5rem;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% { opacity: 0.5; }
+    50% { opacity: 1; }
+    100% { opacity: 0.5; }
+}

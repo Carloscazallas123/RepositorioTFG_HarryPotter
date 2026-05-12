@@ -5,18 +5,24 @@ import java.util.*;
 
 public class PersonajeVistDTO {
 
-	
+	private int id;
 	private String nombre;
 	private String Descripcion;
 	private String casa;
 	private List<String>objetos;
 	
-	public PersonajeVistDTO(String nombre, String descripcion, String casa, List<String> objetos) {
-		
+	public PersonajeVistDTO(int id,String nombre, String descripcion, String casa, List<String> objetos) {
+		this.id=id;
 		this.nombre = nombre;
 		Descripcion = descripcion;
 		this.casa = casa;
 		this.objetos = objetos;
+	}
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
 	}
 	public String getNombre() {
 		return nombre;

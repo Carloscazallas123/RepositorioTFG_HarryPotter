@@ -1,16 +1,18 @@
 import React, { useEffect, useState } from 'react';
-import PersonajeService from './../../Services/ServicioPersonajes'; // Asumiendo que tienes este servicio
+import { useNavigate } from 'react-router-dom'; // 👈 Importante para la navegación
+import PersonajeService from './../../Services/ServicioPersonajes';
 import './../../Style/Navbars/PersonajesCSS.css';
 
 const PersonajesList = () => {
     const [personajes, setPersonajes] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
+    
+    const navigate = useNavigate(); // Hook para redirigir
 
     useEffect(() => {
         const fetchPersonajes = async () => {
             try {
-                // Aquí llamamos al servicio que devuelve PersonajeMostDTO
                 const data = await PersonajeService.getListaPersonajes();
                 setPersonajes(data);
                 setLoading(false);
@@ -24,7 +26,6 @@ const PersonajesList = () => {
     }, []);
 
     if (loading) return <div className="magic-loader">Consultando el Mapa del Merodeador...</div>;
-
     if (error) return <div className="magic-error">⚠️ {error}</div>;
 
     return (
@@ -36,8 +37,12 @@ const PersonajesList = () => {
 
             <div className="personajes-grid">
                 {personajes.length > 0 ? (
-                    personajes.map((pjs, index) => (
-                        <div key={index} className={`personaje-card ${pjs.casa.toLowerCase()}`}>
+                    personajes.map((pjs) => (
+                        <div 
+                            key={pjs.id} 
+                            className={`personaje-card ${pjs.casa.toLowerCase()}`}
+                            onClick={(
+                            ) => navigate(`/detalles/${pjs.id}`)}>
                             <div className="card-inner">
                                 <div className="pj-avatar">👤</div>
                                 <div className="pj-info">

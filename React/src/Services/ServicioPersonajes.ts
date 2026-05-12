@@ -1,4 +1,4 @@
-import {PersonajeMostDTO} from './../Type/Personaje';
+import {PersonajeMostDTO, PersonajeVistDTO} from './../Type/Personaje';
 import { UsuarioFullDTO } from './../Type/Usuario';
 const API_URL = '/api/Personajes'; 
 
@@ -27,6 +27,27 @@ const PersonajeService = {
 
         return await response.json();
     },
+
+    getDetallePersonaje: async (id: number): Promise<PersonajeVistDTO> => {
+        const token = localStorage.getItem('token');
+        
+        // Fíjate que aquí concatenamos el ID en la URL
+        const response = await fetch(`${API_URL}/MostrarPersonaje/${id}`, {
+            method: 'GET',
+            headers: {
+                'Authorization': `Bearer ${token}`,
+                'Content-Type': 'application/json'
+            }
+        });
+        const data= await response.json();
+        console.log(data);
+        if (!response.ok) {
+            if (response.status === 404) throw new Error("El personaje no existe en los archivos");
+            throw new Error("Error al obtener el expediente detallado");
+        }
+
+        return data;
+    }
 };
 
 export default PersonajeService;
