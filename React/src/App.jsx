@@ -18,6 +18,8 @@ import PaginaPersonajes from './Pages/PaginaPersonajes';
 import PaginaPersonajeDetalles from './Pages/PaginaPersonajesDetalles';
 {/* Importe de la ruta del Comentario*/}
 import FormularioComentario from './Components/PlantillaPrincipal/CrearComentarios';
+{/* Importe de la ruta del Comentario*/}
+import PaginaTienda from './Pages/PaginaTienda';
 function App() {
   return (
     <Router>
@@ -27,6 +29,7 @@ function App() {
         <Route path="/login" element={<IniciarSesion/>} />
         <Route path="/registrarse" element={<Registrarse/>} />
         <Route path="/home" element={<PaginaPrincipal/>} />
+        <Route path="/tienda" element={<PaginaTienda/>} />
       </Routes>
       {/* Rutas del Footer */}
       <Routes>

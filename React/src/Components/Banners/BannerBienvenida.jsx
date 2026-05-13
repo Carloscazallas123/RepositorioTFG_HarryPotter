@@ -1,5 +1,5 @@
 import React from 'react';
-import './../../Style/SinIniciarSesion/BienvenidaCSS.css'; 
+import './../../Style/Banner/BienvenidaCSS.css'; 
 
 const Bienvenida = () => {
   return (
@@ -12,7 +12,7 @@ const Bienvenida = () => {
         <span className="quote">- Albus Dumbledore</span>
       </div>
       <div className="visualContent">
-        <img src="/Imagenes/HarryPotter_Caricatura.png" className="characterImage" alt="Harry" />
+        <img src="./../../../public/Imagenes/HarryPotter_Caricatura.png" className="characterImage" alt="Harry" />
       </div>
     </section>
   );

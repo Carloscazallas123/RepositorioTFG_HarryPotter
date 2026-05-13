@@ -12,7 +12,7 @@
   flex-wrap: wrap;
   gap: 40px;
   /* El degradado ayuda a que el texto sea legible sobre la imagen */
-  background-image: linear-gradient(rgba(8, 16, 43, 0.6), rgba(8, 16, 43, 0.8)), url('/Backgrounds/Castillo de Hogwarts.png');
+  background-image: linear-gradient(rgba(8, 16, 43, 0.6), rgba(8, 16, 43, 0.8)), url('./../../../public//Backgrounds/Tienda_Fondo.png');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -61,7 +61,7 @@
 }
 
 .characterImage {
-  width: 100%;
+  width: 300px;
   height: auto;
   max-width: 450px;
   filter: drop-shadow(0 0 25px rgba(212, 175, 55, 0.4));

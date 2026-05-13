@@ -26,22 +26,29 @@ export const loginUsuario = async (datosSesion: SesionDTO) => {
     }
 };
 
-export const registrarUsuario = async (datos: RegistroDTO) => {
+export const registrarUsuario = async (nombre: String, email: String,contraseña:String,repcontraseña:String) => {
+    const usuario: RegistroDTO={
+    nombre: nombre,
+    email:email,
+    contraseña:contraseña,
+    repcontraseña:repcontraseña
+    }
+
     try {
         const response = await fetch(`${API_URL}/Registro`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify(datos)
+            body: JSON.stringify(usuario)
         });
-
+        const data = await response.json();
+        console.log('Respuesta del servidor:', data);
+        localStorage.setItem('usuario', JSON.stringify(data));
         if (!response.ok) {
             const errorData = await response.json().catch(() => ({}));
             throw new Error(errorData.mensaje || 'Error al escribir en el pergamino');
         }
-
-        console.log(response.json())
     } catch (error) {
         console.error("Error en RegistroService:", error);
         throw error;

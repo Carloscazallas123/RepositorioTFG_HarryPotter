@@ -9,13 +9,17 @@ import org.springframework.stereotype.Service;
 import com.harry.paquetes.dtos.objeto.ObjetoInvDTO;
 import com.harry.paquetes.dtos.objeto.ObjetoTiendDTO;
 import com.harry.paquetes.dtos.usuario.UsuarioFullDTO;
+import com.harry.paquetes.entidades.CompraEntity;
 import com.harry.paquetes.entidades.ObjetoEntity;
 import com.harry.paquetes.repositorios.RepoObjetos;
+import com.harry.paquetes.repositorios.RepoUsuarios;
 import com.harry.paquetes.servicios.interfaces.InterfazObjeto;
 
 @Service
 public class ImplementacionObjetos implements InterfazObjeto {
 
+	@Autowired
+	private RepoUsuarios UsuarioRepo;
 	@Autowired
 	private RepoObjetos repositorioObjetos;
 
@@ -50,6 +54,27 @@ public class ImplementacionObjetos implements InterfazObjeto {
 					entidad.getPersonaje().getNombre()));
 		}
 		return listainventario;
+	}
+
+	@Override
+	public UsuarioFullDTO comprarobjeto(UsuarioFullDTO usuario, int id) {
+		List<Integer>listausuario=usuario.getObjetos();
+		boolean yacomprado=false;
+		for(int i=0;i<listausuario.size();i++) {
+			if(listausuario.get(i)==id) {
+				System.out.println("Objeto ya comprado");
+				yacomprado=true;
+			}
+		}
+		
+		if(yacomprado==false) {
+			CompraEntity compranueva = new CompraEntity();
+			compranueva.setObjeto(repositorioObjetos.ObtenerPorid(id));
+			compranueva.setUsuario(UsuarioRepo.ObtenerPorid(usuario.getIdusuario()));
+			usuario.getObjetos().add(compranueva.getObjeto().getIdobjeto());
+		}
+		
+		return usuario;
 	}
 
 }

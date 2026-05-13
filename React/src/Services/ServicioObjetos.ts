@@ -1,5 +1,5 @@
 import { UsuarioFullDTO } from './../Type/Usuario';
-import { ObjetoInvDTO } from './../Type/Objeto';
+import { ObjetoInvDTO, ObjetTiendDTO } from './../Type/Objeto';
 const API_URL = '/api/Objetos';
 
 const ObjetoService = {
@@ -25,6 +25,30 @@ const ObjetoService = {
         }
 
         return await response.json();
+    },
+
+    getTienda: async (): Promise<[ObjetTiendDTO]> => {
+    try {
+      const response = await fetch(`${API_URL}/Tienda`);
+      if (!response.ok) throw new Error('Error al conectar con Hogwarts'); 
+      const data = await response.json();
+      return data;
+    } catch (error) {
+      console.log("Error en el servicio:", error);
+      throw error;
+    }
+    },
+
+    Comprar: async (id:number) => {
+    try {
+      const response = await fetch(`${API_URL}/Tienda`);
+      if (!response.ok) throw new Error('Error al conectar con Hogwarts'); 
+      const data = await response.json();
+      return data;
+    } catch (error) {
+      console.log("Error en el servicio:", error);
+      throw error;
+    }
     }
 };
 

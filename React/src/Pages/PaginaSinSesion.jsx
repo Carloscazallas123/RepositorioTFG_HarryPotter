@@ -1,16 +1,17 @@
 import React from 'react';
 import Navbar from '../Components/Navbars/NavbarSinSesion';
 import Footer from '../Components/Footer';
-import Bienvenida from '../Components/PlantillaPrincipal/Bienvenida';
+import BannerBienvenida from './../Components/Banners/BannerBienvenida';
 import Secciones from '../Components/PlantillaPrincipal/Secciones';
 import Casas from '../Components/PlantillaPrincipal/Casas';
 import Comentarios from '../Components/PlantillaPrincipal/Comentarios'
 
 const SinSesion = () => {
+  localStorage.clear();
   return (
     <div>
         <Navbar/>
-        <Bienvenida/>
+        <BannerBienvenida/>
         <Secciones/>
         <Casas/>
         <Comentarios/>

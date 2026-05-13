@@ -1,4 +1,5 @@
 // src/Services/ReseñaService.js
+import { alertaExito } from '../Utils/Alertas';
 import { ComentarDTO, ComentarioMostDTO } from './../Type/Comentario';
 import { UsuarioFullDTO } from './../Type/Usuario';
 const API_URL = '/api/Comentarios';
@@ -37,6 +38,9 @@ const ComentarioService = {
           });
       if (!response.ok) throw new Error('Error al conectar con Hogwarts'); 
       const data = await response.json();
+      if(data==null){
+        alertaExito('Eureca', 'ComentarioReescrito');
+      }
       console.log(data);
       return data;
     } catch (error) {

@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import './../../Style/CrearComentariosCSS.css';
 import ComentarioService from './../../Services/ServicioComentarios';
-import { useNavigate } from 'react-router-dom'; // 👈 Importante para la navegación
+import { useNavigate } from 'react-router-dom'; 
+import { alertaError, alertaExito } from './../../Utils/Alertas';
 const FormularioComentario = () => {
     const [descripcion, setDescripcion] = useState('');
     const [valor, setValor] = useState(0);
@@ -11,7 +12,7 @@ const FormularioComentario = () => {
         e.preventDefault();
         
         if (valor === 0) {
-            alert("Debes asignar una puntuación mágica.");
+            alertaError('Ups!!','Debes indicar las estrellas');
             return;
         }
         setEnviando(true);
@@ -23,7 +24,7 @@ const FormularioComentario = () => {
             console.log("Crónica guardada:", data);
             setDescripcion('');
             setValor(0);
-            alert("¡Mensaje enviado al Gran Comedor!");
+            alertaExito('Genial','El Comentario ha sido enviado');
             navigate('/home');
             
         } catch (error) {

@@ -5,30 +5,21 @@ import { alertaExito, alertaError } from './../../Utils/Alertas';
 import './../../Style/RegistroSesion/RegistroCSS.css';
 
 const Registrarse = () => {
-    // Estado inicial basado en RegistroDTO
-    const [form, setForm] = useState({
-        nombre: '',
-        email: '',
-        contraseña: '',
-        repcontraseña: ''
-    });
-
+    const [nombre, setNombre] = useState('');
+    const [email, setemail] = useState('');
+    const [contraseña, setcontraseña] = useState('');
+    const [repcontraseña, setRepcontraseña] = useState('');
     const navigate = useNavigate();
-
-    const handleChange = (e) => {
-        setForm({ ...form, [e.target.name]: e.target.value });
-    };
-
     const handleSubmit = async (e) => {
         e.preventDefault();
 
         // Validación mágica: ¿Coinciden los encantamientos?
-        if (form.contraseña !== form.repcontraseña) {
+        if (contraseña !== repcontraseña) {
             return alertaError('Error de duplicación', 'Las contraseñas no coinciden. ¡Revisa tu varita!');
         }
 
         try {
-            await registrarUsuario(form);
+            const resultado=  await registrarUsuario(nombre,email,contraseña,repcontraseña);
             await alertaExito('¡Inscrito!', 'Tu nombre ya figura en el Libro de Escolarización ✍️');
             navigate('/home');
         } catch (err) {
@@ -48,8 +39,8 @@ const Registrarse = () => {
                         <input 
                             type="text" 
                             name="nombre" 
-                            value={form.nombre}
-                            onChange={handleChange} 
+                            value={nombre}
+                            onChange={(e) => setNombre(e.target.value)}  
                             placeholder="Ej: Newt Scamander"
                             required 
                         />
@@ -60,8 +51,8 @@ const Registrarse = () => {
                         <input 
                             type="email" 
                             name="email" 
-                            value={form.email}
-                            onChange={handleChange} 
+                            value={email}
+                            onChange={(e) => setemail(e.target.value)} 
                             placeholder="mago@hogwarts.com"
                             required 
                         />
@@ -72,8 +63,8 @@ const Registrarse = () => {
                         <input 
                             type="password" 
                             name="contraseña" 
-                            value={form.contraseña}
-                            onChange={handleChange} 
+                            value={contraseña}
+                            onChange={(e) => setcontraseña(e.target.value)} 
                             placeholder="••••••••"
                             required 
                         />
@@ -84,8 +75,8 @@ const Registrarse = () => {
                         <input 
                             type="password" 
                             name="repcontraseña" 
-                            value={form.repcontraseña}
-                            onChange={handleChange} 
+                            value={repcontraseña}
+                            onChange={(e) => setRepcontraseña(e.target.value)} 
                             placeholder="••••••••"
                             required 
                         />

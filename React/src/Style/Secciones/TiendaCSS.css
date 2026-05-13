@@ -1,0 +1,154 @@
+
+.tienda-container {
+    padding: 60px 20px;
+    background-color: #1a0a2e;
+    min-height: 100vh;
+}
+
+/* Grid de 3 en 3 */
+.objetos-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* Ajustamos el gap a 40px para que no se vea tan disperso con el título más pequeño */
+    gap: 40px; 
+    max-width: 1000px;
+    margin: 0 auto;
+    perspective: 1500px;
+    /* Añadimos un poco de padding superior a la grid */
+    padding-top: 10px;
+}
+
+/* La Carta */
+.objeto-card {
+    height: 400px;
+    background: transparent;
+}
+
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transform-style: preserve-3d;
+}
+
+.objeto-card:hover .card-inner {
+    transform: rotateY(180deg);
+}
+
+/* Estilo Común (Frente y Detrás) */
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 8px;
+    /* Borde de marco de cuadro antiguo */
+    border: 8px solid #2c1e0f;
+    outline: 2px solid #d4af37;
+    outline-offset: -5px;
+}
+
+/* Cara Frontal (Estilo Pergamino Oscuro) */
+.card-front {
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+                url('https://www.transparenttextures.com/patterns/dark-leather.png'), #1a1a1a;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.8);
+}
+
+.objeto-icono {
+    font-size: 6rem;
+    filter: drop-shadow(0 0 15px rgba(212, 175, 55, 0.8));
+    transition: transform 0.3s ease;
+}
+
+.objeto-card:hover .objeto-icono {
+    transform: scale(1.1);
+}
+
+.card-hint {
+    margin-top: 30px;
+    font-family: 'Cinzel', serif;
+    color: #d4af37;
+    font-size: 0.7rem;
+    letter-spacing: 3px;
+    opacity: 0.7;
+}
+
+/* Cara Trasera (Pergamino Viejo) */
+.card-back {
+    background: #c5b358; /* Color oro viejo */
+    background-image: url('https://www.transparenttextures.com/patterns/paper-fibers.png');
+    background-color: #896e26; /* Color pergamino */
+    color: #2c1e0f;
+    transform: rotateY(180deg);
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: inset 0 0 50px rgba(0,0,0,0.2);
+}
+
+.objeto-nombre {
+    font-family: 'Cinzel', serif;
+    font-size: 1.5rem;
+    border-bottom: 2px solid #000000;
+    padding-bottom: 5px;
+    margin-top: 10px;
+    color: #000000;
+}
+
+.objeto-desc {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    line-height: 1.5;
+    text-align: center;
+}
+
+.objeto-coste {
+    background: rgba(0,0,0,0.05);
+    padding: 10px 20px;
+    border-radius: 50px;
+    border: 1px dashed #2c1e0f;
+}
+
+.precio {
+    font-family: 'Cinzel', serif;
+    font-weight: bold;
+    font-size: 1.3rem;
+    color: #000000;
+}
+
+.btn-comprar {
+    background: #2c1e0f;
+    color: #d4af37;
+    border: 1px solid #d4af37;
+    padding: 10px 25px;
+    font-family: 'Cinzel', serif;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+.btn-comprar:hover {
+    background: #d4af37;
+    color: #2c1e0f;
+    letter-spacing: 1px;
+}
+
+/* Media Queries para que siga siendo funcional */
+@media (max-width: 1024px) {
+    .objetos-grid { grid-template-columns: repeat(2, 1fr); gap: 30px; }
+}
+
+@media (max-width: 650px) {
+    .objetos-grid { grid-template-columns: 1fr; }
+}

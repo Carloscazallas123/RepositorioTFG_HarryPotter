@@ -20,7 +20,7 @@ public class PersonajeEntity implements Serializable {
 	@Column(name = "NOMBRE")
 	private String nombre;
 
-	@Column(name = "DESCRIPCION")
+	@Column(name = "DESCRIPCION", columnDefinition = "TEXT")
 	private String descripcion;
 	
 	@Column(name = "CASA")

@@ -29,7 +29,7 @@ public class ImplementacionComentarios implements InterfazComentario {
 		List<ComentarioEntity> listaentidades = repocomentarios.ObtenerAllComentarios();
 
 		for (int i = listacomentarios.size(); i < 3; i++) {
-			int aleatorio = (int) (Math.random() * listaentidades.size()-1);
+			int aleatorio = (int) (Math.random() * listaentidades.size());
 			listacomentarios.add(new ComentarioMostDTO(
 					listaentidades.get(aleatorio).getId(),
 					listaentidades.get(aleatorio).getDescripcion(),
@@ -45,24 +45,28 @@ public class ImplementacionComentarios implements InterfazComentario {
 	public ComentarDTO comentar(ComentarDTO comentario) {
 		List<ComentarioEntity> listaentidades = repocomentarios.ObtenerAllComentarios();
 		ComentarDTO comentarionuevo = null;
-		boolean existe = true;
+		boolean existe = false;
 		for (int i = 0; i < listaentidades.size(); i++) {
 			if (listaentidades.get(i).getUsuario().getIdusuario() == comentario.getId()) {
-				comentarionuevo = null;
+				comentarionuevo = new ComentarDTO(
+				listaentidades.get(i).getDescripcion(),
+				listaentidades.get(i).getValoracion(),
+				listaentidades.get(i).getFecha(),
+				listaentidades.get(i).getUsuario().getIdusuario());
+				
 				listaentidades.get(i).setDescripcion(comentario.getDescripcion());
 				listaentidades.get(i).setValoracion(comentario.getValor());
 				listaentidades.get(i).setFecha(LocalDate.now());
 				listaentidades.get(i).setUsuario(repoUsuarios.ObtenerPorid(comentario.getId()));
 				repocomentarios.save(listaentidades.get(i));
 				System.out.println("Comentario ya existente");
-			} else {
-				existe = false;
+				existe=true;
 			}
 		}
-		if (existe = false) {
+		if (existe == false) {
 			ComentarioEntity entidad = new ComentarioEntity();
-			entidad.setDescripcion(null);
-			entidad.setValoracion(0);
+			entidad.setDescripcion(comentario.getDescripcion());
+			entidad.setValoracion(comentario.getValor());
 			entidad.setFecha(LocalDate.now());
 			entidad.setUsuario(repoUsuarios.ObtenerPorid(comentario.getId()));
 			comentarionuevo = new ComentarDTO(entidad.getDescripcion(), 
@@ -70,9 +74,10 @@ public class ImplementacionComentarios implements InterfazComentario {
 					entidad.getFecha(),
 					entidad.getUsuario().getIdusuario());
 			repocomentarios.save(entidad);
+			System.out.println("ComentarioCreado");
 		}
 
-		return comentario;
+		return comentarionuevo;
 	}
 
 }

@@ -18,7 +18,7 @@ const Reseñas = () => {
 
     // Función para pintar las estrellas doradas
     const renderStars = (valor) => '★'.repeat(valor) + '☆'.repeat(5 - valor);
-
+    console.log(listaComentarios);
     return (
         <section className="reseñasSection">
             <h2 className="reseñasTitle">Reseñas de la Comunidad</h2>
@@ -31,7 +31,7 @@ const Reseñas = () => {
                         <div key={com.id} className="reseñaCard">
                             <div className="reseñaHeader">
                                 <img 
-                                src={`https://ui-avatars.com/api/?name=${com.usuario?.nombre || 'Mago'}&background=7d6b4a&color=fff&bold=true`} 
+                                src={`https://ui-avatars.com/api/?name=${com.usuario|| 'USR'}&background=7d6b4a&color=fff&bold=true`} 
                                 alt="UserIcon" className="userIcon" />
                                 <div className="userInfo">
                                     {/* Muestra el nombre del usuario relacionado en la DB */}

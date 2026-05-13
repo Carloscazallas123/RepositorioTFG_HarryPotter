@@ -1,15 +1,11 @@
 import React from 'react';
 import './../../Style/SinIniciarSesion/SeccionesCSS.css';
-
+import { Link } from 'react-router-dom';
 const Secciones = () => {
-  const cardsData = [
-    { id: 1, title: 'Cuestionario', desc: 'Evalúa tus conocimientos mágicos y descubre tu nivel.', img: '/Imagenes/Sombrero Seleccionador.png' },
-    { id: 2, title: 'Minijuegos', desc: 'Gana puntos para tu casa superando desafíos únicos.', img: '/Imagenes/Minijuegos.png' },
-    { id: 3, title: 'Tienda', desc: 'Canjea tus puntos por productos exclusivos del mundo mágico.', img: '/Imagenes/Tienda.png' }
-  ];
 
   return (
     <section className="seccionesContainer">
+      {/* Encabezado con los libros */}
       <div className="tituloWrapper">
         <img src="/Iconos/Libro_Icono.png" alt="Libro mágico" className="imagenLibro" />
         <h2 className="tituloManual">Manual Orientativo</h2>
@@ -17,15 +13,40 @@ const Secciones = () => {
       </div>
 
       <div className="seccionesGrid">
-        {cardsData.map((card) => (
-          <div key={card.id} className="seccionCard">
-            <div className="imageContainerSeccion">
-              <img src={card.img} alt={card.title} />
-            </div>
-            <h3>{card.title}</h3>
-            <p>{card.desc}</p>
+        
+        {/* SECCIÓN 1: CUESTIONARIO */}
+        <div className="seccionCard">
+          <div className="imageContainerSeccion">
+            <img src="/Imagenes/Sombrero Seleccionador.png" alt="Cuestionario"/>
           </div>
-        ))}
+          <Link to="/cuestionario" className="seccionLink">
+            <h3>Cuestionario</h3>
+          </Link>
+          <p>Evalúa tus conocimientos mágicos y descubre tu nivel de hechicería.</p>
+        </div>
+
+        {/* SECCIÓN 2: MINIJUEGOS */}
+        <div className="seccionCard">
+          <div className="imageContainerSeccion">
+            <img src="/Imagenes/Minijuegos.png" alt="Minijuegos"/>
+          </div>
+          <Link to="/minijuegos" className="seccionLink" >
+            <h3>Minijuegos</h3>
+          </Link>
+          <p>Gana puntos para tu casa superando desafíos únicos y duelos de magia.</p>
+        </div>
+
+        {/* SECCIÓN 3: TIENDA */}
+        <div className="seccionCard">
+          <div className="imageContainerSeccion">
+            <img src="/Imagenes/Tienda.png" alt="Tienda"/>
+          </div>
+          <Link to="/tienda" className="seccionLink">
+            <h3>Tienda</h3>
+          </Link>
+          <p>Canjea tus puntos por productos exclusivos y reliquias del mundo mágico.</p>
+        </div>
+
       </div>
     </section>
   );
