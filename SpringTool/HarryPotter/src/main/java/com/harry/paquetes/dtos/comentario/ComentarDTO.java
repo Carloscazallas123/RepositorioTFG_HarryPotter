@@ -4,14 +4,14 @@ import java.time.*;
 
 public class ComentarDTO {
 
-	private String Descripcion;
+	private String descripcion;
 	private int valor;
 	private LocalDate fecha;
 	private int id;
 	
 	public ComentarDTO(String descripcion, int valor, LocalDate fecha, int id) {
 
-		Descripcion = descripcion;
+		this.descripcion = descripcion;
 		this.valor = valor;
 		this.fecha = fecha;
 		this.id = id;
@@ -26,13 +26,17 @@ public class ComentarDTO {
 		this.id = id;
 	}
 
+	
+
 	public String getDescripcion() {
-		return Descripcion;
+		return descripcion;
 	}
 
+
 	public void setDescripcion(String descripcion) {
-		Descripcion = descripcion;
+		this.descripcion = descripcion;
 	}
+
 
 	public int getValor() {
 		return valor;

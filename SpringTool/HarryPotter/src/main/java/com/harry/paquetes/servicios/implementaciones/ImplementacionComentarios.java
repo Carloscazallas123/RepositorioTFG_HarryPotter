@@ -42,15 +42,19 @@ public class ImplementacionComentarios implements InterfazComentario {
 	}
 
 	@Override
-	public ComentarDTO comentar(UsuarioFullDTO usuario) {
+	public ComentarDTO comentar(ComentarDTO comentario) {
 		List<ComentarioEntity> listaentidades = repocomentarios.ObtenerAllComentarios();
-		ComentarDTO comentario = null;
+		ComentarDTO comentarionuevo = null;
 		boolean existe = true;
 		for (int i = 0; i < listaentidades.size(); i++) {
-			if (listaentidades.get(i).getUsuario().getIdusuario() == usuario.getIdusuario()) {
-				comentario = new ComentarDTO(listaentidades.get(i).getDescripcion(),
-						listaentidades.get(i).getValoracion(), listaentidades.get(i).setFecha(LocalDate.now()),
-						listaentidades.get(i).getUsuario().getIdusuario());
+			if (listaentidades.get(i).getUsuario().getIdusuario() == comentario.getId()) {
+				comentarionuevo = null;
+				listaentidades.get(i).setDescripcion(comentario.getDescripcion());
+				listaentidades.get(i).setValoracion(comentario.getValor());
+				listaentidades.get(i).setFecha(LocalDate.now());
+				listaentidades.get(i).setUsuario(repoUsuarios.ObtenerPorid(comentario.getId()));
+				repocomentarios.save(listaentidades.get(i));
+				System.out.println("Comentario ya existente");
 			} else {
 				existe = false;
 			}
@@ -60,11 +64,12 @@ public class ImplementacionComentarios implements InterfazComentario {
 			entidad.setDescripcion(null);
 			entidad.setValoracion(0);
 			entidad.setFecha(LocalDate.now());
-			entidad.setUsuario(repoUsuarios.ObtenerPorid(usuario.getIdusuario()));
-			comentario = new ComentarDTO(entidad.getDescripcion(), 
+			entidad.setUsuario(repoUsuarios.ObtenerPorid(comentario.getId()));
+			comentarionuevo = new ComentarDTO(entidad.getDescripcion(), 
 					entidad.getValoracion(), 
 					entidad.getFecha(),
 					entidad.getUsuario().getIdusuario());
+			repocomentarios.save(entidad);
 		}
 
 		return comentario;

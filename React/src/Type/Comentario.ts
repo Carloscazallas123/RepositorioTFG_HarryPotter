@@ -1,7 +1,7 @@
 export interface ComentarDTO {
     descripcion: String;
     valor: number;
-    fecha: Date;
+    fecha?: Date;
     id: number;
 };
 

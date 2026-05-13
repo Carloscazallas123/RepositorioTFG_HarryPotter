@@ -16,7 +16,8 @@ import PropiedadIntelectual from './Components/PaginasFooter/Intelectual';
 import PaginaInventario from './Pages/PaginaInventario';
 import PaginaPersonajes from './Pages/PaginaPersonajes';
 import PaginaPersonajeDetalles from './Pages/PaginaPersonajesDetalles';
-
+{/* Importe de la ruta del Comentario*/}
+import FormularioComentario from './Components/PlantillaPrincipal/CrearComentarios';
 function App() {
   return (
     <Router>
@@ -41,6 +42,10 @@ function App() {
         <Route path='/inventario' element={<PaginaInventario/>}/>
         <Route path='/personajes' element={<PaginaPersonajes/>}/>
         <Route path='/detalles/:id' element={<PaginaPersonajeDetalles/>}/>
+      </Routes>
+      {/* Rutas del la Pagina Principal */}
+      <Routes>
+      <Route path='/comentar' element={<FormularioComentario/>}/>
       </Routes>
     </Router>
     

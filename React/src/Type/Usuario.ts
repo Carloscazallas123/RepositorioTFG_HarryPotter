@@ -11,7 +11,7 @@ export interface SesionDTO {
 };
 
 export interface UsuarioFullDTO {
-    id: number;
+    idusuario: number;
     nombre: string;
     email: string;
     casa: string;

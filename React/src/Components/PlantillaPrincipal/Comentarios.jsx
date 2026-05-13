@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { getComentarios } from '../../Services/ServicioComentarios';
+import ComentarioService from './../../Services/ServicioComentarios';
 import './../../Style/SinIniciarSesion/ComentariosCSS.css';
+import { Link } from 'react-router-dom';
 
 const Reseñas = () => {
     const [listaComentarios, setListaComentarios] = useState([]);
@@ -8,7 +9,7 @@ const Reseñas = () => {
 
     useEffect(() => {
         const cargarDatos = async () => {
-            const datos = await getComentarios();
+            const datos = await ComentarioService.getComentarios();
             setListaComentarios(datos);
             setCargando(false);
         };
@@ -52,7 +53,9 @@ const Reseñas = () => {
             </div>
 
             <div className="buttonContainer">
-                <button className="btnComentar">Añadir Comentario</button>
+                <Link to='/comentar'>
+                <button className='btnComentar'>Añadir Comentario</button>
+                </Link>
             </div>
         </section>
     );

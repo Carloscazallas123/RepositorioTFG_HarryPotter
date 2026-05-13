@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.harry.paquetes.dtos.comentario.ComentarDTO;
 import com.harry.paquetes.dtos.comentario.ComentarioMostDTO;
-import com.harry.paquetes.dtos.usuario.UsuarioFullDTO;
 import com.harry.paquetes.servicios.interfaces.*;
 
 @RestController
@@ -32,8 +31,8 @@ public class ControladorComentarios {
 
 	// Controlador para Crear/Editar el Comentario
 	@PostMapping("/Comentar")
-	public ResponseEntity<ComentarDTO> Comentar(@RequestBody UsuarioFullDTO usuario) {
-		ComentarDTO comentar = interfazcomentario.comentar(usuario);
+	public ResponseEntity<ComentarDTO> Comentar(@RequestBody ComentarDTO comentario) {
+		ComentarDTO comentar = interfazcomentario.comentar(comentario);
 		return ResponseEntity.ok(comentar);
 	}
 
