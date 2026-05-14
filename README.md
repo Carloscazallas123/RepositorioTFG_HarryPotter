@@ -323,6 +323,10 @@ para mostrarlos en la pagina principal.
 | _MostrarComentarios_ | GET | Una Lista de 3 Comentarios Aleatorios mostrados en la pagina |
 | _Comentar_ | GET | Crear/Editar el comentario |
 
-> A Partir de aqui ya no se empleará en el README debido a la Plantilla
+# Aclaración
+---
+Por temás de entrega, no se va a desarollar nada en este README hasta que esté terminado le Proyecto.
+Por el momento, aqui unas capturas de como va quedando.
+
 
 
