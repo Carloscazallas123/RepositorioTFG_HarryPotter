@@ -6,12 +6,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 //Controlador de los Usuarios
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.harry.paquetes.dtos.objeto.CompraDTO;
 import com.harry.paquetes.dtos.objeto.ObjetoInvDTO;
 import com.harry.paquetes.dtos.objeto.ObjetoTiendDTO;
 import com.harry.paquetes.dtos.usuario.UsuarioFullDTO;
@@ -39,9 +39,9 @@ public class ControladorObjetos {
 	}
 
 	// Controlador para Comprar el Objeto
-	@PostMapping("/Comprar/{id}")
-	public ResponseEntity<UsuarioFullDTO> Comprarobjeto(@RequestBody UsuarioFullDTO usuario, @PathVariable int id) {
-		usuario=interfazObjetos.comprarobjeto(usuario, id);
+	@PostMapping("/Comprar")
+	public ResponseEntity<UsuarioFullDTO> comprarobjeto(@RequestBody CompraDTO compra) {
+		UsuarioFullDTO usuario=interfazObjetos.comprarobjeto(compra);
 		return ResponseEntity.ok(usuario);
 	}
 

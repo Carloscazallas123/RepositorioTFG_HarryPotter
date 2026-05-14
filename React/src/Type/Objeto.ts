@@ -1,3 +1,5 @@
+import { UsuarioFullDTO } from "./Usuario";
+
 export interface ObjetoInvDTO {
     id: number;
     nombre: String;
@@ -11,4 +13,9 @@ export interface ObjetTiendDTO {
     nombre: String;
     descripcion: String;
     costo: number;
+};
+
+export interface CompraDTO {
+    usuario: UsuarioFullDTO;
+    idobjeto: number;
 };

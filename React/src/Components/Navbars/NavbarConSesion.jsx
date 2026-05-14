@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import './../../Style/Navbars/NavbarConSesionCSS.css';
-
 const NavbarConSesion = () => {
     const navigate = useNavigate();
 
@@ -10,7 +9,7 @@ const NavbarConSesion = () => {
     const usuarioString = localStorage.getItem('usuario');
     
     // Parseamos los datos siguiendo el type UsuarioFullDTO
-    const usuario = usuarioString ? JSON.parse(usuarioString) : null;
+    const usuario = JSON.parse(usuarioString);
 
     const manejarLogout = () => {
         localStorage.removeItem('token');

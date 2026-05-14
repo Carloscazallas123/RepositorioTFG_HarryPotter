@@ -37,6 +37,9 @@ public class UsuarioFullDTO {
 		this.objetos = objetos;
 		this.personajes = personajes;
 	}
+	
+	//Constructor vacio
+	public UsuarioFullDTO() {}
 
 	public int getIdusuario() {
 		return idusuario;

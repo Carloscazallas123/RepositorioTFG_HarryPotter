@@ -4,8 +4,6 @@ import Footer from '../Components/Footer';
 import PersonajesList from '../Components/Navbars/Personajes';
 
 const PaginaPersonajes = () => {
-  const token=localStorage.getItem('usuario');
-  console.log(JSON.parse(token));
   return (
     <div>
         <Navbar/>

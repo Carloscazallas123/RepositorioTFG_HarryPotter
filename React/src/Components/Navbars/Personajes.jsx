@@ -40,7 +40,7 @@ const PersonajesList = () => {
                     personajes.map((pjs) => (
                         <div 
                             key={pjs.id} 
-                            className={`personaje-card ${pjs.casa.toLowerCase()}`}
+                            className={`personaje-card ${pjs.casa?.toLowerCase()}`}
                             onClick={(
                             ) => navigate(`/detalles/${pjs.id}`)}>
                             <div className="card-inner">
@@ -49,7 +49,7 @@ const PersonajesList = () => {
                                     <h3 className="pj-nombre">{pjs.nombre}</h3>
                                     <div className="pj-casa-tag">
                                         <i className="fa-solid fa-shield-halved"></i>
-                                        <span>{pjs.casa}</span>
+                                        <span>{pjs.casa || 'Desconocido'}</span>
                                     </div>
                                 </div>
                             </div>

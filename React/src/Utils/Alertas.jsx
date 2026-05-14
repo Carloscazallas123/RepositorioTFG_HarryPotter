@@ -28,12 +28,16 @@ export const alertaError = (titulo, mensaje) => {
     });
 };
 
-export const alertaCargando = (titulo) => {
-    swalCustom.fire({
-        title: titulo,
-        allowOutsideClick: false,
-        didOpen: () => {
-            Swal.showLoading();
-        }
+export const comprarObjeto = async (nombreObjeto) => {
+    const result = await Swal.fire({
+        title: '¿Confirmar?',
+        text: `¿Quieres el objeto ${nombreObjeto}?`,
+        icon: 'question',
+        showCancelButton: true,
+        confirmButtonColor: '#d4af37',
+        cancelButtonColor: '#2c1e0f',
     });
+
+    // ¡ESTA LÍNEA ES CLAVE! Sin el return, el await del IF no recibe nada.
+    return result.isConfirmed; 
 };

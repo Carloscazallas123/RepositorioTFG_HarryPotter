@@ -24,4 +24,13 @@ public interface RepoPersonajes extends JpaRepository<PersonajeEntity, Integer> 
 	           "GROUP BY p.idpersonaje " +
 	           "HAVING COUNT(o.id) >= 3")
 	    List<PersonajeEntity> findPersonajesConTresObjetos(@Param("listaIds") List<Integer> listaIds);
+	
+	@Query("SELECT DISTINCT p FROM PersonajeEntity p " +
+		       "JOIN p.objetos o " +
+		       "WHERE o.id IN :listaIds " +
+		       "AND p.idpersonaje NOT IN :idsPoseidos " + // <--- EXCLUIR POSEÍDOS
+		       "GROUP BY p.idpersonaje " +
+		       "HAVING COUNT(DISTINCT o.id) >= 3")
+		List<PersonajeEntity> findNuevosPersonajes(@Param("listaIds") List<Integer> listaIds, 
+		                                           @Param("idsPoseidos") List<Integer> idsPoseidos);
 }

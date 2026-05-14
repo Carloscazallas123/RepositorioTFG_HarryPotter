@@ -7,8 +7,6 @@ import Casas from '../Components/PlantillaPrincipal/Casas';
 import Comentarios from '../Components/PlantillaPrincipal/Comentarios'
 
 const ConSesion = () => {
-  const token=localStorage.getItem('usuario');
-  console.log(JSON.parse(token));
   return (
     <div>
         <Navbar/>

@@ -12,8 +12,9 @@
   flex-wrap: wrap;
   gap: 40px;
   /* El degradado ayuda a que el texto sea legible sobre la imagen */
-  background-image: linear-gradient(rgba(8, 16, 43, 0.6), rgba(8, 16, 43, 0.8)), url('./../../../public//Backgrounds/Castillo_de_Hogwarts.png');
+  background-image: linear-gradient(rgba(8, 16, 43, 0.6), rgba(8, 16, 43, 0.8)), url('./../../../public/Backgrounds/Castillo\ de\ Hogwarts.png');
   background-size: cover;
+  background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;
 }

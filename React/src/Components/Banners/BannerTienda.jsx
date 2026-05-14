@@ -3,16 +3,16 @@ import './../../Style/Banner/BannerTienda.css'
 
 const BannerTienda = () => {
   return (
-    <section className="heroSection">
-      <div className="textContent">
-        <h1 className="title">Tienda de Objetos</h1>
-        <p className="description">
+    <section className="heroSectionn">
+      <div className="textContenty">
+        <h1 className="titlee">Tienda de Objetos</h1>
+        <p className="descriptionn">
           Adentrate en al magina tienda de Hogwarts y compra objetos caracteristicos de la serie.
         </p>
-        <span className="quote">- Albus Dumbledore</span>
+        <span className="quotee">- Albus Dumbledore</span>
       </div>
-      <div className="visualContent">
-        <img src="./../../../public/Imagenes/Buho Libros.png" className="characterImage" alt="Buho" />
+      <div className="visualContentt">
+        <img src="./../../../public/Imagenes/Buho Libros.png" className="characterImagee" alt="Buho" />
       </div>
     </section>
   );

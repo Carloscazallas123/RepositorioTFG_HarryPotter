@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './../../Style/Secciones/TiendaCSS.css';
 import ObjetoService from './../../Services/ServicioObjetos';
-
+import { comprarObjeto } from './../../Utils/Alertas';
 const Tienda = () => {
     const [objetos, setObjetos] = useState([]);
 
@@ -24,6 +24,18 @@ const Tienda = () => {
             </div>
         );
     }
+
+    const Comprarobjeto = async (obj) => {
+    if (await comprarObjeto(obj.nombre)) {
+        console.log("¡Hechizo comprado directamente!");
+        const datos=await ObjetoService.Comprar(obj.id);
+        localStorage.setItem('usuario',JSON.stringify(datos));
+        console.log(datos);
+    } else {
+        console.log("El usuario canceló.");
+    }
+};
+
     console.log(objetos);
     return (
         <section className="tienda-container">
@@ -46,7 +58,7 @@ const Tienda = () => {
                                 <div className="objeto-coste">
                                     <span className="precio">{obj.costo} Puntos</span>
                                 </div>
-                                <button className="btn-comprar">Adquirir</button>
+                                <button className="btn-comprar"onClick={() => Comprarobjeto(obj)}>Adquirir</button>
                             </div>
                         </div>
                     </div>

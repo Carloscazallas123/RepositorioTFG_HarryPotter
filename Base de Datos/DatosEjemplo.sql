@@ -77,7 +77,7 @@ INSERT INTO OBJETO (NOMBRE, DESCRIPCION, COSTE, ID_PERSONAJE) VALUES
 ('Mimbulus Mimbletonia', 'Planta rara que expulsa chorros de savia apestosa', 65, (SELECT ID_PERSONAJE FROM PERSONAJE WHERE NOMBRE = 'Neville Longbottom'));
                     
 INSERT INTO USUARIO (NOMBRE, CORREO, CONTRASEÑA, CASA, PUNTOS) VALUES 
-('Juan Pablo Morales', 'juan.pablo@hogwarts.edu', 1234, 'Gryffindor', 150),
+('Juan Pablo Morales', 'juan.pablo@hogwarts.edu', 1234, 'Gryffindor', 9999999),
 ('Carlos Chacon Gomez', 'carlos.ch@hogwarts.edu', 5678, 'Slytherin', 120),
 ('Maria Sanchez Chacon', 'maria.s@hogwarts.edu', 9012, 'Ravenclaw', 200),
 ('Luna Lovegood', 'luna.l@hogwarts.edu', 1111, 'Ravenclaw', 300),
@@ -142,4 +142,3 @@ INSERT INTO COMPRA (ID_USUARIO, ID_OBJETO) VALUES
 ((SELECT ID_USUARIO FROM USUARIO WHERE NOMBRE = 'Carlos Chacon Gomez'), (SELECT ID_OBJETO FROM OBJETO WHERE NOMBRE = 'Moto Voladora'));
 
 SELECT * FROM USUARIO;
-SELECT * FROM COMENTARIO;

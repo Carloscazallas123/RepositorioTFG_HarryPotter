@@ -105,7 +105,7 @@ public class ImplementacionUsuario implements InterfazUsuario {
 			// Obtener los Objetos
 			List<CompraEntity> listaentidadesO = repositoriocompras.ObtenerPorid(entidad.getIdusuario());
 			List<Integer> listacompras = rellenarlistaobjetos(listaentidadesO);
-
+			
 			// Obtener los Personajes
 			List<PersonajeEntity> listaentidadesP = repositoriopersonajes.findPersonajesConTresObjetos(listacompras);
 			List<Integer> listapersonajes = rellenarlistapersonajes(listaentidadesP);

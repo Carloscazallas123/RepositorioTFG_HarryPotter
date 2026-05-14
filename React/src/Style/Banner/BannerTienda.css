@@ -2,7 +2,7 @@
 *{
   cursor: url('./../../assets/Varita.svg'), auto;
 }
-.heroSection {
+.heroSectionn {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -18,14 +18,14 @@
   background-attachment: fixed;
 }
 
-.textContent {
+.textContentt {
   flex: 1;
   min-width: 300px;
   max-width: 650px;
   text-align: left;
 }
 
-.title {
+.titlee {
   font-size: 3.3rem;
   color: #d4af37; /* Dorado Hogwarts */
   font-family: 'Cinzel', serif;
@@ -35,7 +35,7 @@
   text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
 }
 
-.description {
+.descriptionn {
   font-size: 1.2rem;
   line-height: 1.6;
   color: #e0e0e0;
@@ -44,7 +44,7 @@
   font-family: 'Georgia', serif;
 }
 
-.quote {
+.quotee {
   color: #d4af37;
   font-size: 1.1rem;
   font-style: italic;
@@ -53,14 +53,14 @@
   border-left: 2px solid #d4af37;
 }
 
-.visualContent {
+.visualContentt {
   flex: 0 1 450px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.characterImage {
+.characterImagee {
   width: 300px;
   height: auto;
   max-width: 450px;
