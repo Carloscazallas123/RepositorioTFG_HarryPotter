@@ -322,7 +322,9 @@ para mostrarlos en la pagina principal.
 | :--- | :--- | :--- |
 | _MostrarComentarios_ | GET | Una Lista de 3 Comentarios Aleatorios mostrados en la pagina |
 | _Comentar_ | GET | Crear/Editar el comentario |
-
-> A Partir de aqui ya no se empleará en el README debido a la Plantilla
+---
+### Por temás de entrega, no se va a desarollar nada en este README hasta que esté terminado el Proyecto.<br>
+# Imagenes de Demostracón
+<img width="1799" height="885" alt="image" src="https://github.com/user-attachments/assets/5dc3db06-badd-4ffc-b459-ffea5c1b2354" />
 
 
