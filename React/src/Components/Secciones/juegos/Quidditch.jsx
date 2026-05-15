@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import './../../../Style/Secciones/juegos/QuidditchCSS.css'; 
+import MinijuegoService from '../../../Services/ServicioMinijuegos';
+import { alertaExito } from '../../../Utils/Alertas';
 
 const Quidditch = ({ onVolver }) => {
     // Estados del juego
@@ -10,11 +12,13 @@ const Quidditch = ({ onVolver }) => {
     const [juegoEstado, setJuegoEstado] = useState('inicio'); // 'inicio', 'jugando', 'ganado', 'perdido'
     const [posicion, setPosicion] = useState({ top: '50%', left: '50%' });
     const [velocidadSnitch, setVelocidadSnitch] = useState(1400); // Dificultad Media: 1.4 segundos iniciales
+    const [puntaje, setPuntaje] = useState(0);
 
     const snitchTimerRef = useRef(null);
     const juegoTimerRef = useRef(null);
 
     const moverSnitch = () => {
+        // Manda al Snitch a una ubicacion aleatoria
         const randomTop = Math.floor(Math.random() * 75) + 10; 
         const randomLeft = Math.floor(Math.random() * 75) + 10;
         setPosicion({ top: `${randomTop}%`, left: `${randomLeft}%` });
@@ -55,6 +59,7 @@ const Quidditch = ({ onVolver }) => {
         return () => clearInterval(snitchTimerRef.current);
     }, [velocidadSnitch, juegoEstado]);
 
+    //Iniciar la Partida
     const iniciarPartido = () => {
         setAtrapadas(0);
         setErrores(0);
@@ -64,15 +69,17 @@ const Quidditch = ({ onVolver }) => {
         moverSnitch();
     };
 
+    //Cuando la Atrapa
     const handleAtraparSnitch = (e) => {
         e.stopPropagation(); 
         if (juegoEstado !== 'jugando') return;
-
         const nuevasAtrapadas = atrapadas + 1;
         setAtrapadas(nuevasAtrapadas);
-
+        const Puntaje = puntaje + 50;
+        setPuntaje(Puntaje);
         if (nuevasAtrapadas >= 10) {
             setJuegoEstado('ganado');
+            PartidaTerminada(puntaje);
         } else {
             // Aceleración media (-85ms) con un tope justo pero retador (600ms)
             setVelocidadSnitch((prevVel) => Math.max(600, prevVel - 85)); 
@@ -85,11 +92,18 @@ const Quidditch = ({ onVolver }) => {
 
         const nuevosErrores = errores + 1;
         setErrores(nuevosErrores);
-
+        setPuntaje(puntaje - 10);
         if (nuevosErrores >= 5) {
             setJuegoEstado('perdido');
+            PartidaTerminada(puntaje);
         }
     };
+    //Metodo para cuando terminas la partida
+    const PartidaTerminada = async (puntaje) => {
+        alertaExito('Enorabuena','has ganado' + puntaje);
+        const usuarioactualizado= await MinijuegoService.getUsuarioActualizado(puntaje);
+        localStorage.setItem('usuario',JSON.stringify(usuarioactualizado));
+    }
 
     return (
         <div className="juego-wrapper">

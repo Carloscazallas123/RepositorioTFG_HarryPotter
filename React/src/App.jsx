@@ -29,6 +29,9 @@ import PaginaMinijuegos from './Pages/PaginaMinijuegos';
 
 {/* Importe da ruta de los Juegos */}
 import Quidditch from './Components/Secciones/juegos/Quidditch';
+import CarreraEscobas from './Components/Secciones/juegos/Memoria';
+import MinijuegoMemoria from './Components/Secciones/juegos/Memoria';
+import DueloMagos from './Components/Secciones/juegos/DueloMagos';
 
 function App() {
   return (
@@ -65,6 +68,8 @@ function App() {
       {/* Rutas del la Pagina Principal */}
       <Routes>
       <Route path='/quidditch' element={<Quidditch/>}/>
+      <Route path='/memoria' element={<MinijuegoMemoria/>}/>
+      <Route path='/duelo' element={<DueloMagos/>}/>
       </Routes>
     </Router>
     

@@ -3,12 +3,14 @@ package com.harry.paquetes.dtos.usuario;
 public class UsuarioPuntosDTO {
 
 	private UsuarioFullDTO usuario;
-	private int puntos;
+	private int puntaje;
 	
-	public UsuarioPuntosDTO(UsuarioFullDTO usuario, int puntos) {
+	public UsuarioPuntosDTO(UsuarioFullDTO usuario, int puntaje) {
 		this.usuario = usuario;
-		this.puntos = puntos;
+		this.puntaje = puntaje;
 	}
+	
+	public UsuarioPuntosDTO() { }
 
 
 	public UsuarioFullDTO getUsuario() {
@@ -22,12 +24,12 @@ public class UsuarioPuntosDTO {
 
 
 	public int getPuntos() {
-		return puntos;
+		return puntaje;
 	}
 
 
 	public void setPuntos(int puntos) {
-		this.puntos = puntos;
+		this.puntaje = puntos;
 	}
 	
 	

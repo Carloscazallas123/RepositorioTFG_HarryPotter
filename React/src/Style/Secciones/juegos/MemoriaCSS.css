@@ -1,0 +1,130 @@
+/* ==========================================================================
+   CONTENEDOR GENERAL (ESTILO SOBRE)
+   ========================================================================== */
+.sobre-hogwarts-memoria {
+    background-color: #f2e6ce; /* Pergamino */
+    border: 2px solid #dfcca3;
+    border-radius: 4px;
+    padding: 40px 25px;
+    max-width: 650px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+    cursor: default !important;
+}
+
+/* ==========================================================================
+   REJILLA DEL TABLERO (GRID 4x3)
+   ========================================================================== */
+.tablero-memoria {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columnas fijas */
+    gap: 15px;
+    width: 100%;
+    margin-top: 10px;
+}
+
+/* ==========================================================================
+   ESTRUCTURA MÁGICA 3D DE LAS CARTAS
+   ========================================================================== */
+.carta-slot {
+    background-color: transparent;
+    height: 130px;
+    perspective: 1000px; /* Necesario para el efecto de profundidad 3D */
+    cursor: default !important;
+}
+
+.carta-interna {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-style: preserve-3d;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    border-radius: 6px;
+}
+
+/* Activador del giro */
+.carta-slot.volteada .carta-interna {
+    transform: rotateY(180deg);
+}
+
+/* Propiedades comunes de ambas caras */
+.carta-reverso, .carta-anverso {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; /* Oculta la cara trasera al girar */
+    backface-visibility: hidden;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #dfcca3;
+}
+
+/* --- REVERSO (Carta cerrada) --- */
+.carta-reverso {
+    background-color: #e6d8ba; /* Un pergamino un poco más oscuro */
+    box-shadow: inset 0 0 15px rgba(0,0,0,0.05);
+}
+
+.sello-lacre-mini {
+    font-size: 2.2rem;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.15));
+}
+
+/* --- ANVERSO (Carta abierta / Personaje) --- */
+.carta-anverso {
+    background-color: #faf4e8; /* Pergamino claro y limpio */
+    color: #1c3b2b; /* Tinta esmeralda */
+    transform: rotateY(180deg); /* Pre-girada para que se revele al voltear */
+    padding: 10px;
+}
+
+.personaje-emoji {
+    font-size: 2.2rem;
+    margin-bottom: 8px;
+}
+
+.personaje-nombre {
+    font-family: 'Cinzel', 'Georgia', serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+    margin: 0;
+    letter-spacing: 0.5px;
+    line-height: 1.2;
+}
+
+/* ==========================================================================
+   PANTALLA DE VICTORIA
+   ========================================================================== */
+.pantalla-victoria-memoria {
+    padding: 40px 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.pantalla-victoria-memoria h3 {
+    font-family: 'Cinzel', serif;
+    font-size: 1.8rem;
+    margin: 0;
+}
+
+.pantalla-victoria-memoria p {
+    font-family: 'Georgia', serif;
+    color: #4b5563;
+    font-size: 1rem;
+    margin: 0;
+}
+
+.esmeraldaT {
+    color:#1a0a2e;
+}

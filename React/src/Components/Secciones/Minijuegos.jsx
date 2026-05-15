@@ -40,7 +40,10 @@ const Minijuegos = () => {
                         perderás velocidad y tiempo. Completa el circuito en el menor tiempo posible para ganar.
                     </p>
                 </div>
-                <button className="btn-jugar-magico">Despegar</button>
+                <Link to={'/memoria'}>
+                    <button className="btn-jugar-magico">Despegar</button>
+                </Link>
+                
             </div>
 
             {/* MINIJUEGO 3: DUELO DE MAGOS */}
@@ -56,7 +59,10 @@ const Minijuegos = () => {
                         Si aciertas, tú atacarás a Draco. Gana quien reduzca la vida del oponente primero.
                     </p>
                 </div>
+                <Link to={'/duelo'}>
                 <button className="btn-jugar-magico">Batirse en Duelo</button>
+                </Link>
+                
             </div>
 
         </div>

@@ -18,4 +18,9 @@ export interface UsuarioFullDTO {
     puntos: number;
     objetos: number[];
     personajes: number[];
-}
+};
+
+export interface UsuarioPuntosDTO {
+    usuario: UsuarioFullDTO;
+    puntaje: number;
+};
