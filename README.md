@@ -326,5 +326,6 @@ para mostrarlos en la pagina principal.
 ### Por temás de entrega, no se va a desarollar nada en este README hasta que esté terminado el Proyecto.<br>
 # Imagenes de Demostracón
 <img width="1799" height="885" alt="image" src="https://github.com/user-attachments/assets/5dc3db06-badd-4ffc-b459-ffea5c1b2354" />
+<img width="1225" height="803" alt="image" src="https://github.com/user-attachments/assets/09fab4cb-cb19-4602-892e-3100f1040963" />
 
 
