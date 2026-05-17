@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import com.harry.paquetes.dtos.usuario.RegistroDTO;
 import com.harry.paquetes.dtos.usuario.SesionDTO;
 import com.harry.paquetes.dtos.usuario.UsuarioFullDTO;
+import com.harry.paquetes.dtos.usuario.UsuarioPuntosDTO;
 import com.harry.paquetes.entidades.CompraEntity;
 import com.harry.paquetes.entidades.PersonajeEntity;
 import com.harry.paquetes.entidades.UsuarioEntity;
@@ -137,5 +138,14 @@ public class ImplementacionUsuario implements InterfazUsuario {
 		}
 
 		return listapersonajes;
+	}
+
+	@Override
+	public UsuarioFullDTO actualizarpuntos(UsuarioPuntosDTO usuario) {
+	UsuarioEntity entidad= repositoriousuarios.ObtenerPorid(usuario.getUsuario().getIdusuario());
+	entidad.setPuntos(entidad.getPuntos() + usuario.getPuntos());
+	usuario.getUsuario().setPuntos(usuario.getUsuario().getPuntos() + usuario.getPuntos());
+	UsuarioFullDTO usuarioactualizado = usuario.getUsuario();
+		return usuarioactualizado;
 	}
 }

@@ -1,0 +1,171 @@
+/* ==========================================================================
+   CONTENEDOR PRINCIPAL (EL PERGAMINO DE LA ACADEMIA)
+   ========================================================================== */
+.sobre-hogwarts-sombrero {
+    background: linear-gradient(135deg, #1e0a2e 0%, #11051c 100%); /* Fondo morado oscuro místico */
+    border: 2px solid #d4af37; /* Borde dorado clásico de Hogwarts */
+    border-radius: 12px;
+    padding: 40px 35px;
+    max-width: 620px;
+    width: 100%;
+    box-shadow: 0 0 25px rgba(212, 175, 55, 0.2), inset 0 0 15px rgba(255, 255, 255, 0.05);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+/* Decoración de esquinas mágicas opcional (Efecto viñeta) */
+.sobre-hogwarts-sombrero::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    margin: 6px;
+    border-radius: 8px;
+    pointer-events: none;
+}
+
+/* ==========================================================================
+   ELEMENTOS DE TEXTO E INDICADORES
+   ========================================================================== */
+.progreso-test {
+    font-family: 'Cinzel', 'Georgia', serif;
+    font-size: 0.9rem;
+    color: #d4af37; /* Dorado */
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    text-shadow: 0 0 8px rgba(212, 175, 55, 0.4);
+}
+
+.enunciado-pregunta {
+    font-family: 'Cinzel', 'Georgia', serif;
+    font-size: 1.4rem;
+    color: #ffffff;
+    font-weight: 600;
+    line-height: 1.5;
+    margin-bottom: 35px;
+    min-height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* ==========================================================================
+   BOTONES DE SELECCIÓN (OPCIONES DE RESPUESTA)
+   ========================================================================== */
+.lista-opciones {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+}
+
+.btn-opcion-magica {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(212, 175, 55, 0.25);
+    color: #e5e7eb;
+    padding: 16px 24px;
+    font-family: 'Georgia', serif;
+    font-size: 1.05rem;
+    text-align: left;
+    border-radius: 6px;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Efecto de iluminación morada/dorada al pasar el cursor */
+.btn-opcion-magica:hover {
+    background: rgba(212, 175, 55, 0.1);
+    color: #ffffff;
+    border-color: #d4af37;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(212, 175, 55, 0.25);
+    padding-left: 30px; /* Sutil desplazamiento hacia la derecha */
+}
+
+.btn-opcion-magica:active {
+    transform: translateY(1px);
+}
+
+/* ==========================================================================
+   PANTALLA DE REVELACIÓN (VEREDICTO)
+   ========================================================================== */
+.resultado-seleccion {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 25px 0;
+    animation: fadeInVeredicto 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.escudo-casa-animado {
+    font-size: 5rem;
+    width: 130px;
+    height: 130px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    margin-bottom: 25px;
+    animation: pulsoEscudo 2.5s infinite alternate ease-in-out;
+}
+
+/* Marcos temáticos e iluminación de las Casas */
+.escudo-casa-animado.gryffindor { 
+    background: radial-gradient(circle, #991b1b 0%, #450a0a 100%); 
+    border: 3px solid #f59e0b; 
+    box-shadow: 0 0 25px rgba(245, 158, 11, 0.4);
+}
+.escudo-casa-animado.slytherin { 
+    background: radial-gradient(circle, #065f46 0%, #022c22 100%); 
+    border: 3px solid #94a3b8; 
+    box-shadow: 0 0 25px rgba(148, 163, 184, 0.4);
+}
+.escudo-casa-animado.ravenclaw { 
+    background: radial-gradient(circle, #1e40af 0%, #1e3a8a 100%); 
+    border: 3px solid #b45309; 
+    box-shadow: 0 0 25px rgba(180, 83, 9, 0.4);
+}
+.escudo-casa-animado.hufflepuff { 
+    background: radial-gradient(circle, #fef08a 0%, #ca8a04 100%); 
+    border: 3px solid #1e293b; 
+    box-shadow: 0 0 25px rgba(202, 138, 4, 0.4);
+}
+
+.titulo-casa-ganadora {
+    font-family: 'Cinzel', serif;
+    font-size: 2rem;
+    color: #ffffff;
+    margin: 15px 0;
+    letter-spacing: 2px;
+    text-shadow: 0 2px 8px rgba(255, 255, 255, 0.2);
+}
+
+.descripcion-casa {
+    font-family: 'Georgia', serif;
+    color: #9ca3af; /* Gris claro legible sobre morado */
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 35px;
+    max-width: 500px;
+}
+
+/* ==========================================================================
+   ANIMACIONES MÍSTICAS
+   ========================================================================== */
+@keyframes fadeInVeredicto {
+    from { opacity: 0; transform: translateY(15px) scale(0.98); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes pulsoEscudo {
+    from { 
+        transform: scale(1); 
+    }
+    to { 
+        transform: scale(1.08); 
+    }
+}

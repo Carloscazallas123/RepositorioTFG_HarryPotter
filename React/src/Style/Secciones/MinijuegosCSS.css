@@ -1,0 +1,151 @@
+/* ==========================================================================
+   CONTENEDOR DE LA SALA GENERAL (FONDO DE PANTALLA)
+   ========================================================================== */
+.minijuegos-container {
+    padding: 120px 20px 60px 20px;
+    background-color: #1a0a2e; /* Gris azulado muy oscuro para que los sobres resalten */
+    min-height: 100vh;
+    text-align: center;
+    border: 2px solid #a72424; /* Rojo del borde inferior de tu Nav */
+}
+
+.minijuegos-titulo {
+    font-family: 'Cinzel', 'Georgia', serif;
+    color: #f2e6ce; /* Tono pergamino claro para el título principal */
+    font-size: 2.8rem;
+    margin-bottom: 12px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.minijuegos-subtitulo {
+    color: #9ca3af;
+    font-style: italic;
+    font-size: 1.1rem;
+    margin-bottom: 60px;
+    letter-spacing: 1px;
+}
+
+/* ==========================================================================
+   REJILLA DE TARJETAS (GRID)
+   ========================================================================== */
+.juegos-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 35px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 15px;
+}
+
+/* ==========================================================================
+   LAS TARJETAS: FORMATO SOBRE DE HOGWARTS
+   ========================================================================== */
+.juego-card {
+    background-color: #f2e6ce; /* Color pergamino real de la carta de Hogwarts */
+    border: 2px solid #dfcca3;  /* Borde sutil que simula el doblez del sobre */
+    border-radius: 4px;        /* Esquinas casi rectas, simulando un sobre físico */
+    padding: 45px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 480px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5); /* Sombra para dar volumen de objeto real */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* El sobre se eleva ligeramente al pasar el ratón, manteniendo la sobriedad */
+.juego-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6);
+}
+
+/* ==========================================================================
+   SELLO DE LACRE (EL CONTENEDOR DEL ICONO)
+   ========================================================================== */
+.juego-icono-wrapper {
+    background-color: #7a1c1c; /* Rojo oscuro mate, idéntico al lacre de cera real */
+    border: 1px solid #5a1414;
+    width: 75px;
+    height: 75px;
+    border-radius: 50%; /* Circular como un sello estampado */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 25px;
+    box-shadow: inset 0 0 12px rgba(0, 0, 0, 0.5), 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+}
+
+/* El sello reacciona sutilmente cuando interactúas con el sobre */
+.juego-card:hover .juego-icono-wrapper {
+    transform: scale(1.05);
+}
+
+.juego-icono {
+    font-size: 2rem;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+}
+
+/* ==========================================================================
+   TEXTOS EN TINTA ESMERALDA (ESTILO MINERVA MCCOGNAGALL)
+   ========================================================================== */
+.juego-info {
+    text-align: center;
+    width: 100%;
+}
+
+.juego-info h3 {
+    color: #000000; /* Verde esmeralda oscuro de las cartas de admisión */
+    font-family: 'Cinzel', 'Georgia', serif;
+    font-size: 1.6rem;
+    margin-bottom: 18px;
+    letter-spacing: 1px;
+    font-weight: 700;
+}
+
+.juego-info p {
+    color: #000000; /* Un tono verde más legible y suave para el cuerpo del texto */
+    font-family: 'Georgia', serif;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 35px;
+    padding: 0 10px;
+    text-align: center;
+}
+
+/* ==========================================================================
+   BOTÓN DE ACCIÓN: SELLO IMPRESO EN LA CARTA
+   ========================================================================== */
+.btn-jugar-magico {
+    color: #f2e6ce;
+    padding: 12px 0;
+    border-radius: 4px;
+    font-family: 'Cinzel', serif;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    transition: background-color 0.2s ease;
+    width: 85%;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    text-align: center;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+}
+
+/* ==========================================================================
+   RESPONSIVO
+   ========================================================================== */
+@media (max-width: 1024px) {
+    .juegos-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+    }
+}
+
+@media (max-width: 700px) {
+    .juegos-grid {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+    }
+}

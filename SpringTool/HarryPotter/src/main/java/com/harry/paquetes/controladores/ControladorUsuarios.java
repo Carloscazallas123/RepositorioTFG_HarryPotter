@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.harry.paquetes.dtos.usuario.RegistroDTO;
 import com.harry.paquetes.dtos.usuario.SesionDTO;
 import com.harry.paquetes.dtos.usuario.UsuarioFullDTO;
+import com.harry.paquetes.dtos.usuario.UsuarioPuntosDTO;
 import com.harry.paquetes.servicios.interfaces.InterfazUsuario;
 
 @RestController
@@ -32,4 +33,12 @@ public class ControladorUsuarios {
 		UsuarioFullDTO usuario= interfazusuario.iniciarsesionusuario(sesion);
 		return ResponseEntity.ok(usuario);
 	}
+	
+	// Controlador para Actualizarpuntos
+	@PostMapping("/Puntaje")
+	public ResponseEntity<UsuarioFullDTO> ActualizarPuntos(@RequestBody UsuarioPuntosDTO usuario) {
+		System.out.println(usuario.getPuntos() + usuario.getUsuario().getNombre());
+	UsuarioFullDTO usuarioactualizado=interfazusuario.actualizarpuntos(usuario);
+	return ResponseEntity.ok(usuarioactualizado);
+		}
 }
