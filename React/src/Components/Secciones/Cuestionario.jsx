@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './../../Style/Secciones/CuestionarioCSS.css';
 import { Link } from 'react-router-dom';
+import CasaService from '../../Services/ServiceCasas';
 
 const PREGUNTAS = [
     {
@@ -132,7 +133,7 @@ const PaginaCuestionario = ({ onTestCompletado }) => {
         }
     };
 
-    const calcularCasaGanadora = (puntosFinales) => {
+    const calcularCasaGanadora = async (puntosFinales) => {
         // Buscamos la casa con la puntuación más alta
         let maxPuntos = -1;
         let casaElegida = 'hufflepuff'; // Por defecto si hay empates absolutos
@@ -152,9 +153,9 @@ const PaginaCuestionario = ({ onTestCompletado }) => {
         // Para que se sincronice en tiempo real con el Navbar con sesión sin tumbar la app
         const usuarioString = localStorage.getItem('usuario');
         if (usuarioString) {
-            const usuarioObj = JSON.parse(usuarioString);
-            usuarioObj.casa = casaFormateada; // Le añadimos la casa calculada
-            localStorage.setItem('usuario', JSON.stringify(usuarioObj));
+            const data = await CasaService.getUsuarioActualizado(casaFormateada);
+            localStorage.setItem('usuario',JSON.stringify(data));
+            console.log(data);
         }
     };
 

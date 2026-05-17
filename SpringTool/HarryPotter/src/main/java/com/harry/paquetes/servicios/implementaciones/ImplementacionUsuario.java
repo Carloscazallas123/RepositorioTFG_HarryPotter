@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.harry.paquetes.dtos.usuario.RegistroDTO;
 import com.harry.paquetes.dtos.usuario.SesionDTO;
+import com.harry.paquetes.dtos.usuario.UsuarioCasasDTO;
 import com.harry.paquetes.dtos.usuario.UsuarioFullDTO;
 import com.harry.paquetes.dtos.usuario.UsuarioPuntosDTO;
 import com.harry.paquetes.entidades.CompraEntity;
@@ -106,7 +107,7 @@ public class ImplementacionUsuario implements InterfazUsuario {
 			// Obtener los Objetos
 			List<CompraEntity> listaentidadesO = repositoriocompras.ObtenerPorid(entidad.getIdusuario());
 			List<Integer> listacompras = rellenarlistaobjetos(listaentidadesO);
-			
+
 			// Obtener los Personajes
 			List<PersonajeEntity> listaentidadesP = repositoriopersonajes.findPersonajesConTresObjetos(listacompras);
 			List<Integer> listapersonajes = rellenarlistapersonajes(listaentidadesP);
@@ -120,6 +121,24 @@ public class ImplementacionUsuario implements InterfazUsuario {
 		return usuario;
 	}
 
+	@Override
+	public UsuarioFullDTO actualizarpuntos(UsuarioPuntosDTO usuario) {
+		UsuarioEntity entidad = repositoriousuarios.ObtenerPorid(usuario.getUsuario().getIdusuario());
+		entidad.setPuntos(entidad.getPuntos() + usuario.getPuntos());
+		usuario.getUsuario().setPuntos(usuario.getUsuario().getPuntos() + usuario.getPuntos());
+		UsuarioFullDTO usuarioactualizado = usuario.getUsuario();
+		return usuarioactualizado;
+	}
+
+	@Override
+	public UsuarioFullDTO actualizarcasa(UsuarioCasasDTO usuario) {
+		UsuarioEntity entidad = repositoriousuarios.ObtenerPorid(usuario.getUsuario().getIdusuario());
+		entidad.setCasa(usuario.getCasa());
+		usuario.getUsuario().setCasa(usuario.getCasa());
+		UsuarioFullDTO usuarioactualizado = usuario.getUsuario();
+		return usuarioactualizado;
+	}
+
 	// ------------- Procesos SubExternos --------------
 
 	public List<Integer> rellenarlistaobjetos(List<CompraEntity> listaentidades) {
@@ -130,7 +149,7 @@ public class ImplementacionUsuario implements InterfazUsuario {
 
 		return listacompras;
 	}
-	
+
 	public List<Integer> rellenarlistapersonajes(List<PersonajeEntity> listaentidades) {
 		List<Integer> listapersonajes = new ArrayList<>();
 		for (int i = 0; i < listaentidades.size(); i++) {
@@ -138,14 +157,5 @@ public class ImplementacionUsuario implements InterfazUsuario {
 		}
 
 		return listapersonajes;
-	}
-
-	@Override
-	public UsuarioFullDTO actualizarpuntos(UsuarioPuntosDTO usuario) {
-	UsuarioEntity entidad= repositoriousuarios.ObtenerPorid(usuario.getUsuario().getIdusuario());
-	entidad.setPuntos(entidad.getPuntos() + usuario.getPuntos());
-	usuario.getUsuario().setPuntos(usuario.getUsuario().getPuntos() + usuario.getPuntos());
-	UsuarioFullDTO usuarioactualizado = usuario.getUsuario();
-		return usuarioactualizado;
 	}
 }
