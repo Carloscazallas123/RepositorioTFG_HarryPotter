@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './../../../Style/Secciones/juegos/DueloMagosCSS.css';
-
+import MinijuegoService from '../../../Services/ServicioMinijuegos';
+import { alertaExito } from '../../../Utils/Alertas';
+import { Link } from 'react-router-dom';
 // Banco de palabras mágicas para el duelo
 const PALABRAS_MAGICAS = [
     "Expelliarmus", "Flipendo", "Alohomora", "Lumos", "Incendio", 
@@ -18,7 +20,7 @@ const DueloMagos = ({ onVolver }) => {
     const [tiempoRestante, setTiempoRestante] = useState(TIEMPO_LIMITE_SEGUNDOS);
     const [juegoEstado, setJuegoEstado] = useState('inicio'); // 'inicio', 'jugando', 'ganado', 'perdido'
     const [mensajeFeedback, setMensajeFeedback] = useState('¡Prepara tus dedos!');
-    
+    const [puntaje, setPuntaje] = useState(100);
 
     // Timers en Refs para evitar desfases con los re-renders
     const timerRef = useRef(null);
@@ -66,9 +68,13 @@ const DueloMagos = ({ onVolver }) => {
 
     const dracoAtaca = () => {
         setMensajeFeedback('¡Demasiado lento! Draco te ha lanzado un maleficio 💥');
+        setPuntaje(puntaje - 20);
         setVidaHarry((prev) => {
             const nuevaVida = Math.max(0, prev - 25);
-            if (nuevaVida <= 0) setJuegoEstado('perdido');
+            if (nuevaVida <= 0){
+            setJuegoEstado('perdido');
+            PartidaTerminada(puntaje);
+            }
             return nuevaVida;
         });
         if (estadoRef.current === 'jugando') obtenerPalabraAleatoria();
@@ -82,10 +88,14 @@ const DueloMagos = ({ onVolver }) => {
         // Comparamos ignorando espacios extra al principio o al final
         if (inputUsuario.trim() === palabraActual) {
             setMensajeFeedback('¡Hechizo lanzado con éxito! ⚡');
-
+            setPuntaje(puntaje + 100);
+            console.log(puntaje);
             setVidaDraco((prev) => {
                 const nuevaVida = Math.max(0, prev - 25);
-                if (nuevaVida <= 0) setJuegoEstado('ganado');
+                if (nuevaVida <= 0) {
+                    setJuegoEstado('ganado');
+                    PartidaTerminada(puntaje);
+                }
                 return nuevaVida;
             });
             obtenerPalabraAleatoria();
@@ -94,15 +104,21 @@ const DueloMagos = ({ onVolver }) => {
         }
     };
 
+    //Metodo para cuando terminas la partida
+    const PartidaTerminada = async (puntaje) => {
+        const usuarioactualizado= await MinijuegoService.getUsuarioActualizado(puntaje);
+        localStorage.setItem('usuario',JSON.stringify(usuarioactualizado));
+    }
+
     return (
         <div className="juego-wrapper">
             <div className="juego-box sobre-hogwarts-duelo">
                 <h2 className="juego-titulo">⌨️ DUELO DE MECANOGRAFÍA 🪄</h2>
                 
-                <button className="btn-volver" onClick={onVolver}>
-                    ← Huir de la Batalla
-                </button>
-
+                <Link to={'/minijuegos'}>
+                    <button className="btn-volver"> ← Huir de la Batalla </button>
+                </Link>
+                
                 {/* HUD de vida estilo juego de lucha */}
                 <div className="duelo-marcador-vida">
                     <div className="mago-status">

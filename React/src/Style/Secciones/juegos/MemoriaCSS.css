@@ -2,8 +2,8 @@
    CONTENEDOR GENERAL (ESTILO SOBRE)
    ========================================================================== */
 .sobre-hogwarts-memoria {
-    background-color: #f2e6ce; /* Pergamino */
-    border: 2px solid #dfcca3;
+    background-color: #1a0a2e; /* Pergamino */
+    border: 2px solid #d4af37;
     border-radius: 4px;
     padding: 40px 25px;
     max-width: 650px;
@@ -69,7 +69,7 @@
 
 /* --- REVERSO (Carta cerrada) --- */
 .carta-reverso {
-    background-color: #e6d8ba; /* Un pergamino un poco más oscuro */
+    background-color: #9d3838; /* Un pergamino un poco más oscuro */
     box-shadow: inset 0 0 15px rgba(0,0,0,0.05);
 }
 

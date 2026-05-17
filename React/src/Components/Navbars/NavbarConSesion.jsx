@@ -1,21 +1,62 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import './../../Style/Navbars/NavbarConSesionCSS.css';
+import { alertaError } from '../../Utils/Alertas';
 const NavbarConSesion = () => {
     const navigate = useNavigate();
 
-    // Recuperamos el usuario y el token del almacenamiento local
-    const token = localStorage.getItem('token');
-    const usuarioString = localStorage.getItem('usuario');
-    
-    // Parseamos los datos siguiendo el type UsuarioFullDTO
-    const usuario = JSON.parse(usuarioString);
+    // 1. Intentamos leer lo que haya en el disco duro del navegador
+    const [usuario, setUsuario] = useState(() => {
+        const usuarioString = localStorage.getItem('usuario');
+        try {
+            return usuarioString ? JSON.parse(usuarioString) : null;
+        } catch (e) {
+            console.error("Error al parsear el usuario del localStorage:", e);
+            return null;
+        }
+    });
+
+    // 2. Comprobación en tiempo de ejecución
+    useEffect(() => {
+        const mUsuarioString = localStorage.getItem('usuario');
+
+        // 🔥 ESTO TE DIRÁ EN LA CONSOLA QUÉ ESTÁ LEYENDO EL NAVBAR
+        console.log("=== INSPECCIÓN DE VARITA (NAVBAR) ===");
+        console.log("Usuario String detectado:", mUsuarioString);
+        if (mUsuarioString) {
+            setUsuario(JSON.parse(mUsuarioString));
+        } else {
+            // 🚨 SI TE ECHA, ESTE MENSAJE TE DIRÁ POR QUÉ MALDITA VARIABLE ES
+            console.warn("¡Expulsado! Motivo ->  Usuario ausente:", !mUsuarioString);
+            
+            // Le damos un margen de 300ms por si el Login se está retrasando en escribir en el disco
+            const timeoutRedireccion = setTimeout(() => {
+                const tokenRechequeo = localStorage.getItem('token');
+                const usuarioRechequeo = localStorage.getItem('usuario');
+                
+                if (!tokenRechequeo || !usuarioRechequeo) {
+                    navigate('/login');
+                }
+            }, 300);
+
+            return () => clearTimeout(timeoutRedireccion);
+        }
+    }, [navigate]);
 
     const manejarLogout = () => {
-        localStorage.removeItem('token');
         localStorage.removeItem('usuario');
+        setUsuario(null);
         navigate('/login');
     };
+
+    // Si aún está validando, mostramos la pantalla de carga para que el useEffect trabaje
+    if (!usuario) {
+        return (
+            <div className="hp-nav-loading-placeholder" style={{ color: '#dfcca3', padding: '20px', textAlign: 'center' }}>
+                <span>Verificando credenciales mágicas...</span> 
+            </div>
+        ); 
+    }
 
   return (
     <nav className="NavBar">

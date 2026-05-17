@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './../../../Style/Secciones/juegos/MemoriaCSS.css';
 import { alertaExito } from '../../../Utils/Alertas';
 import MinijuegoService from '../../../Services/ServicioMinijuegos';
+import { Link } from 'react-router-dom';
 const PERSONAJES_BASE = [
     { name: 'Harry Potter', emoji: '⚡' },
     { name: 'Hermione Granger', emoji: '📚' },
@@ -90,7 +91,6 @@ const MinijuegoMemoria = ({ onVolver }) => {
 
     //Metodo para cuando terminas la partida
     const PartidaTerminada = async (puntaje) => {
-        alertaExito('Enorabuena','has ganado ' + puntaje + ' puntos');
         const usuarioactualizado= await MinijuegoService.getUsuarioActualizado(puntaje);
         localStorage.setItem('usuario',JSON.stringify(usuarioactualizado));
     }
@@ -103,9 +103,9 @@ const MinijuegoMemoria = ({ onVolver }) => {
             <div className="juego-box sobre-hogwarts-memoria">
                 <h2 className="juego-titulo">🧠 MEMORIA DE MAGOS 🧠</h2>
                 
-                <button className="btn-volver" onClick={onVolver}>
-                    ← Volver a la Sala
-                </button>
+                <Link to={'/minijuegos'}>
+                    <button className="btn-volver"> ← Huir de la Batalla </button>
+                </Link>
 
                 <div className="snitch-marcador">
                     <span>Movimientos restantes: <strong className={movimientosRestantes <= 3 ? "texto-alerta" : "esmeralda"}>{movimientosRestantes}</strong></span>

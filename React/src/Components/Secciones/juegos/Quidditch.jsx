@@ -100,7 +100,6 @@ const Quidditch = ({ onVolver }) => {
     };
     //Metodo para cuando terminas la partida
     const PartidaTerminada = async (puntaje) => {
-        alertaExito('Enorabuena','has ganado' + puntaje);
         const usuarioactualizado= await MinijuegoService.getUsuarioActualizado(puntaje);
         localStorage.setItem('usuario',JSON.stringify(usuarioactualizado));
     }

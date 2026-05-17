@@ -33,11 +33,12 @@ const Minijuegos = () => {
                     <span className="juego-icono">🧹</span>
                 </div>
                 <div className="juego-info">
-                    <h3>Carrera de Escobas</h3>
+                    <h3>Cartas Magicas</h3>
                     <p>
-                        Recorre un circuito lleno de obstáculos volando en tu escoba, al mismo tiempo que recoges una 
-                        cierta cantidad de calderos dorados para sumar puntos. Evita chocar con los obstáculos, ya que 
-                        perderás velocidad y tiempo. Completa el circuito en el menor tiempo posible para ganar.
+                        Dumbledore te da 12 cartas magicas de Hogwarts. Tu propósito sera encontrar las parejas 
+                        bajo un cierto numero de intentos. Si, por el contrario, no has completado el desafio y 
+                        se te han acabado los intentos, el juego termina. ¡ No decepciones a Dumbledore !
+
                     </p>
                 </div>
                 <Link to={'/memoria'}>
@@ -54,9 +55,9 @@ const Minijuegos = () => {
                 <div className="juego-info">
                     <h3>Duelo de Magos</h3>
                     <p>
-                        Enfréntate en un duelo de magos contra Draco Malfoy. Para atacar, deberás responder bien las 
-                        preguntas que te va lanzando Snape con respecto a la serie. Si fallas, Draco te atacará y perderás vida. 
-                        Si aciertas, tú atacarás a Draco. Gana quien reduzca la vida del oponente primero.
+                        Enfréntate en un duelo de magos contra Draco Malfoy. Para atacar, deberás usas tus 
+                        magicas habilidades de mecanografia para enfrentarlo. Si fallas, Draco te atacará y perderás vida. 
+                        Si aciertas, le atacarás. ¡ Que gane el mejor !
                     </p>
                 </div>
                 <Link to={'/duelo'}>

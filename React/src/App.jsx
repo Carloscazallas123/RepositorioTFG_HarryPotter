@@ -26,7 +26,7 @@ import FormularioComentario from './Components/PlantillaPrincipal/CrearComentari
 {/* Importe de la ruta del las Secciones */}
 import PaginaTienda from './Pages/PaginaTienda';
 import PaginaMinijuegos from './Pages/PaginaMinijuegos';
-
+import PaginaCuestionario from './Components/Secciones/Cuestionario';
 {/* Importe da ruta de los Juegos */}
 import Quidditch from './Components/Secciones/juegos/Quidditch';
 import CarreraEscobas from './Components/Secciones/juegos/Memoria';
@@ -44,6 +44,7 @@ function App() {
         <Route path="/home" element={<PaginaPrincipal/>} />
         <Route path="/tienda" element={<PaginaTienda/>} />
         <Route path='/minijuegos' element={<PaginaMinijuegos/>}/>
+        <Route path='/cuestionario' element={<PaginaCuestionario/>}/>
       </Routes>
       {/* Rutas del Footer */}
       <Routes>

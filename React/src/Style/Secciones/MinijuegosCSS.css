@@ -3,9 +3,10 @@
    ========================================================================== */
 .minijuegos-container {
     padding: 120px 20px 60px 20px;
-    background-color: #0d131a; /* Gris azulado muy oscuro para que los sobres resalten */
+    background-color: #1a0a2e; /* Gris azulado muy oscuro para que los sobres resalten */
     min-height: 100vh;
     text-align: center;
+    border: 2px solid #a72424; /* Rojo del borde inferior de tu Nav */
 }
 
 .minijuegos-titulo {

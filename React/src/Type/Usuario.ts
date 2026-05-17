@@ -24,3 +24,8 @@ export interface UsuarioPuntosDTO {
     usuario: UsuarioFullDTO;
     puntaje: number;
 };
+
+export interface UsuarioCasaDTO {
+    usuario: UsuarioFullDTO;
+    casa: String;
+};
