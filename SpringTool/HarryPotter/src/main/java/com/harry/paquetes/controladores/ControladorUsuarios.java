@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.harry.paquetes.dtos.usuario.RegistroDTO;
 import com.harry.paquetes.dtos.usuario.SesionDTO;
+import com.harry.paquetes.dtos.usuario.UsuarioCasasDTO;
 import com.harry.paquetes.dtos.usuario.UsuarioFullDTO;
 import com.harry.paquetes.dtos.usuario.UsuarioPuntosDTO;
 import com.harry.paquetes.servicios.interfaces.InterfazUsuario;
@@ -41,4 +42,12 @@ public class ControladorUsuarios {
 	UsuarioFullDTO usuarioactualizado=interfazusuario.actualizarpuntos(usuario);
 	return ResponseEntity.ok(usuarioactualizado);
 		}
+	
+	// Controlador para Actualizar la casa
+	@PostMapping("/Casa")
+		public ResponseEntity<UsuarioFullDTO> ActualizarCasa(@RequestBody UsuarioCasasDTO usuario) {
+			System.out.println(usuario.getCasa() + " "+ usuario.getUsuario().getNombre());
+		UsuarioFullDTO usuarioactualizado=interfazusuario.actualizarcasa(usuario);
+		return ResponseEntity.ok(usuarioactualizado);
+			}
 }
