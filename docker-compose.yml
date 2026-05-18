@@ -1,0 +1,43 @@
+services:
+  web:
+    image: nginx
+    ports:
+      - 80:80
+      - 443:443
+    volumes:
+      - ./React/dist:/usr/share/nginx/html
+      - ./nginx.conf:/etc/nginx/nginx.conf
+      - ./ssl/nginx.crt:/etc/nginx/ssl/nginx.crt
+      - ./ssl/nginx.key:/etc/nginx/ssl/nginx.key
+    depends_on:
+      - server
+
+  db:
+    image: mysql:oraclelinux9
+    container_name: proyectotfg_carlos-db-1
+    command: --lower_case_table_names=1
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: hogwartsweb
+      TZ: "Europe/Madrid"
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-p1234"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+    volumes:
+      - ./BaseDatos/Hogwartsweb.sql:/docker-entrypoint-initdb.d/archivo_01.sql
+      - ./BaseDatos/DatosEjemplo.sql:/docker-entrypoint-initdb.d/archivo_02.sql
+
+  server:
+      environment:
+      - TZ=Europe/Madrid
+      build: 
+        context: ./SpringTool/HarryPotter
+        dockerfile: ./DockerFile
+      container_name: proyectotfg_carlos-server-1
+      ports:
+      - 9090:9090
+      depends_on:
+       db:
+        condition: service_healthy

@@ -12,7 +12,7 @@ const BannerTienda = () => {
         <span className="quotee">- Albus Dumbledore</span>
       </div>
       <div className="visualContentt">
-        <img src="./../../../public/Imagenes/Buho Libros.png" className="characterImagee" alt="Buho" />
+        <img src="/Imagenes/Buho Libros.png" className="characterImagee" alt="Buho" />
       </div>
     </section>
   );
