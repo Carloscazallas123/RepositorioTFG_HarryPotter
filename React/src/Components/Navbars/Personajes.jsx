@@ -10,6 +10,7 @@ const PersonajesList = () => {
     
     const navigate = useNavigate(); // Hook para redirigir
 
+    //Metodo para llamar el Servicio de Personajes
     useEffect(() => {
         const fetchPersonajes = async () => {
             try {

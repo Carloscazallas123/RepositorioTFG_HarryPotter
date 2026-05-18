@@ -12,7 +12,7 @@ const PERSONAJES_BASE = [
     { name: 'Draco Malfoy', emoji: '🍏' }
 ];
 
-const MOVIMIENTOS_MAXIMOS = 1000; // Aquí puedes cambiar el límite de intentos
+const MOVIMIENTOS_MAXIMOS = 12; // Aquí puedes cambiar el límite de intentos
 
 const MinijuegoMemoria = ({ onVolver }) => {
     const [puntaje, setPuntaje] = useState(100);
@@ -49,12 +49,14 @@ const MinijuegoMemoria = ({ onVolver }) => {
         const nuevasSeleccionadas = [...seleccionadas, carta];
         setSeleccionadas(nuevasSeleccionadas);
 
+
         if (nuevasSeleccionadas.length === 2) {
             const elSiguienteMovimiento = movimientos + 1;
             setMovimientos(elSiguienteMovimiento);
             
             const [primera, segunda] = nuevasSeleccionadas;
 
+            //Si acierta, se suman 500 puntos
             if (primera.name === segunda.name) {
                 const nuevasEmparejadas = [...emparejadas, primera.name];
                 setEmparejadas(nuevasEmparejadas);
@@ -68,12 +70,13 @@ const MinijuegoMemoria = ({ onVolver }) => {
                     PartidaTerminada(puntaje);
                     setPuntaje(0);
                 }
-            } else {
-                // No coinciden: voltear de vuelta tras 1 segundo
+            } else { 
+                //Para evitar numeros negativos
                 if(puntaje==0){
                     setPuntaje(0); 
                     console.log('0 puntos');
                 }
+
                 setPuntaje(puntaje-100);
                 console.log('Menos 100 puntos');
                 setTimeout(() => {
@@ -93,6 +96,7 @@ const MinijuegoMemoria = ({ onVolver }) => {
     const PartidaTerminada = async (puntaje) => {
         const usuarioactualizado= await MinijuegoService.getUsuarioActualizado(puntaje);
         localStorage.setItem('usuario',JSON.stringify(usuarioactualizado));
+        alertaExito('Has consegido ' + puntaje + ' puntos');
     }
 
     // Calculamos cuántos movimientos le quedan al mago

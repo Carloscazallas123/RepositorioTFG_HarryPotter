@@ -62,6 +62,8 @@ const Registrarse = () => {
                         <label>🔐 Contraseña</label>
                         <input 
                             type="password" 
+                            inputMode='numeric'
+                            pattern='[0-9]'
                             name="contraseña" 
                             value={contraseña}
                             onChange={(e) => setcontraseña(e.target.value)} 
@@ -74,6 +76,8 @@ const Registrarse = () => {
                         <label>🔄 Repetir Contraseña</label>
                         <input 
                             type="password" 
+                            inputMode='numeric'
+                            pattern='[0-9]'
                             name="repcontraseña" 
                             value={repcontraseña}
                             onChange={(e) => setRepcontraseña(e.target.value)} 

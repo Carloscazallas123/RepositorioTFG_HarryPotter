@@ -74,14 +74,25 @@ public class ImplementacionObjetos implements InterfazObjeto {
 		}
 
 		if (yacomprado == false) {
-			CompraEntity compranueva = new CompraEntity();
-			compranueva.setObjeto(repositorioObjetos.ObtenerPorid(compra.getIdobjeto()));
-			compranueva.setUsuario(UsuarioRepo.ObtenerPorid(usuario.getIdusuario()));
-			usuario.getObjetos().add(compranueva.getObjeto().getIdobjeto());
-			usuario.setPuntos(usuario.getPuntos() - compranueva.getObjeto().getCosto());
-			compranueva.getUsuario()
-					.setPuntos(compranueva.getUsuario().getPuntos() - compranueva.getObjeto().getCosto());
-			ComprasRepo.save(compranueva);
+			ObjetoEntity objeto=repositorioObjetos.ObtenerPorid(compra.getIdobjeto());
+			if(compra.getUsuario().getPuntos()<=0) {
+				System.out.println("No tiene puntos");
+			} else {
+				CompraEntity compranueva = new CompraEntity();
+				if(compra.getUsuario().getPuntos() > objeto.getCosto()) {
+					compranueva.setObjeto(repositorioObjetos.ObtenerPorid(compra.getIdobjeto()));
+					compranueva.setUsuario(UsuarioRepo.ObtenerPorid(usuario.getIdusuario()));
+					usuario.getObjetos().add(compranueva.getObjeto().getIdobjeto());
+					usuario.setPuntos(usuario.getPuntos() - compranueva.getObjeto().getCosto());
+					compranueva.getUsuario()
+							.setPuntos(compranueva.getUsuario().getPuntos() - compranueva.getObjeto().getCosto());
+					ComprasRepo.save(compranueva);
+				} else {
+					System.out.println("Precio mayor a los puntos el usuario");
+				}
+				
+			}
+			
 		}
 		List<PersonajeEntity>listanueva=PersonajesRepo.findNuevosPersonajes(listausuario, listapersonajes);
 		rellenarpersonajes(usuario,listanueva);

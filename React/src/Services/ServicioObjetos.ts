@@ -1,5 +1,6 @@
 import { UsuarioFullDTO } from './../Type/Usuario';
 import { CompraDTO, ObjetoInvDTO, ObjetTiendDTO } from './../Type/Objeto';
+import { alertaError } from '../Utils/Alertas';
 const API_URL = '/api/Objetos';
 
 const ObjetoService = {
@@ -36,12 +37,24 @@ const ObjetoService = {
     }
     },
 
-    Comprar: async (id:number): Promise<UsuarioFullDTO> => {
+    Comprar: async (id:number,costo:number): Promise<UsuarioFullDTO> => {
     const token = localStorage.getItem('usuario');
     if (!token) {
             throw new Error('Token de usuario no encontrado');
         }
     const usuario: UsuarioFullDTO = JSON.parse(token);
+
+    //Comprobacion para evitar numeros negativos
+    if(usuario.puntos<costo){
+      alertaError('No tienes suficientes puntos')
+    }
+    //Comprobacion para que no repita objeto
+    for (const numero of usuario.objetos) {
+      if(Number(numero) === Number(id)){
+        alertaError('Ya tienes este objeto');
+      }
+    }
+    
     const compra: CompraDTO = {
       usuario: usuario,
       idobjeto: id

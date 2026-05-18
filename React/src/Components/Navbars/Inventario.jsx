@@ -8,6 +8,8 @@ const InventarioObjetos = () => {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
+    //Se llama al servicio de Objetos para recibir una lista 
+    //Con los objetos del Usuario.
     useEffect(() => {
         const fetchInventario = async () => {
             try {

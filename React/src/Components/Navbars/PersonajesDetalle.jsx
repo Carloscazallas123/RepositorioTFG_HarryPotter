@@ -25,9 +25,6 @@ const PersonajeDetalle= () => {
         if (id) obtenerDatos();
     }, []);
 
-    if (loading) return <div className="magic-loader">Consultando los archivos del Ministerio...</div>;
-    if (!pj) return <div>Personaje no encontrado.</div>;
-
     return (
         <div className="detalle-page-container">
             <button className="back-btn" onClick={() => navigate(-1)}>

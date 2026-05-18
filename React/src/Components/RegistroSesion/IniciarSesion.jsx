@@ -42,6 +42,7 @@ const IniciarSesion = () => {
                         <label>🔐 Contraseña</label>
                         <input 
                             type="password" 
+                            inputMode='numeric'
                             placeholder="••••••••" 
                             onChange={(e) => setPass(e.target.value)} 
                             required

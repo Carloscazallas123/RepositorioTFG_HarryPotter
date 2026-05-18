@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import './../../Style/Secciones/TiendaCSS.css';
 import ObjetoService from './../../Services/ServicioObjetos';
-import { comprarObjeto } from './../../Utils/Alertas';
+import { alertaError, comprarObjeto } from './../../Utils/Alertas';
 const Tienda = () => {
     const [objetos, setObjetos] = useState([]);
-
+    const [loTiene, setTiene] = useState(false);
     useEffect(() => {
         const cargarDatos = async () => {
             try {
@@ -26,14 +26,16 @@ const Tienda = () => {
     }
 
     const Comprarobjeto = async (obj) => {
-    if (await comprarObjeto(obj.nombre)) {
-        console.log("¡Hechizo comprado directamente!");
-        const datos=await ObjetoService.Comprar(obj.id);
-        localStorage.setItem('usuario',JSON.stringify(datos));
-        console.log(datos);
+    if (comprarObjeto(obj.nombre)) {
+            console.log("¡Hechizo comprado directamente!");
+            const datos=await ObjetoService.Comprar(obj.id,obj.costo);
+            localStorage.setItem('usuario',JSON.stringify(datos));
+            console.log(datos);
     } else {
         console.log("El usuario canceló.");
     }
+   
+        
 };
 
     console.log(objetos);

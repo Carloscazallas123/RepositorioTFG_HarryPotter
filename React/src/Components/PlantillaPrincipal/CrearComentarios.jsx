@@ -11,25 +11,19 @@ const FormularioComentario = () => {
     const [enviando, setEnviando] = useState(false);
     const navigate = useNavigate(); // Hook para redirigir
 
-    // 2. Comprobación en tiempo de ejecución
+    // Aqui se comprueba si el usuario ha iniciado sesion o no
     useEffect(() => {
-        const mUsuarioString = localStorage.getItem('usuario');
-
-        // 🔥 ESTO TE DIRÁ EN LA CONSOLA QUÉ ESTÁ LEYENDO EL NAVBAR
+        const token = localStorage.getItem('usuario');
         console.log("=== INSPECCIÓN DE VARITA (NAVBAR) ===");
-        console.log("Usuario String detectado:", mUsuarioString);
-        if (mUsuarioString) {
-            setUsuario(JSON.parse(mUsuarioString));
-        } else {
-            // 🚨 SI TE ECHA, ESTE MENSAJE TE DIRÁ POR QUÉ MALDITA VARIABLE ES
-            console.warn("¡Expulsado! Motivo ->  Usuario ausente:", !mUsuarioString);
-            
-            // Le damos un margen de 300ms por si el Login se está retrasando en escribir en el disco
+        console.log("Usuario String detectado:", token);
+        if (token) {
+            setUsuario(JSON.parse(token));
+        } else {     
+            // Margen de 300m de la pagina principal y la pagina de inicio de sesion
             const timeoutRedireccion = setTimeout(() => {
-                const tokenRechequeo = localStorage.getItem('token');
                 const usuarioRechequeo = localStorage.getItem('usuario');
                 
-                if (!tokenRechequeo || !usuarioRechequeo) {
+                if (!usuarioRechequeo) {
                     navigate('/login');
                 }
             }, 300);
@@ -38,6 +32,8 @@ const FormularioComentario = () => {
         }
     }, [navigate]);
 
+
+    // Metodo para guardar/modificar el comentario
     const handleSubmit = async (e) => {
         e.preventDefault();
         

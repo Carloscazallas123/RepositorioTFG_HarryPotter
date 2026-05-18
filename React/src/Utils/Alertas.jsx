@@ -10,24 +10,25 @@ const swalCustom = Swal.mixin({
     }
 });
 
-export const alertaExito = (titulo, mensaje) => {
+//Alerta Para cuando se cumple
+export const alertaExito = (mensaje) => {
     return swalCustom.fire({
-        title: `✨ ${titulo}`,
+        title: `✨ ¡Alohomora!`,
         text: mensaje,
         icon: 'success',
         confirmButtonText: 'Continuar 🏰'
     });
 };
-
-export const alertaError = (titulo, mensaje) => {
+//Alerta para cuando se falla
+export const alertaError = (mensaje) => {
     return swalCustom.fire({
-        title: `❌ ${titulo}`,
+        title: `❌ ¡Alohomora!`,
         text: mensaje,
         icon: 'error',
         confirmButtonText: 'Reintentar 🪄'
     });
 };
-
+//Alerta al momento de comprar un producto
 export const comprarObjeto = async (nombreObjeto) => {
     const result = await Swal.fire({
         title: '¿Confirmar?',

@@ -30,14 +30,14 @@ const DueloMagos = ({ onVolver }) => {
         estadoRef.current = juegoEstado;
     }, [juegoEstado]);
 
-    // Seleccionar una palabra aleatoria asegurando que no se repita inmediatamente la misma
+    // Metodo para obtener una palabra aleatoriasacad de la Lista Palabras Magicas
     const obtenerPalabraAleatoria = () => {
         let nuevaPalabra = PALABRAS_MAGICAS[Math.floor(Math.random() * PALABRAS_MAGICAS.length)];
         setPalabraActual(nuevaPalabra);
         setInputUsuario('');
         setTiempoRestante(TIEMPO_LIMITE_SEGUNDOS);
     };
-
+    //Metodo para iniciar el duelo
     const iniciarDuelo = () => {
         setVidaHarry(100);
         setVidaDraco(100);
@@ -46,7 +46,7 @@ const DueloMagos = ({ onVolver }) => {
         obtenerPalabraAleatoria();
     };
 
-    // Bucle del reloj de Draco
+    //Tiempo transcurrido
     useEffect(() => {
         if (juegoEstado === 'jugando') {
             timerRef.current = setInterval(() => {
@@ -66,6 +66,7 @@ const DueloMagos = ({ onVolver }) => {
         return () => clearInterval(timerRef.current);
     }, [juegoEstado, palabraActual]);
 
+    //Metodo para cuando ataca draco (Pierdes 20 puntos)
     const dracoAtaca = () => {
         setMensajeFeedback('¡Demasiado lento! Draco te ha lanzado un maleficio 💥');
         setPuntaje(puntaje - 20);
@@ -80,12 +81,12 @@ const DueloMagos = ({ onVolver }) => {
         if (estadoRef.current === 'jugando') obtenerPalabraAleatoria();
     };
 
-    // Procesar el intento al pulsar Enter
+    // Metodo para cuando le des al Enter
     const handleSubmit = (e) => {
         e.preventDefault();
         if (juegoEstado !== 'jugando') return;
 
-        // Comparamos ignorando espacios extra al principio o al final
+        // con el .trim, quitamos los espacios tanto del principio, como al final
         if (inputUsuario.trim() === palabraActual) {
             setMensajeFeedback('¡Hechizo lanzado con éxito! ⚡');
             setPuntaje(puntaje + 100);
@@ -108,6 +109,7 @@ const DueloMagos = ({ onVolver }) => {
     const PartidaTerminada = async (puntaje) => {
         const usuarioactualizado= await MinijuegoService.getUsuarioActualizado(puntaje);
         localStorage.setItem('usuario',JSON.stringify(usuarioactualizado));
+        alertaExito('Has consegido ' + puntaje + ' puntos');
     }
 
     return (
