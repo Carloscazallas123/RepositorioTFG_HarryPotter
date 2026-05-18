@@ -12,7 +12,7 @@ const BannerMinijuegos = () => {
         <span className="Quote">- Albus Dumbledore</span>
       </div>
       <div className="VisualContent">
-        <img src="./../../../public/Imagenes/Harry con escoba.png" className="CharacterImage" alt="HarryEscoba" />
+        <img src="/Imagenes/Harry con escoba.png" className="CharacterImage" alt="HarryEscoba" />
       </div>
     </section>
   );

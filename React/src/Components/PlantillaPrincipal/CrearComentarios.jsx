@@ -2,12 +2,42 @@ import React, { useState } from 'react';
 import './../../Style/CrearComentariosCSS.css';
 import ComentarioService from './../../Services/ServicioComentarios';
 import { useNavigate } from 'react-router-dom'; 
+import { useEffect } from 'react';
 import { alertaError, alertaExito } from './../../Utils/Alertas';
+
 const FormularioComentario = () => {
     const [descripcion, setDescripcion] = useState('');
     const [valor, setValor] = useState(0);
     const [enviando, setEnviando] = useState(false);
     const navigate = useNavigate(); // Hook para redirigir
+
+    // 2. Comprobación en tiempo de ejecución
+    useEffect(() => {
+        const mUsuarioString = localStorage.getItem('usuario');
+
+        // 🔥 ESTO TE DIRÁ EN LA CONSOLA QUÉ ESTÁ LEYENDO EL NAVBAR
+        console.log("=== INSPECCIÓN DE VARITA (NAVBAR) ===");
+        console.log("Usuario String detectado:", mUsuarioString);
+        if (mUsuarioString) {
+            setUsuario(JSON.parse(mUsuarioString));
+        } else {
+            // 🚨 SI TE ECHA, ESTE MENSAJE TE DIRÁ POR QUÉ MALDITA VARIABLE ES
+            console.warn("¡Expulsado! Motivo ->  Usuario ausente:", !mUsuarioString);
+            
+            // Le damos un margen de 300ms por si el Login se está retrasando en escribir en el disco
+            const timeoutRedireccion = setTimeout(() => {
+                const tokenRechequeo = localStorage.getItem('token');
+                const usuarioRechequeo = localStorage.getItem('usuario');
+                
+                if (!tokenRechequeo || !usuarioRechequeo) {
+                    navigate('/login');
+                }
+            }, 300);
+
+            return () => clearTimeout(timeoutRedireccion);
+        }
+    }, [navigate]);
+
     const handleSubmit = async (e) => {
         e.preventDefault();
         

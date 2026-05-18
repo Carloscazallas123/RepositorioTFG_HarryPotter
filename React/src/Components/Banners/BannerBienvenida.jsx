@@ -12,7 +12,7 @@ const Bienvenida = () => {
         <span className="quote">- Albus Dumbledore</span>
       </div>
       <div className="visualContent">
-        <img src="./../../../public/Imagenes/HarryPotter_Caricatura.png" className="characterImage" alt="Harry" />
+        <img src="./Imagenes/HarryPotter_Caricatura.png" className="characterImage" alt="Harry" />
       </div>
     </section>
   );

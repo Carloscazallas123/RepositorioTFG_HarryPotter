@@ -9,9 +9,9 @@ const Footer = () => {
         {/* COLUMNA 1: LOGO Y REDES */}
         <div className="footer-column brand-col">
           <div className="social-links">
-            <a href="https://www.facebook.com/harrypotter/" target='_blank'><img src="./../../../public/Iconos/Facebook_Icono.png" alt="Facebook" className='ImagenesIconos'/></a>
-            <a href="https://www.instagram.com/harrypotterspain/?hl=es" target='_blank'><img src="./../../../public/Iconos/Instagram_Icono.png" alt="Instagram" className='ImagenesIconos'/></a>
-            <a href="https://www.youtube.com/@harrypotter" target='_blank'><img src="./../../../public/Iconos/YouTube_Icono.png" alt="YouTube" className='ImagenesIconos'/></a>
+            <a href="https://www.facebook.com/harrypotter/" target='_blank'><img src="/Iconos/Facebook_Icono.png" alt="Facebook" className='ImagenesIconos'/></a>
+            <a href="https://www.instagram.com/harrypotterspain/?hl=es" target='_blank'><img src="/Iconos/Instagram_Icono.png" alt="Instagram" className='ImagenesIconos'/></a>
+            <a href="https://www.youtube.com/@harrypotter" target='_blank'><img src="/Iconos/YouTube_Icono.png" alt="YouTube" className='ImagenesIconos'/></a>
           </div>
         </div>
 
@@ -40,7 +40,7 @@ const Footer = () => {
         {/* COLUMNA 4: CONTACTO */}
         <div className="footer-column contact-col">
           <div>
-            <img src="./../../public/Iconos/Gafas_Icono.png" alt="GafasIcono" className='GafasIcono'/>
+            <img src="/Iconos/Gafas_Icono.png" alt="GafasIcono" className='GafasIcono'/>
           </div>
           <h4 className="contact-title">Correo Electrónico:</h4>
           <a href="mailto:Hogwartsweb@gmail.com" className="footer-email">

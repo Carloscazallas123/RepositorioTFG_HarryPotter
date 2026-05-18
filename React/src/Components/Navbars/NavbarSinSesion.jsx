@@ -17,7 +17,7 @@ const Navbar = () => {
         <div className="ContendorIzquierda">
           <Link to='/login' className="Enlaces">PERSONAJES</Link>
           <Link to='/login' className="Enlaces">INVENTARIO</Link>
-          <img src="./../../../../public/Iconos/Logo HogwartWeb.png" alt="Logo HogwartWeb" className='ImagenLogo'/>
+          <img src="/Iconos/Logo HogwartWeb.png" alt="Logo HogwartWeb" className='ImagenLogo'/>
         </div>
       </div>
     </nav>
