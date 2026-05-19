@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom'; 
 import PersonajeService from './../../Services/ServicioPersonajes';
 import './../../Style/Navbars/PersonajesDetallesCSS.css';
-
+import './../../Querys/NavBars/NavBarDetallesQuerys.css'
 const PersonajeDetalle= () => {
     const { id } = useParams();
     const navigate = useNavigate();
@@ -24,6 +24,9 @@ const PersonajeDetalle= () => {
 
         if (id) obtenerDatos();
     }, []);
+
+    if (loading) return <div className="magic-loader">Consultando los archivos del Ministerio...</div>;
+    if (!pj) return <div>Personaje no encontrado.</div>;
 
     return (
         <div className="detalle-page-container">

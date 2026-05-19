@@ -1,0 +1,79 @@
+/* --- PANTALLAS MEDIANAS --- */
+@media (max-width: 1200px) {
+  .casasGrid {
+    /* Reducimos el hueco central progresivamente para que las cartas no se desborden lateralmente */
+    column-gap: 150px; 
+    row-gap: 40px;
+  }
+}
+
+/* --- TABLETS --- */
+@media (max-width: 1024px) {
+  .casasTitle {
+    font-size: 2.5rem; /* Escalamos el título principal */
+    margin-bottom: 30px;
+  }
+
+  .casasGrid {
+    /* Ajustamos el hueco para que las 2 columnas queden cómodas en una tablet */
+    column-gap: 40px; 
+    row-gap: 40px;
+  }
+
+  .cardContainer {
+    width: 280px; /* Hacemos las cartas un pelín más estrechas para asegurar espacio */
+    height: 360px;
+  }
+
+  .backFace h3 {
+    font-size: 1.7rem;
+  }
+
+  .backFace p {
+    font-size: 0.95rem;
+    line-height: 1.4;
+  }
+}
+
+/* --- MÓVILES --- */
+@media (max-width: 768px) {
+  .casasSection {
+    padding: 40px 15px;
+  }
+
+  .casasTitle {
+    font-size: 2rem;
+    margin-bottom: 25px;
+  }
+
+  .casasGrid {
+    /* Eliminamos el diseño de 2 columnas y el hueco central gigantesco; todo pasa a una línea vertical */
+    grid-template-columns: 1fr; 
+    row-gap: 30px;
+    width: 100%;
+  }
+
+  .cardContainer {
+    width: 100%;
+    max-width: 310px; /* Permite que la carta sea ancha pero con un límite seguro en móviles */
+    height: 380px;
+  }
+
+  .commonFace {
+    padding: 20px; /* Compactamos ligeramente el aire interno del pergamino */
+  }
+
+  .frontFace img {
+    max-height: 190px; /* Redimensionamos los escudos de las casas en móvil */
+  }
+
+  .backFace h3 {
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+  }
+
+  .backFace p {
+    font-size: 0.95rem;
+    padding: 0;
+  }
+}

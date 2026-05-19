@@ -1,0 +1,44 @@
+/* --- TABLETS --- */
+@media (max-width: 1024px) {
+  .personajes-container {
+    padding: 3rem 1.5rem; /* Reducimos un poco el espacio exterior */
+  }
+
+  .personajes-header h2 {
+    font-size: 2.8rem; /* El título se adapta para pantallas medianas */
+  }
+
+  .personajes-grid {
+    gap: 1.8rem; /* Estrechamos el espacio entre tarjetas */
+  }
+}
+
+/* --- MÓVILES --- */
+@media (max-width: 768px) {
+  .personajes-container {
+    padding: 2rem 1rem;
+  }
+
+  .personajes-header {
+    margin-bottom: 2.5rem; /* Menos espacio muerto arriba */
+  }
+
+  .personajes-header h2 {
+    font-size: 2rem; /* Título cómodo para leer en un teléfono */
+    letter-spacing: 2px;
+  }
+
+  .personajes-grid {
+    /* Forzamos que las tarjetas ocupen el ancho disponible en una sola columna vertical */
+    grid-template-columns: 1fr; 
+    gap: 1.5rem;
+  }
+
+  .personaje-card {
+    padding: 1.5rem; /* Tarjetas ligeramente más compactas */
+  }
+
+  .pj-nombre {
+    font-size: 1.3rem; /* El nombre del personaje se escala para que no se corte */
+  }
+}

@@ -9,6 +9,7 @@ const FormularioComentario = () => {
     const [descripcion, setDescripcion] = useState('');
     const [valor, setValor] = useState(0);
     const [enviando, setEnviando] = useState(false);
+    const [usuario, setUsuario] = useState();
     const navigate = useNavigate(); // Hook para redirigir
 
     // Aqui se comprueba si el usuario ha iniciado sesion o no

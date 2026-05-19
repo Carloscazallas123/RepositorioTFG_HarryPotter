@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 const Reseñas = () => {
     const [listaComentarios, setListaComentarios] = useState([]);
     const [cargando, setCargando] = useState(true);
-
+    const [usuario, setUsuario] = useState();
     useEffect(() => {
         const cargarDatos = async () => {
             const datos = await ComentarioService.getComentarios();

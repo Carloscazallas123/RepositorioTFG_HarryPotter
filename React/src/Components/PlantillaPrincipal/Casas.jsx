@@ -1,6 +1,6 @@
 import React from 'react';
 import './../../Style/SinIniciarSesion/CasasCSS.css';
-
+import './../../Querys/Principal/CasasQuerys.css'
 // Componente para mostrar la carta de cada casa
 const CartaCasa = ({ imagen, titulo, descripcion, colorTitulo }) => {
   return (

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom'; // 👈 Importante para la navegación
 import PersonajeService from './../../Services/ServicioPersonajes';
 import './../../Style/Navbars/PersonajesCSS.css';
-
+import './../../Querys/NavBars/PersonajesQuerys.css'
 const PersonajesList = () => {
     const [personajes, setPersonajes] = useState([]);
     const [loading, setLoading] = useState(true);

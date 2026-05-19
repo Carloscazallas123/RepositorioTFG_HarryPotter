@@ -1,0 +1,48 @@
+/* --- TABLETS --- */
+@media (max-width: 1024px) {
+  .footer-container {
+    /* Tu grid original pasa de 4 columnas a 2 columnas por fila */
+    grid-template-columns: 1fr 1fr; 
+    gap: 30px;
+    padding: 40px 30px;
+  }
+
+  .divider-left {
+    /* Quitamos tu línea vertical divisoria para que no flote en medio del diseño 2x2 */
+    border-left: none; 
+    padding-left: 0;
+  }
+}
+
+/* --- MÓVILES --- */
+@media (max-width: 768px) {
+  .footer-container {
+    /* Tu grid pasa a tener 1 sola columna vertical (todo apilado) */
+    grid-template-columns: 1fr; 
+    gap: 35px;
+    padding: 40px 20px;
+    text-align: center; /* Centramos los textos para que luzca mejor en móviles */
+  }
+
+  .brand-col, .footer-column, .contact-col {
+    /* Alineamos todos los bloques internos al centro de la pantalla */
+    align-items: center; 
+    text-align: center;
+  }
+
+  .social-links {
+    /* Centramos tus iconos de Facebook, Instagram y YouTube */
+    justify-content: center; 
+    padding-right: 0; /* Eliminamos el padding lateral para que no se descentren */
+  }
+
+  .footer-list li {
+    margin-bottom: 15px; /* Separación un poco más amplia para pulsar bien con el dedo */
+  }
+
+  .ImagenesIconos {
+    /* Reducimos ligeramente el tamaño de tus iconos en móvil para que no saturen */
+    width: 75px;
+    height: 60px;
+  }
+}

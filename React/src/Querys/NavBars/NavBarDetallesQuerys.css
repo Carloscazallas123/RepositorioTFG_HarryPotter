@@ -1,0 +1,76 @@
+/* --- TABLETS --- */
+@media (max-width: 1024px) {
+  .detalle-page-container {
+    padding: 1.5rem;
+  }
+
+  .detalle-view {
+    max-width: 95%; /* Aprovecha mejor el ancho disponible en tablets */
+  }
+
+  .view-header {
+    padding: 2.5rem 2rem; /* Aligeramos el espacio superior */
+  }
+
+  .view-header h1 {
+    font-size: 2.5rem; /* Ajuste sutil del tamaño de fuente */
+  }
+
+  .view-content {
+    padding: 2.5rem 2rem;
+  }
+}
+
+/* --- MÓVILES --- */
+@media (max-width: 768px) {
+  .detalle-page-container {
+    padding: 1rem;
+  }
+
+  .back-btn {
+    width: 100%; /* El botón de volver se vuelve un bloque completo más fácil de pulsar */
+    text-align: center;
+    padding: 0.7rem 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .view-header {
+    padding: 2rem 1rem;
+  }
+
+  .view-header h1 {
+    font-size: 1.8rem; /* Evita que los nombres largos desborden la tarjeta */
+  }
+
+  .casa-tag {
+    font-size: 0.8rem;
+    padding: 4px 16px;
+  }
+
+  .view-content {
+    padding: 2rem 1rem; /* Compactación para pantallas estrechas */
+  }
+
+  .bio-text {
+    font-size: 1rem; /* Lectura más cómoda en smartphones */
+    line-height: 1.6;
+    margin-bottom: 2rem;
+  }
+
+  .inventory-section h3 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+  }
+
+  .items-list {
+    gap: 8px; /* Reduce la separación entre insignias de inventario */
+    justify-content: center; /* Centra los objetos si se rompen en varias filas */
+  }
+
+  .item-badge {
+    padding: 8px 14px; /* Botones de inventario un poco más compactos */
+    font-size: 0.9rem;
+    width: 100%; /* Las insignias se apilan de forma limpia si el texto es largo */
+    max-width: 280px;
+  }
+}

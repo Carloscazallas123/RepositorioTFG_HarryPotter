@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import './../../Style/Navbars/NavbarConSesionCSS.css';
 import { alertaError } from '../../Utils/Alertas';
+import './../../Querys/NavBars/NavBarConCesionQuery.css'
 const NavbarConSesion = () => {
     const navigate = useNavigate();
 
@@ -27,7 +28,7 @@ const NavbarConSesion = () => {
                 // Margen de 300m de la pagina principal y la pagina de inicio de sesion
                 const timeoutRedireccion = setTimeout(() => {
                     const usuarioRechequeo = localStorage.getItem('usuario');
-                    
+                    // Si no hay ningun token, te redirige al login
                     if (!usuarioRechequeo) {
                         navigate('/login');
                     }

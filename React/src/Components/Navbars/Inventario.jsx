@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import ObjetoService from './../../Services/ServicioObjetos';
 import './../../Style/Navbars/InventarioCSS.css';
-
+import './../../Querys/NavBars/InventarioQuery.css'
 const InventarioObjetos = () => {
     // Cambiamos el nombre a 'objetos' porque ahora guardaremos objetos completos, no solo IDs
     const [objetos, setObjetos] = useState([]);

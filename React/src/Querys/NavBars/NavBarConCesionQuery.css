@@ -1,0 +1,35 @@
+/* ============================================================
+   3. RESPONSIVE DESIGN (Solo Media Queries)
+   ============================================================ */
+
+/* --- TABLETS (Pantallas menores de 1024px) --- */
+@media (max-width: 1024px) {
+  .ContenedorNav {
+    /* Mantenemos tus dos columnas internas pero dándoles flexibilidad */
+    flex-wrap: wrap; 
+    gap: 20px;
+    justify-content: center; /* Centra los bloques si se quedan sin espacio */
+  }
+}
+
+/* --- MÓVILES (Pantallas menores de 768px) --- */
+@media (max-width: 768px) {
+  .ContenedorNav {
+    /* Fuerza a que la parte del usuario y la de los enlaces se apilen verticalmente */
+    flex-direction: column; 
+    gap: 25px;
+    text-align: center;
+  }
+
+  .ContendorIzquierda {
+    /* Hace que los enlaces (Personajes, Inventario, Logo) se apilen uno debajo de otro */
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .hp-session-container {
+    /* Centra el avatar y el botón de salir en la pantalla del móvil */
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}

@@ -1,0 +1,71 @@
+/* --- TABLETS --- */
+@media (max-width: 1024px) {
+  .inventario-container {
+    padding: 2.5rem 1.5rem; /* Ajustamos márgenes externos */
+  }
+
+  .inventario-header h2 {
+    font-size: 2.5rem; /* El título se adapta al espacio de la tablet */
+    letter-spacing: 2px;
+  }
+
+  .objetos-grid {
+    gap: 1.8rem; /* Estrechamos la rejilla para optimizar espacio */
+  }
+}
+
+/* --- MÓVILES --- */
+@media (max-width: 768px) {
+  .inventario-container {
+    padding: 2rem 1rem;
+  }
+
+  .inventario-header {
+    margin-bottom: 2.5rem; /* Menos espacio en blanco arriba */
+    gap: 0.8rem;
+  }
+
+  .inventario-header h2 {
+    font-size: 1.8rem; /* Escala del título para pantallas compactas */
+    padding: 10px;
+    letter-spacing: 1px;
+  }
+
+  .stat-pill.gold {
+    font-size: 0.95rem; /* Ajuste del tamaño de la insignia del total */
+    padding: 0.5rem 1.2rem;
+  }
+
+  .objetos-grid {
+    /* Forzamos una sola columna vertical bien definida */
+    grid-template-columns: 1fr; 
+    gap: 1.5rem;
+  }
+
+  .objeto-item {
+    padding: 1.5rem; /* Compactamos el cuerpo de la tarjeta */
+  }
+
+  .objeto-item:hover {
+    transform: scale(1.02); /* Suavizamos el efecto hover para evitar rebotes visuales en pantallas táctiles */
+  }
+
+  .objeto-icon {
+    font-size: 2.5rem; /* El icono se adapta al tamaño móvil */
+    margin-bottom: 1rem;
+  }
+
+  .objeto-nombre {
+    font-size: 1.3rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .objeto-descripcion {
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .loading-magic {
+    font-size: 1.4rem; /* Texto de carga cómodo para móviles */
+  }
+}
