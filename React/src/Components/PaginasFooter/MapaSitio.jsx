@@ -1,12 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './../../Style/FooterPagesCSS.css';
-
+import { useNavigate } from 'react-router-dom';
 const MapaDelSitio = () => {
+const navigate = useNavigate();
+
   return (
     <div className="footer-page-container">
       <div className="footer-content-card">
-        <Link to="/" className="back-btn-footer">← Volver al Gran Comedor</Link>
+        <button onClick={() => navigate(-1)} className="back-btn-footer">
+        <span className="wand-spark">←</span> Volver al Gran Comedor
+        </button>
         
         <h2>Mapa del Sitio 🗺️</h2>
         <p>
@@ -16,7 +20,7 @@ const MapaDelSitio = () => {
 
         <h3>Secciones Principales</h3>
         <ul>
-          <li><Link to="/">Pagina Principal</Link></li>
+          <li><Link to="/home">Pagina Principal</Link></li>
           <li><Link to="/cuestionario">Cuestionario</Link></li>
           <li><Link to="/minijuegos">Minijuegos</Link></li>
           <li><Link to="/tienda">Tienda</Link></li>

@@ -57,7 +57,7 @@ const PersonajesList = () => {
                         </div>
                     ))
                 ) : (
-                    <p className="empty-msg">No hay personajes registrados en el gran comedor.</p>
+                    <p className="empty-msg"> </p>
                 )}
             </div>
         </div>

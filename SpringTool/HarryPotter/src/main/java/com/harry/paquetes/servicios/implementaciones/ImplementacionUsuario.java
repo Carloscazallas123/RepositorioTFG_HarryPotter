@@ -125,6 +125,7 @@ public class ImplementacionUsuario implements InterfazUsuario {
 	public UsuarioFullDTO actualizarpuntos(UsuarioPuntosDTO usuario) {
 		UsuarioEntity entidad = repositoriousuarios.ObtenerPorid(usuario.getUsuario().getIdusuario());
 		entidad.setPuntos(entidad.getPuntos() + usuario.getPuntos());
+		repositoriousuarios.save(entidad);
 		usuario.getUsuario().setPuntos(usuario.getUsuario().getPuntos() + usuario.getPuntos());
 		UsuarioFullDTO usuarioactualizado = usuario.getUsuario();
 		return usuarioactualizado;
@@ -134,6 +135,7 @@ public class ImplementacionUsuario implements InterfazUsuario {
 	public UsuarioFullDTO actualizarcasa(UsuarioCasasDTO usuario) {
 		UsuarioEntity entidad = repositoriousuarios.ObtenerPorid(usuario.getUsuario().getIdusuario());
 		entidad.setCasa(usuario.getCasa());
+		repositoriousuarios.save(entidad);
 		usuario.getUsuario().setCasa(usuario.getCasa());
 		UsuarioFullDTO usuarioactualizado = usuario.getUsuario();
 		return usuarioactualizado;

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import './../../Style/Navbars/NavbarConSesionCSS.css';
-import { alertaError } from '../../Utils/Alertas';
+import { alertaError, alertaWarning } from '../../Utils/Alertas';
 import './../../Querys/NavBars/NavBarConCesionQuery.css'
 const NavbarConSesion = () => {
     const navigate = useNavigate();
@@ -30,6 +30,7 @@ const NavbarConSesion = () => {
                     const usuarioRechequeo = localStorage.getItem('usuario');
                     // Si no hay ningun token, te redirige al login
                     if (!usuarioRechequeo) {
+                        alertaWarning('No has iniciado Sesion');
                         navigate('/login');
                     }
                 }, 300);

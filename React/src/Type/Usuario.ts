@@ -1,13 +1,13 @@
 export interface RegistroDTO {
-    nombre: String;
-    email: String;
-    contraseña: String;
-    repcontraseña: String;
+    nombre: string;
+    email: string;
+    contraseña: string;
+    repcontraseña: string;
 };
 
 export interface SesionDTO {
-    nombre: String;
-    contraseña: String;
+    nombre: string;
+    contraseña: string;
 };
 
 export interface UsuarioFullDTO {
@@ -27,5 +27,5 @@ export interface UsuarioPuntosDTO {
 
 export interface UsuarioCasaDTO {
     usuario: UsuarioFullDTO;
-    casa: String;
+    casa: string;
 };

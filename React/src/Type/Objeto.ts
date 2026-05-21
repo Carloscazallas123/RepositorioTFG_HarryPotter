@@ -2,16 +2,16 @@ import { UsuarioFullDTO } from "./Usuario";
 
 export interface ObjetoInvDTO {
     id: number;
-    nombre: String;
-    descripcion: String;
+    nombre: string;
+    descripcion: string;
     costo: number;
-    personaje: String;
+    personaje: string;
 };
 
 export interface ObjetTiendDTO {
     id: number;
-    nombre: String;
-    descripcion: String;
+    nombre: string;
+    descripcion: string;
     costo: number;
 };
 

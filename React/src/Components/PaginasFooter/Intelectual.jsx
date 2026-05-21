@@ -1,12 +1,15 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { use } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import './../../Style/FooterPagesCSS.css';
-
+import { Navigate } from 'react-router-dom';
 const PropiedadIntelectual = () => {
+  const navigate = useNavigate();
   return (
     <div className="footer-page-container">
       <div className="footer-content-card">
-        <Link to="/" className="back-btn-footer">← Volver al Gran Comedor</Link>
+        <button onClick={() => navigate(-1)} className="back-btn-footer">
+        <span className="wand-spark">←</span> Volver al Gran Comedor
+        </button>
         
         <h2>Propiedad Intelectual ⚖️</h2>
         

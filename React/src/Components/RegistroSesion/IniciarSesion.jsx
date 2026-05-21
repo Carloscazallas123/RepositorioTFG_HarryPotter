@@ -14,10 +14,10 @@ const IniciarSesion = () => {
         const datosParaEnviar = { nombre: nombre, contraseña: pass };
         try {
             const resultado = await loginUsuario(datosParaEnviar);
-            await alertaExito('¡Alohomora!', 'Has entrado con éxito al castillo.');
+            alertaExito('Bienvenido a HogwartsWeb');
             navigate('/home'); 
         } catch (err) {
-            await alertaError('¡Alohomora!', 'No se pudo iniciar sesión. Por favor, inténtalo de nuevo.');
+            await alertaError('No se pudo iniciar sesión. Por favor, inténtalo de nuevo.');
         }
     };
 

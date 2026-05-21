@@ -36,7 +36,7 @@ services:
         context: ./SpringTool/HarryPotter
         dockerfile: ./DockerFile
       container_name: proyectotfg_carlos-server-1
-      ports:
+      expose:
       - 9090:9090
       depends_on:
        db:

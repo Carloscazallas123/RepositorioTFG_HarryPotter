@@ -51,7 +51,7 @@
 
 /* Tarjeta Estilo Pergamino Oscuro */
 .objeto-item {
-    background: linear-gradient(145deg, #161b22, #0d1117);
+    background-color:#1a0a2e ;
     border: 1px solid #30363d;
     border-radius: 20px;
     padding: 2rem;
@@ -89,7 +89,7 @@
 
 .objeto-nombre {
     font-family: 'Cinzel', serif;
-    color:#d4af37;
+
     font-size: 1.5rem;
     margin-bottom: 1rem;
     letter-spacing: 1px;

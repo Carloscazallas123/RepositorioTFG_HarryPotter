@@ -15,12 +15,12 @@ const Registrarse = () => {
 
         // Validación mágica: ¿Coinciden los encantamientos?
         if (contraseña !== repcontraseña) {
-            return alertaError('Error de duplicación', 'Las contraseñas no coinciden. ¡Revisa tu varita!');
+            return alertaError('Las contraseñas no coinciden. ¡Revisa tu varita!');
         }
 
         try {
             const resultado=  await registrarUsuario(nombre,email,contraseña,repcontraseña);
-            await alertaExito('¡Inscrito!', 'Tu nombre ya figura en el Libro de Escolarización ✍️');
+            await alertaExito('Tu nombre ya figura en el Libro de Escolarización ✍️');
             navigate('/home');
         } catch (err) {
             alertaError('Maldición', err.message);
@@ -62,8 +62,6 @@ const Registrarse = () => {
                         <label>🔐 Contraseña</label>
                         <input 
                             type="password" 
-                            inputMode='numeric'
-                            pattern='[0-9]'
                             name="contraseña" 
                             value={contraseña}
                             onChange={(e) => setcontraseña(e.target.value)} 
@@ -76,8 +74,6 @@ const Registrarse = () => {
                         <label>🔄 Repetir Contraseña</label>
                         <input 
                             type="password" 
-                            inputMode='numeric'
-                            pattern='[0-9]'
                             name="repcontraseña" 
                             value={repcontraseña}
                             onChange={(e) => setRepcontraseña(e.target.value)} 

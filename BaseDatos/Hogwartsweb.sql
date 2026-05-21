@@ -10,7 +10,7 @@ CREATE TABLE USUARIO(
     ID_USUARIO INT NOT NULL AUTO_INCREMENT COMMENT 'Identificador del Usuario',
     NOMBRE VARCHAR(45) NOT NULL COMMENT 'Nombre del Usuario',
     CORREO VARCHAR(45) NOT NULL COMMENT 'Correo Electronico del Usuario',
-    CONTRASEÑA INT NOT NULL COMMENT 'Contraseña del Usuario',
+    CONTRASEÑA Varchar(45) NOT NULL COMMENT 'Contraseña del Usuario',
     CASA VARCHAR(45) NULL COMMENT 'Casa del Usuario',
     PUNTOS INT NULL COMMENT 'Puntos del Usuario',
     CONSTRAINT PK_ID_USUARIO PRIMARY KEY (ID_USUARIO)

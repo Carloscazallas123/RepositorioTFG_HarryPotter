@@ -1,12 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './../../Style/FooterPagesCSS.css';
-
+import { useNavigate } from 'react-router-dom';
 const PoliticaCookies = () => {
+const navigate = useNavigate();
+
   return (
     <div className="footer-page-container">
       <div className="footer-content-card">
-        <Link to="/home" className="back-btn-footer">← Volver al Gran Comedor</Link>
+        <button onClick={() => navigate(-1)} className="back-btn-footer">
+        <span className="wand-spark">←</span> Volver al Gran Comedor
+        </button>
         
         <h2>Política de Cookies 🍪</h2>
         

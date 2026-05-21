@@ -1,5 +1,5 @@
 export interface ComentarDTO {
-    descripcion: String;
+    descripcion: string;
     valor: number;
     fecha?: Date;
     id: number;
@@ -7,8 +7,8 @@ export interface ComentarDTO {
 
 export interface ComentarioMostDTO {
     id_comentario: number;
-    descripcion: String;
+    descripcion: string;
     valor: number;
     fecha: Date;
-    usuario: String;
+    usuario: string;
 };

@@ -1,12 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './../../Style/FooterPagesCSS.css';
-
+import { useNavigate } from 'react-router-dom';
 const GuiaEstilo = () => {
+const navigate = useNavigate();
+
   return (
     <div className="footer-page-container">
       <div className="footer-content-card">
-        <Link to="/" className="back-btn-footer">← Volver al Gran Comedor</Link>
+        <button onClick={() => navigate(-1)} className="back-btn-footer">
+        <span className="wand-spark">←</span> Volver al Gran Comedor
+        </button>
         
         <h2>Guía de Estilo ✒️</h2>
         <p>
@@ -20,7 +24,7 @@ const GuiaEstilo = () => {
         <ul>
           <li><strong>Color principal:</strong> <span style={{color: '#d4af37',backgroundColor: '#100f0f'}}>#d4af37 (Dorado)</span></li>
           <li><strong>Color complementario:</strong> <span style={{color: '#650707',backgroundColor: '#100f0f'}}>#650707 (Granate)</span></li>
-          <li><strong>Color de fondo:</strong><span style={{color: '#0a122c',backgroundColor: '#908686'}}> #0a122c (Azul oscuro)</span></li>
+          <li><strong>Color de fondo:</strong><span style={{color: '#1a0a2e',backgroundColor: '#100f0f'}}> #1a0a2e (Morado Oscuro)</span></li>
           <li><strong>Color de texto:</strong><span style={{color: '#f5e6c5', backgroundColor: '#100f0f'}}> #f5e6c5 (Durazno)</span></li>
         </ul>
 

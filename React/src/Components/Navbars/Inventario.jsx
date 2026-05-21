@@ -66,7 +66,7 @@ const InventarioObjetos = () => {
                         <div key={index} className="objeto-item">
                             <div className="objeto-icon">📜</div>
                             <div className="objeto-info">
-                                <h3 className="objeto-nombre">{obj.nombre}</h3>
+                                <h3 className="objeto-nombre" style={''}>{obj.nombre}</h3>
                                 <p className="objeto-descripcion">{obj.descripcion}</p>
                                 
                                 <div className="objeto-detalles">
@@ -81,10 +81,7 @@ const InventarioObjetos = () => {
                         </div>
                     ))
                 ) : (
-                    <div className="inventario-vacio">
-                        <p>No tienes objetos en tu inventario.</p>
-                        <p className="sub-text">Visita la tienda para adquirir nuevas reliquias.</p>
-                    </div>
+                    <p> </p>
                 )}
             </div>
         </div>

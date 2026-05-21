@@ -1,13 +1,13 @@
 export interface PersonajeMostDTO {
-    nombre: String;
-    casa:String;
+    nombre: string;
+    casa:string;
 };
 
 export interface PersonajeVistDTO {
     id: number,
-    nombre: String;
-    descripcion: String;
-    casa: String;
-    objetos: String[];
+    nombre: string;
+    descripcion: string;
+    casa: string;
+    objetos: string[];
 };
 
