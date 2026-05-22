@@ -1,8 +1,8 @@
 import { UsuarioFullDTO, UsuarioCasaDTO } from "../Type/Usuario";
-const API_URL = '/api/Usuarios';
+const API_URL = '${import.meta.env.VITE_API_URL}/api/Usuarios';
 
 const CasaService = {
-  getUsuarioActualizado: async (casa: String): Promise<[UsuarioFullDTO]> => {
+  getUsuarioActualizado: async (casa: string): Promise<[UsuarioFullDTO]> => {
     console.log(casa);
     const token = localStorage.getItem('usuario');
     if (!token) {
