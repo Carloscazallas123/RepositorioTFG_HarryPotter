@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import './../../Style/Navbars/NavbarConSesionCSS.css';
+import './../../Style/Navbars/NavbarConSesionCss.css';
 import { alertaError, alertaWarning } from '../../Utils/Alertas';
 import './../../Querys/NavBars/NavBarConCesionQuery.css'
 const NavbarConSesion = () => {
