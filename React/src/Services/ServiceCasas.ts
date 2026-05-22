@@ -1,4 +1,5 @@
 import { UsuarioFullDTO, UsuarioCasaDTO } from "../Type/Usuario";
+
 // @ts-ignore
 const API_URL = '/api';
 
