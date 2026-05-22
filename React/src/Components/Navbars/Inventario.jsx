@@ -66,7 +66,7 @@ const InventarioObjetos = () => {
                         <div key={index} className="objeto-item">
                             <div className="objeto-icon">📜</div>
                             <div className="objeto-info">
-                                <h3 className="objeto-nombre" style={''}>{obj.nombre}</h3>
+                                <h3 className="objeto-nombre" style={{color: '#d4af37'}}>{obj.nombre}</h3>
                                 <p className="objeto-descripcion">{obj.descripcion}</p>
                                 
                                 <div className="objeto-detalles">
