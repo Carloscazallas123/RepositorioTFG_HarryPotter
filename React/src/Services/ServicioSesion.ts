@@ -7,7 +7,7 @@ const API_URL = '/api';
 
 export const loginUsuario = async (datosSesion: SesionDTO) => {
     try {
-        const response = await fetch(`${API_URL}/Usuario/Sesion`, {
+        const response = await fetch(`${API_URL}/Usuarios/Sesion`, {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
@@ -36,7 +36,7 @@ export const registrarUsuario = async (nombre: string, email: string,contraseña
     }
 
     try {
-        const response = await fetch(`${API_URL}/Usuario/Registro`, {
+        const response = await fetch(`${API_URL}/Usuarios/Registro`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
