@@ -2,7 +2,8 @@
 import { alertaExito } from '../Utils/Alertas';
 import { ComentarDTO, ComentarioMostDTO } from './../Type/Comentario';
 import { UsuarioFullDTO } from './../Type/Usuario';
-const API_URL = '/api/Comentarios';
+// @ts-ignore
+const API_URL = '/api';
 const ComentarioService = {
 
 

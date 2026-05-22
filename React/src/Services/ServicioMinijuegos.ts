@@ -1,5 +1,6 @@
 import { UsuarioFullDTO, UsuarioPuntosDTO } from "../Type/Usuario";
-const API_URL = '/api/Usuarios';
+// @ts-ignore
+const API_URL = '/api';
 
 const MinijuegoService = {
   getUsuarioActualizado: async (puntaje: number): Promise<[UsuarioFullDTO]> => {

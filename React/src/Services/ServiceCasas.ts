@@ -1,5 +1,6 @@
 import { UsuarioFullDTO, UsuarioCasaDTO } from "../Type/Usuario";
-const API_URL = '/api/Usuarios';
+// @ts-ignore
+const API_URL = '/api';
 
 const CasaService = {
   getUsuarioActualizado: async (casa: string): Promise<[UsuarioFullDTO]> => {
@@ -18,8 +19,8 @@ const CasaService = {
             const response = await fetch(`${API_URL}/Casa`, {
             method: 'POST',
             headers: {
-                'Authorization': `Bearer ${token}`, // El token va aquí (Header)
-                'Content-Type': 'application/json'  // Avisamos que enviamos JSON
+                'Authorization': `Bearer ${token}`, 
+                'Content-Type': 'application/json'  
                 },
             body: JSON.stringify(usuario) 
             });

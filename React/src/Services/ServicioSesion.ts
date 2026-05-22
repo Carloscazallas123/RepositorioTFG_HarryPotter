@@ -2,7 +2,8 @@
 import { alertaError } from '../Utils/Alertas';
 import { SesionDTO,RegistroDTO } from './../Type/Usuario';
 
-const API_URL = '/api/Usuario';
+// @ts-ignore
+const API_URL = '/api';
 
 export const loginUsuario = async (datosSesion: SesionDTO) => {
     try {
