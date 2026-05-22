@@ -1,17 +1,13 @@
-# Usamos la misma imagen de Nginx que tenías en tu docker-compose
+FROM node:18-alpine AS build
+WORKDIR /app
+COPY package*.json ./
+RUN npm install
+COPY . .
+RUN npm run build
+
+# 2. Etapa de producción con Nginx
 FROM nginx:alpine
-
-# Copiamos los archivos compilados de tu React dentro del servidor Nginx
-COPY ./React/dist /usr/share/nginx/html
-
-# Copiamos tu archivo de configuración de Nginx
+COPY --from=build /app/dist /usr/share/nginx/html
 COPY ./nginx.conf /etc/nginx/nginx.conf
-
-# Si usas SSL locales (opcional, Railway ya te da HTTPS gratis, pero por si tu nginx.conf lo pide)
-COPY ./ssl/nginx.crt /etc/nginx/ssl/nginx.crt
-COPY ./ssl/nginx.key /etc/nginx/ssl/nginx.key
-
-# Exponemos el puerto estándar
 EXPOSE 80
-
 CMD ["nginx", "-g", "daemon off;"]
