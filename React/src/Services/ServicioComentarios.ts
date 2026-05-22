@@ -2,7 +2,7 @@
 import { alertaExito } from '../Utils/Alertas';
 import { ComentarDTO, ComentarioMostDTO } from './../Type/Comentario';
 import { UsuarioFullDTO } from './../Type/Usuario';
-const API_URL = '/api/Comentarios';
+const API_URL = '${import.meta.env.VITE_API_URL}/api/Comentarios';
 const ComentarioService = {
 
 
@@ -18,7 +18,7 @@ const ComentarioService = {
     }
   },
 
-  Comentar: async (descripcion: String, valor: number): Promise<ComentarDTO> => {
+  Comentar: async (descripcion: string, valor: number): Promise<ComentarDTO> => {
     const token = localStorage.getItem('usuario');
     if (!token) { throw new Error('Token de usuario no encontrado'); }
     const usuario: UsuarioFullDTO = JSON.parse(token);
@@ -39,7 +39,7 @@ const ComentarioService = {
       if (!response.ok) throw new Error('Error al conectar con Hogwarts'); 
       const data = await response.json();
       if(data==null){
-        alertaExito('Eureca', 'ComentarioReescrito');
+        alertaExito('Comentario Reescrito');
       }
       console.log(data);
       return data;
