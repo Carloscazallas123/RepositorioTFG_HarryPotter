@@ -10,6 +10,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@emnapi/core": "^1.10.0",
+    "@emnapi/runtime": "^1.10.0",
     "axios": "^1.15.2",
     "i": "^0.3.7",
     "jwt-decode": "^4.0.0",
