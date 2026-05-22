@@ -2,7 +2,7 @@
 import { alertaError } from '../Utils/Alertas';
 import { SesionDTO,RegistroDTO } from './../Type/Usuario';
 
-const API_URL = '${import.meta.env.VITE_API_URL}/api/Usuario';
+const API_URL = '/api/Usuario';
 
 export const loginUsuario = async (datosSesion: SesionDTO) => {
     try {

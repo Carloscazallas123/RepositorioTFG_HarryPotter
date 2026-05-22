@@ -2,7 +2,7 @@
 import { alertaExito } from '../Utils/Alertas';
 import { ComentarDTO, ComentarioMostDTO } from './../Type/Comentario';
 import { UsuarioFullDTO } from './../Type/Usuario';
-const API_URL = '${import.meta.env.VITE_API_URL}/api/Comentarios';
+const API_URL = '/api/Comentarios';
 const ComentarioService = {
 
 
