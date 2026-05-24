@@ -3,11 +3,11 @@ import { alertaError } from '../Utils/Alertas';
 import { SesionDTO,RegistroDTO } from './../Type/Usuario';
 
 // @ts-ignore
-const API_URL = '/api';
+const API_URL = `${import.meta.env.VITE_API_URL}/Usuarios`;
 
 export const loginUsuario = async (datosSesion: SesionDTO) => {
     try {
-        const response = await fetch(`${API_URL}/Usuarios/Sesion`, {
+        const response = await fetch(`${API_URL}/Sesion`, {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
@@ -36,7 +36,7 @@ export const registrarUsuario = async (nombre: string, email: string,contraseña
     }
 
     try {
-        const response = await fetch(`${API_URL}/Usuarios/Registro`, {
+        const response = await fetch(`${API_URL}/Registro`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
