@@ -1,8 +1,8 @@
 SET NAMES 'utf8mb4';
-USE HOGWARTSWEB;
+USE railway;
 
 --  1. CREACIÓN DE PERSONAJES
-INSERT INTO PERSONAJE (NOMBRE, DESCRIPCION, CASA) VALUES 
+INSERT INTO personaje (NOMBRE, DESCRIPCION, CASA) VALUES 
 ('Ron Weasley', 'Ronald Bilius Weasley, el sexto de los hermanos Weasley, es mucho más que el fiel acompañante del Niño que Vivió; es el ancla emocional del trío de oro. Creció en "La Madriguera" bajo la constante presión de superar los logros académicos y deportivos de sus hermanos mayores, lo que forjó en él una lucha interna contra sus propias inseguridades. Sin embargo, su valor se manifestó desde su primer año cuando, con solo once años, se sacrificó en una partida de ajedrez mágico mortal para permitir que Harry avanzara. Estratega nato, guardián de Quidditch y portador de una lealtad que ni siquiera la influencia de un Horrocrux pudo quebrar definitivamente, Ron personifica la nobleza de quien elige ser valiente a pesar de tener miedo.', 'Gryffindor'),
 
 ('Lord Voldemort', 'Nacido en la miseria de un orfanato londinense bajo el nombre de Tom Marvolo Riddle, este mago de linaje mestizo se convertiría en la personificación del terror en el mundo mágico. Descendiente directo de Salazar Slytherin, Tom utilizó su genio excepcional y su carisma manipulador para desentrañar los secretos más oscuros de la magia, llegando a fragmentar su alma en siete Horrocruxes en un intento desesperado por vencer a la muerte, a la que consideraba una debilidad humana. Bajo el pseudónimo de Lord Voldemort, lideró una purga ideológica basada en la supremacía de la sangre, sumiendo a Gran Bretaña en dos guerras civiles mágicas. Su incapacidad para comprender el poder del amor y el sacrificio personal fue, en última instancia, su única y fatal debilidad.', 'Slytherin'),
@@ -24,60 +24,60 @@ INSERT INTO PERSONAJE (NOMBRE, DESCRIPCION, CASA) VALUES
 -- 2. ASIGNACIÓN DE OBJETOS (3 POR PERSONAJE)
 
 -- Objetos de Ron Weasley
-INSERT INTO OBJETO (NOMBRE, DESCRIPCION, COSTE, ID_PERSONAJE) VALUES 
-('Manual de Mantenimiento', 'Guía para cuidar escobas voladoras de segunda mano', 12, (SELECT ID_PERSONAJE FROM PERSONAJE WHERE NOMBRE = 'Ron Weasley')),
-('Bufanda de Gryffindor', 'Bufanda de lana roja y dorada tejida por su madre', 18, (SELECT ID_PERSONAJE FROM PERSONAJE WHERE NOMBRE = 'Ron Weasley')),
-('Cromos de Ranas de Chocolate', 'Colección incompleta de magos famosos', 5, (SELECT ID_PERSONAJE FROM PERSONAJE WHERE NOMBRE = 'Ron Weasley'));
+INSERT INTO objeto (NOMBRE, DESCRIPCION, COSTE, ID_PERSONAJE) VALUES 
+('Manual de Mantenimiento', 'Guía para cuidar escobas voladoras de segunda mano', 12, (SELECT ID_PERSONAJE FROM personaje WHERE NOMBRE = 'Ron Weasley')),
+('Bufanda de Gryffindor', 'Bufanda de lana roja y dorada tejida por su madre', 18, (SELECT ID_PERSONAJE FROM personaje WHERE NOMBRE = 'Ron Weasley')),
+('Cromos de Ranas de Chocolate', 'Colección incompleta de magos famosos', 5, (SELECT ID_PERSONAJE FROM personaje WHERE NOMBRE = 'Ron Weasley'));
 
 -- Objetos de Lord Voldemort
-INSERT INTO OBJETO (NOMBRE, DESCRIPCION, COSTE, ID_PERSONAJE) VALUES 
-('Caja de música', 'Objeto oscuro que emite una melodía inquietante', 150, (SELECT ID_PERSONAJE FROM PERSONAJE WHERE NOMBRE = 'Lord Voldemort')),
-('Hueso de su padre', 'Reliquia macabra usada en el ritual de resurrección', 0, (SELECT ID_PERSONAJE FROM PERSONAJE WHERE NOMBRE = 'Lord Voldemort')),
-('Diario de Tom Riddle', 'Un cuaderno aparentemente en blanco con un fragmento de alma', 500, (SELECT ID_PERSONAJE FROM PERSONAJE WHERE NOMBRE = 'Lord Voldemort'));
+INSERT INTO objeto (NOMBRE, DESCRIPCION, COSTE, ID_PERSONAJE) VALUES 
+('Caja de música', 'Objeto oscuro que emite una melodía inquietante', 150, (SELECT ID_PERSONAJE FROM personaje WHERE NOMBRE = 'Lord Voldemort')),
+('Hueso de su padre', 'Reliquia macabra usada en el ritual de resurrección', 0, (SELECT ID_PERSONAJE FROM personaje WHERE NOMBRE = 'Lord Voldemort')),
+('Diario de Tom Riddle', 'Un cuaderno aparentemente en blanco con un fragmento de alma', 500, (SELECT ID_PERSONAJE FROM personaje WHERE NOMBRE = 'Lord Voldemort'));
 
 -- Objetos de Rubeus Hagrid
-INSERT INTO OBJETO (NOMBRE, DESCRIPCION, COSTE, ID_PERSONAJE) VALUES 
-('Tostadas de Hagrid', 'Rebanadas de pan tan duras que podrían romper dientes', 2, (SELECT ID_PERSONAJE FROM PERSONAJE WHERE NOMBRE = 'Rubeus Hagrid')),
-('Trampa para lazos', 'Red resistente para capturar criaturas pequeñas', 45, (SELECT ID_PERSONAJE FROM PERSONAJE WHERE NOMBRE = 'Rubeus Hagrid')),
-('Paraguas Rosa', 'Oculta los restos de su varita partida', 15, (SELECT ID_PERSONAJE FROM PERSONAJE WHERE NOMBRE = 'Rubeus Hagrid'));
+INSERT INTO objeto (NOMBRE, DESCRIPCION, COSTE, ID_PERSONAJE) VALUES 
+('Tostadas de Hagrid', 'Rebanadas de pan tan duras que podrían romper dientes', 2, (SELECT ID_PERSONAJE FROM personaje WHERE NOMBRE = 'Rubeus Hagrid')),
+('Trampa para lazos', 'Red resistente para capturar criaturas pequeñas', 45, (SELECT ID_PERSONAJE FROM personaje WHERE NOMBRE = 'Rubeus Hagrid')),
+('Paraguas Rosa', 'Oculta los restos de su varita partida', 15, (SELECT ID_PERSONAJE FROM personaje WHERE NOMBRE = 'Rubeus Hagrid'));
 
 -- Objetos de Minerva McGonagall
-INSERT INTO OBJETO (NOMBRE, DESCRIPCION, COSTE, ID_PERSONAJE) VALUES 
-('Reloj de arena de Casa', 'Mide los puntos ganados por Gryffindor en el curso', 350, (SELECT ID_PERSONAJE FROM PERSONAJE WHERE NOMBRE = 'Minerva McGonagall')),
-('Pluma de caligrafía', 'Pluma de ganso para firmar permisos de Hogsmeade', 25, (SELECT ID_PERSONAJE FROM PERSONAJE WHERE NOMBRE = 'Minerva McGonagall')),
-('Sombrero puntiagudo', 'Sombrero de gala verde esmeralda', 40, (SELECT ID_PERSONAJE FROM PERSONAJE WHERE NOMBRE = 'Minerva McGonagall'));
+INSERT INTO objeto (NOMBRE, DESCRIPCION, COSTE, ID_PERSONAJE) VALUES 
+('Reloj de arena de Casa', 'Mide los puntos ganados por Gryffindor en el curso', 350, (SELECT ID_PERSONAJE FROM personaje WHERE NOMBRE = 'Minerva McGonagall')),
+('Pluma de caligrafía', 'Pluma de ganso para firmar permisos de Hogsmeade', 25, (SELECT ID_PERSONAJE FROM personaje WHERE NOMBRE = 'Minerva McGonagall')),
+('Sombrero puntiagudo', 'Sombrero de gala verde esmeralda', 40, (SELECT ID_PERSONAJE FROM personaje WHERE NOMBRE = 'Minerva McGonagall'));
 
 -- Objetos de Sirius Black
-INSERT INTO OBJETO (NOMBRE, DESCRIPCION, COSTE, ID_PERSONAJE) VALUES 
-('Cuchillo de Sirius', 'Daga mágica que abre cualquier puerta bloqueada', 120, (SELECT ID_PERSONAJE FROM PERSONAJE WHERE NOMBRE = 'Sirius Black')),
-('Anillo de compromiso', 'Antigua joya familiar guardada en la casa Black', 900, (SELECT ID_PERSONAJE FROM PERSONAJE WHERE NOMBRE = 'Sirius Black')),
-('Moto Voladora', 'Vehículo encantado que deja un rastro de chispas azules', 1200, (SELECT ID_PERSONAJE FROM PERSONAJE WHERE NOMBRE = 'Sirius Black'));
+INSERT INTO objeto (NOMBRE, DESCRIPCION, COSTE, ID_PERSONAJE) VALUES 
+('Cuchillo de Sirius', 'Daga mágica que abre cualquier puerta bloqueada', 120, (SELECT ID_PERSONAJE FROM personaje WHERE NOMBRE = 'Sirius Black')),
+('Anillo de compromiso', 'Antigua joya familiar guardada en la casa Black', 900, (SELECT ID_PERSONAJE FROM personaje WHERE NOMBRE = 'Sirius Black')),
+('Moto Voladora', 'Vehículo encantado que deja un rastro de chispas azules', 1200, (SELECT ID_PERSONAJE FROM personaje WHERE NOMBRE = 'Sirius Black'));
 
 -- Objetos de Nicholas Flamel
-INSERT INTO OBJETO (NOMBRE, DESCRIPCION, COSTE, ID_PERSONAJE) VALUES 
-('Crisol de plata', 'Recipiente para fundir metales preciosos en alquimia', 180, (SELECT ID_PERSONAJE FROM PERSONAJE WHERE NOMBRE = 'Nicholas Flamel')),
-('Lupa de aumento', 'Lente mágica para leer inscripciones diminutas', 30, (SELECT ID_PERSONAJE FROM PERSONAJE WHERE NOMBRE = 'Nicholas Flamel')),
-('Elixir de la Vida', 'Sustancia roja que prolonga la existencia', 5000, (SELECT ID_PERSONAJE FROM PERSONAJE WHERE NOMBRE = 'Nicholas Flamel'));
+INSERT INTO objeto (NOMBRE, DESCRIPCION, COSTE, ID_PERSONAJE) VALUES 
+('Crisol de plata', 'Recipiente para fundir metales preciosos en alquimia', 180, (SELECT ID_PERSONAJE FROM personaje WHERE NOMBRE = 'Nicholas Flamel')),
+('Lupa de aumento', 'Lente mágica para leer inscripciones diminutas', 30, (SELECT ID_PERSONAJE FROM personaje WHERE NOMBRE = 'Nicholas Flamel')),
+('Elixir de la Vida', 'Sustancia roja que prolonga la existencia', 5000, (SELECT ID_PERSONAJE FROM personaje WHERE NOMBRE = 'Nicholas Flamel'));
 
 -- Objetos de Helga Hufflepuff
-INSERT INTO OBJETO (NOMBRE, DESCRIPCION, COSTE, ID_PERSONAJE) VALUES 
-('Manteles mágicos', 'Telas que se limpian solas tras los grandes banquetes', 60, (SELECT ID_PERSONAJE FROM PERSONAJE WHERE NOMBRE = 'Helga Hufflepuff')),
-('Copa de Oro', 'Pequeña copa con dos asas y un tejón grabado', 1500, (SELECT ID_PERSONAJE FROM PERSONAJE WHERE NOMBRE = 'Helga Hufflepuff')),
-('Libro de Recetas de Cocina', 'Recetario mágico para los elfos domésticos', 45, (SELECT ID_PERSONAJE FROM PERSONAJE WHERE NOMBRE = 'Helga Hufflepuff'));
+INSERT INTO objeto (NOMBRE, DESCRIPCION, COSTE, ID_PERSONAJE) VALUES 
+('Manteles mágicos', 'Telas que se limpian solas tras los grandes banquetes', 60, (SELECT ID_PERSONAJE FROM personaje WHERE NOMBRE = 'Helga Hufflepuff')),
+('Copa de Oro', 'Pequeña copa con dos asas y un tejón grabado', 1500, (SELECT ID_PERSONAJE FROM personaje WHERE NOMBRE = 'Helga Hufflepuff')),
+('Libro de Recetas de Cocina', 'Recetario mágico para los elfos domésticos', 45, (SELECT ID_PERSONAJE FROM personaje WHERE NOMBRE = 'Helga Hufflepuff'));
 
 -- Objetos de Rowena Ravenclaw
-INSERT INTO OBJETO (NOMBRE, DESCRIPCION, COSTE, ID_PERSONAJE) VALUES 
-('Telescopio de latón', 'Instrumento para observar las estrellas de Ravenclaw', 220, (SELECT ID_PERSONAJE FROM PERSONAJE WHERE NOMBRE = 'Rowena Ravenclaw')),
-('Diadema de Ravenclaw', 'Corona de plata que otorga sabiduría al portador', 2500, (SELECT ID_PERSONAJE FROM PERSONAJE WHERE NOMBRE = 'Rowena Ravenclaw')),
-('Mapa de las Estrellas', 'Pergamino infinito que muestra el cielo en tiempo real', 85, (SELECT ID_PERSONAJE FROM PERSONAJE WHERE NOMBRE = 'Rowena Ravenclaw'));
+INSERT INTO objeto (NOMBRE, DESCRIPCION, COSTE, ID_PERSONAJE) VALUES 
+('Telescopio de latón', 'Instrumento para observar las estrellas de Ravenclaw', 220, (SELECT ID_PERSONAJE FROM personaje WHERE NOMBRE = 'Rowena Ravenclaw')),
+('Diadema de Ravenclaw', 'Corona de plata que otorga sabiduría al portador', 2500, (SELECT ID_PERSONAJE FROM personaje WHERE NOMBRE = 'Rowena Ravenclaw')),
+('Mapa de las Estrellas', 'Pergamino infinito que muestra el cielo en tiempo real', 85, (SELECT ID_PERSONAJE FROM personaje WHERE NOMBRE = 'Rowena Ravenclaw'));
 
 -- Objetos de Neville Longbottom
-INSERT INTO OBJETO (NOMBRE, DESCRIPCION, COSTE, ID_PERSONAJE) VALUES 
-('Tierra de maceta', 'Sustrato especial de los invernaderos de Hogwarts', 8, (SELECT ID_PERSONAJE FROM PERSONAJE WHERE NOMBRE = 'Neville Longbottom')),
-('Regadera mágica', 'Regadera que nunca se queda sin agua tibia', 30, (SELECT ID_PERSONAJE FROM PERSONAJE WHERE NOMBRE = 'Neville Longbottom')),
-('Mimbulus Mimbletonia', 'Planta rara que expulsa chorros de savia apestosa', 65, (SELECT ID_PERSONAJE FROM PERSONAJE WHERE NOMBRE = 'Neville Longbottom'));
+INSERT INTO objeto (NOMBRE, DESCRIPCION, COSTE, ID_PERSONAJE) VALUES 
+('Tierra de maceta', 'Sustrato especial de los invernaderos de Hogwarts', 8, (SELECT ID_PERSONAJE FROM personaje WHERE NOMBRE = 'Neville Longbottom')),
+('Regadera mágica', 'Regadera que nunca se queda sin agua tibia', 30, (SELECT ID_PERSONAJE FROM personaje WHERE NOMBRE = 'Neville Longbottom')),
+('Mimbulus Mimbletonia', 'Planta rara que expulsa chorros de savia apestosa', 65, (SELECT ID_PERSONAJE FROM personaje WHERE NOMBRE = 'Neville Longbottom'));
                     
-INSERT INTO USUARIO (NOMBRE, CORREO, CONTRASEÑA, CASA, PUNTOS) VALUES 
+INSERT INTO usuario (NOMBRE, CORREO, CONTRASEÑA, CASA, PUNTOS) VALUES 
 ('Juan Pablo Morales', 'juan.pablo@hogwarts.edu', 1234, 'Gryffindor', 9999999),
 ('Carlos Chacon Gomez', 'carlos.ch@hogwarts.edu', 5678, 'Slytherin', 120),
 ('Maria Sanchez Chacon', 'maria.s@hogwarts.edu', 9012, 'Ravenclaw', 200),
@@ -89,7 +89,7 @@ INSERT INTO USUARIO (NOMBRE, CORREO, CONTRASEÑA, CASA, PUNTOS) VALUES
 ('Gregory Goyle', 'gregory.g@hogwarts.edu', 0000, 'Slytherin', 10),
 ('Hannah Abbott', 'hannah.a@hogwarts.edu', 5555, 'Hufflepuff', 90);
 
-INSERT INTO COMENTARIO (DESCRIPCION, FECHA, VALORACION, ID_USUARIO) VALUES 
+INSERT INTO comentario (DESCRIPCION, FECHA, VALORACION, ID_USUARIO) VALUES 
 -- Las originales con ajustes
 ('Diseño muy interesante y con mucho potencial a futuro.', '2026-01-17', 5, 1),
 ('Los minijuegos son el punto fuerte, muy entretenidos.', '2026-01-17', 4, 2),
@@ -106,40 +106,40 @@ INSERT INTO COMENTARIO (DESCRIPCION, FECHA, VALORACION, ID_USUARIO) VALUES
 
 -- 1. Juan Pablo Morales (Gryffindor) compra los 3 objetos de Ron Weasley
 -- Esto hará que Ron aparezca en su lista de afinidad
-INSERT INTO COMPRA (ID_USUARIO, ID_OBJETO) VALUES 
-((SELECT ID_USUARIO FROM USUARIO WHERE NOMBRE = 'Juan Pablo Morales'), (SELECT ID_OBJETO FROM OBJETO WHERE NOMBRE = 'Manual de Mantenimiento')),
-((SELECT ID_USUARIO FROM USUARIO WHERE NOMBRE = 'Juan Pablo Morales'), (SELECT ID_OBJETO FROM OBJETO WHERE NOMBRE = 'Bufanda de Gryffindor')),
-((SELECT ID_USUARIO FROM USUARIO WHERE NOMBRE = 'Juan Pablo Morales'), (SELECT ID_OBJETO FROM OBJETO WHERE NOMBRE = 'Cromos de Ranas de Chocolate'));
+INSERT INTO compra (ID_USUARIO, ID_OBJETO) VALUES 
+((SELECT ID_USUARIO FROM usuario WHERE NOMBRE = 'Juan Pablo Morales'), (SELECT ID_OBJETO FROM objeto WHERE NOMBRE = 'Manual de Mantenimiento')),
+((SELECT ID_USUARIO FROM usuario WHERE NOMBRE = 'Juan Pablo Morales'), (SELECT ID_OBJETO FROM objeto WHERE NOMBRE = 'Bufanda de Gryffindor')),
+((SELECT ID_USUARIO FROM usuario WHERE NOMBRE = 'Juan Pablo Morales'), (SELECT ID_OBJETO FROM objeto WHERE NOMBRE = 'Cromos de Ranas de Chocolate'));
 
 -- 2. Draco Malfoy (Slytherin) compra los 3 objetos de Lord Voldemort
 -- Posee el kit completo del Señor Tenebroso
-INSERT INTO COMPRA (ID_USUARIO, ID_OBJETO) VALUES 
-((SELECT ID_USUARIO FROM USUARIO WHERE NOMBRE = 'Draco Malfoy'), (SELECT ID_OBJETO FROM OBJETO WHERE NOMBRE = 'Caja de música')),
-((SELECT ID_USUARIO FROM USUARIO WHERE NOMBRE = 'Draco Malfoy'), (SELECT ID_OBJETO FROM OBJETO WHERE NOMBRE = 'Hueso de su padre')),
-((SELECT ID_USUARIO FROM USUARIO WHERE NOMBRE = 'Draco Malfoy'), (SELECT ID_OBJETO FROM OBJETO WHERE NOMBRE = 'Diario de Tom Riddle'));
+INSERT INTO compra (ID_USUARIO, ID_OBJETO) VALUES 
+((SELECT ID_USUARIO FROM usuario WHERE NOMBRE = 'Draco Malfoy'), (SELECT ID_OBJETO FROM objeto WHERE NOMBRE = 'Caja de música')),
+((SELECT ID_USUARIO FROM usuario WHERE NOMBRE = 'Draco Malfoy'), (SELECT ID_OBJETO FROM objeto WHERE NOMBRE = 'Hueso de su padre')),
+((SELECT ID_USUARIO FROM usuario WHERE NOMBRE = 'Draco Malfoy'), (SELECT ID_OBJETO FROM objeto WHERE NOMBRE = 'Diario de Tom Riddle'));
 
 -- 3. Maria Sanchez Chacon (Ravenclaw) compra objetos de Rowena Ravenclaw
 -- Solo tiene 2, por lo que todavía NO le saldría en la query de "mínimo 3"
-INSERT INTO COMPRA (ID_USUARIO, ID_OBJETO) VALUES 
-((SELECT ID_USUARIO FROM USUARIO WHERE NOMBRE = 'Maria Sanchez Chacon'), (SELECT ID_OBJETO FROM OBJETO WHERE NOMBRE = 'Telescopio de latón')),
-((SELECT ID_USUARIO FROM USUARIO WHERE NOMBRE = 'Maria Sanchez Chacon'), (SELECT ID_OBJETO FROM OBJETO WHERE NOMBRE = 'Mapa de las Estrellas'));
+INSERT INTO compra (ID_USUARIO, ID_OBJETO) VALUES 
+((SELECT ID_USUARIO FROM usuario WHERE NOMBRE = 'Maria Sanchez Chacon'), (SELECT ID_OBJETO FROM objeto WHERE NOMBRE = 'Telescopio de latón')),
+((SELECT ID_USUARIO FROM usuario WHERE NOMBRE = 'Maria Sanchez Chacon'), (SELECT ID_OBJETO FROM objeto WHERE NOMBRE = 'Mapa de las Estrellas'));
 
 -- 4. Luna Lovegood compra objetos variados (Coleccionista)
-INSERT INTO COMPRA (ID_USUARIO, ID_OBJETO) VALUES 
-((SELECT ID_USUARIO FROM USUARIO WHERE NOMBRE = 'Luna Lovegood'), (SELECT ID_OBJETO FROM OBJETO WHERE NOMBRE = 'Lupa de aumento')),
-((SELECT ID_USUARIO FROM USUARIO WHERE NOMBRE = 'Luna Lovegood'), (SELECT ID_OBJETO FROM OBJETO WHERE NOMBRE = 'Mimbulus Mimbletonia')),
-((SELECT ID_USUARIO FROM USUARIO WHERE NOMBRE = 'Luna Lovegood'), (SELECT ID_OBJETO FROM OBJETO WHERE NOMBRE = 'Diadema de Ravenclaw'));
+INSERT INTO compra (ID_USUARIO, ID_OBJETO) VALUES 
+((SELECT ID_USUARIO FROM usuario WHERE NOMBRE = 'Luna Lovegood'), (SELECT ID_OBJETO FROM objeto WHERE NOMBRE = 'Lupa de aumento')),
+((SELECT ID_USUARIO FROM usuario WHERE NOMBRE = 'Luna Lovegood'), (SELECT ID_OBJETO FROM objeto WHERE NOMBRE = 'Mimbulus Mimbletonia')),
+((SELECT ID_USUARIO FROM usuario WHERE NOMBRE = 'Luna Lovegood'), (SELECT ID_OBJETO FROM objeto WHERE NOMBRE = 'Diadema de Ravenclaw'));
 
 -- 5. Cedric Diggory compra los objetos de Helga Hufflepuff
-INSERT INTO COMPRA (ID_USUARIO, ID_OBJETO) VALUES 
-((SELECT ID_USUARIO FROM USUARIO WHERE NOMBRE = 'Cedric Diggory'), (SELECT ID_OBJETO FROM OBJETO WHERE NOMBRE = 'Manteles mágicos')),
-((SELECT ID_USUARIO FROM USUARIO WHERE NOMBRE = 'Cedric Diggory'), (SELECT ID_OBJETO FROM OBJETO WHERE NOMBRE = 'Copa de Oro')),
-((SELECT ID_USUARIO FROM USUARIO WHERE NOMBRE = 'Cedric Diggory'), (SELECT ID_OBJETO FROM OBJETO WHERE NOMBRE = 'Libro de Recetas de Cocina'));
+INSERT INTO compra (ID_USUARIO, ID_OBJETO) VALUES 
+((SELECT ID_USUARIO FROM usuario WHERE NOMBRE = 'Cedric Diggory'), (SELECT ID_OBJETO FROM objeto WHERE NOMBRE = 'Manteles mágicos')),
+((SELECT ID_USUARIO FROM usuario WHERE NOMBRE = 'Cedric Diggory'), (SELECT ID_OBJETO FROM objeto WHERE NOMBRE = 'Copa de Oro')),
+((SELECT ID_USUARIO FROM usuario WHERE NOMBRE = 'Cedric Diggory'), (SELECT ID_OBJETO FROM objeto WHERE NOMBRE = 'Libro de Recetas de Cocina'));
 
 -- 6. Carlos Chacon Gomez compra objetos de Sirius Black
-INSERT INTO COMPRA (ID_USUARIO, ID_OBJETO) VALUES 
-((SELECT ID_USUARIO FROM USUARIO WHERE NOMBRE = 'Carlos Chacon Gomez'), (SELECT ID_OBJETO FROM OBJETO WHERE NOMBRE = 'Cuchillo de Sirius')),
-((SELECT ID_USUARIO FROM USUARIO WHERE NOMBRE = 'Carlos Chacon Gomez'), (SELECT ID_OBJETO FROM OBJETO WHERE NOMBRE = 'Anillo de compromiso')),
-((SELECT ID_USUARIO FROM USUARIO WHERE NOMBRE = 'Carlos Chacon Gomez'), (SELECT ID_OBJETO FROM OBJETO WHERE NOMBRE = 'Moto Voladora'));
+INSERT INTO compra (ID_USUARIO, ID_OBJETO) VALUES 
+((SELECT ID_USUARIO FROM usuario WHERE NOMBRE = 'Carlos Chacon Gomez'), (SELECT ID_OBJETO FROM objeto WHERE NOMBRE = 'Cuchillo de Sirius')),
+((SELECT ID_USUARIO FROM usuario WHERE NOMBRE = 'Carlos Chacon Gomez'), (SELECT ID_OBJETO FROM objeto WHERE NOMBRE = 'Anillo de compromiso')),
+((SELECT ID_USUARIO FROM usuario WHERE NOMBRE = 'Carlos Chacon Gomez'), (SELECT ID_OBJETO FROM objeto WHERE NOMBRE = 'Moto Voladora'));
 
-SELECT * FROM USUARIO;
+SELECT * FROM usuario;
