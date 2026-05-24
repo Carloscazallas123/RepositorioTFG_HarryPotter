@@ -5,6 +5,7 @@ import java.util.*;
 import org.springframework.beans.factory.annotation.Autowired;
 //Controlador de los Personajes
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -15,6 +16,7 @@ import com.harry.paquetes.dtos.personajes.PersonajeMostDTO;
 import com.harry.paquetes.dtos.personajes.PersonajeVistDTO;
 import com.harry.paquetes.servicios.interfaces.InterfazPersonaje;
 
+@CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("/Personajes")
 public class ControladorPersonajes {

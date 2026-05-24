@@ -3,6 +3,7 @@ package com.harry.paquetes.controladores;
 import org.springframework.beans.factory.annotation.Autowired;
 //Controlador de los Usuarios
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,6 +16,7 @@ import com.harry.paquetes.dtos.usuario.UsuarioFullDTO;
 import com.harry.paquetes.dtos.usuario.UsuarioPuntosDTO;
 import com.harry.paquetes.servicios.interfaces.InterfazUsuario;
 
+@CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("/Usuarios")
 public class ControladorUsuarios {
