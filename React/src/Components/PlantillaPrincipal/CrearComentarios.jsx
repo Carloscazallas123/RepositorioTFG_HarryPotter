@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './../../Style/CrearComentariosCSS.css';
-import './../../Querys/CrearComentariosQuery.css'
+import './../../Querys/CrearComentarioQuery.css'
 import ComentarioService from './../../Services/ServicioComentarios';
 import { useNavigate } from 'react-router-dom'; 
 import { useEffect } from 'react';
