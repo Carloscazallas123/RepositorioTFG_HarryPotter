@@ -1,0 +1,69 @@
+/* ==========================================================================
+   MEDIA QUERIES (RESPONSIVE DESIGN)
+   ========================================================================== */
+
+/* 1. Para Tablets y pantallas medianas (Menos de 1024px) */
+@media screen and (max-width: 1024px) {
+    .comentario-form {
+        width: 90%; /* Deja de tener ancho fijo y ocupa el 90% de la pantalla */
+        padding: 2rem;
+    }
+
+    /* Si tienes una cuadrícula en el grid de reseñas, hacemos que ocupe menos columnas */
+    .reseñasGrid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1.5rem;
+        padding: 0 1rem;
+    }
+}
+
+/* 2. Para Móviles (Menos de 600px) */
+@media screen and (max-width: 600px) {
+    .comentario-form {
+        width: 95%; /* Aprovecha mejor el espacio en pantallas pequeñas */
+        padding: 1.5rem 1rem;
+        border-radius: 16px; /* Bordes un poco más sutiles en móvil */
+    }
+
+    /* Ajustamos el tamaño de las estrellas para que no se amontonen */
+    .star {
+        font-size: 1.8rem;
+        gap: 8px;
+    }
+
+    .comentario-form textarea {
+        min-height: 140px; /* Reducimos la altura del área de texto */
+        padding: 0.9rem;
+        font-size: 1rem;
+    }
+
+    /* El pie del formulario pasa de estar en fila a estar en columna */
+    .form-footer {
+        flex-direction: column;
+        gap: 1.2rem;
+        text-align: center;
+    }
+
+    /* El botón mágico se adapta a todo el ancho en móviles */
+    .magic-button {
+        width: 100%;
+        padding: 14px;
+    }
+
+    /* Ajustes para las tarjetas de reseñas que ya tienes pintadas */
+    .reseñaHeader {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 0.8rem;
+    }
+
+    .userInfo {
+        align-items: center;
+    }
+
+    .metaData {
+        flex-direction: column;
+        gap: 0.3rem;
+    }
+}
