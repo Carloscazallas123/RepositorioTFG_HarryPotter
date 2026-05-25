@@ -1,65 +1,95 @@
 /* ==========================================================================
-   REPARACIÓN RESPONSIVE PARA EL FORMULARIO DE COMENTARIOS
+   RESET Y REPARACIÓN AGRESIVA PARA MÓVILES (Max-Width: 768px)
    ========================================================================== */
-
-/* Ajuste general para pantallas móviles y tablets */
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 768px) {
     
-    /* 1. Ajustamos el contenedor del formulario */
+    /* 1. Forzar que el body y el contenedor raíz permitan scroll normal y no rompan el ancho */
+    html, body, #root {
+        width: 100% !important;
+        overflow-x: hidden !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    /* 2. Limpieza total del contenedor del formulario */
     .comentario-form {
-        width: 90% !important;        /* Cambia los 900px fijos por un ancho dinámico */
-        max-width: 500px;             /* Evita que en tablets se estire demasiado */
-        margin: 2rem auto !important; /* Centra el formulario horizontalmente */
-        padding: 1.5rem !important;   /* Reduce el espacio interno para que quepa todo */
-        box-sizing: border-box;       /* Crucial: incluye el padding dentro del ancho */
+        /* Desactivamos posicionamientos raros que lo manden a la izquierda */
+        position: relative !important;
+        left: auto !important;
+        top: auto !important;
+        transform: none !important;
+        
+        /* Forzamos ancho fluido y centrado estricto */
+        width: 92% !important;
+        max-width: 420px !important; /* Ideal para la mayoría de teléfonos */
+        margin: 2rem auto !important; /* Centra horizontalmente sí o sí */
+        
+        /* Ajuste de espaciados */
+        padding: 1.2rem !important;
+        box-sizing: border-box !important;
+        border-radius: 16px !important;
     }
 
-    /* 2. Reparamos el textarea que se sale de la pantalla */
+    /* Quitamos la línea decorativa superior si está descuadrando el diseño */
+    .comentario-form::before {
+        display: none !important;
+    }
+
+    /* 3. El cuadro de texto ("Escribe tu crónica...") no puede superar el ancho del padre */
     .comentario-form textarea {
-        width: 100% !important;       /* Obliga al cuadro a heredar el ancho de la caja madre */
-        max-width: 100%;
-        min-height: 140px;            /* Reducimos un poco la altura en móviles */
-        box-sizing: border-box;       /* Evita que el padding sume pixeles extra hacia los lados */
+        width: 100% !important;
+        min-height: 130px !important;
+        box-sizing: border-box !important;
+        margin: 0 !important;
+        font-size: 0.95rem !important;
     }
 
-    /* 3. Ajustamos las estrellas para que no se amontonen con el texto "Puntuación" */
+    /* 4. Puntuación y estrellas: Todo en una sola columna limpia y centrada */
     .valoracion-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 0.5rem;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        margin-bottom: 1.5rem !important;
+        width: 100% !important;
+    }
+
+    .valoracion-container label {
+        font-size: 1rem !important;
+        margin-bottom: 0.5rem !important;
     }
 
     .stars {
-        justify-content: center;
-        gap: 8px;
+        display: flex !important;
+        justify-content: center !important;
+        gap: 6px !important;
     }
 
     .star {
-        font-size: 1.8rem;            /* Estrellas ligeramente más pequeñas */
+        font-size: 1.6rem !important; /* Reducimos tamaño de estrellas */
     }
 
-    /* 4. Arreglamos el footer (Contador de caracteres y Botón) */
+    /* 5. Pie de formulario: Mandamos el contador de caracteres arriba y el botón abajo */
     .form-footer {
-        flex-direction: column;       /* Los apila verticalmente en lugar de en línea */
-        gap: 1rem;
-        text-align: center;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 0.8rem !important;
+        margin-top: 1rem !important;
+        width: 100% !important;
     }
 
+    /* El contador de caracteres (0 / 1000) */
+    .form-footer span {
+        font-size: 0.8rem !important;
+        order: 1; /* Lo posiciona primero */
+    }
+
+    /* Botón mágico a pantalla completa en móvil */
     .magic-button {
-        width: 100%;                  /* El botón ocupará todo el ancho disponible */
-        padding: 12px;
-    }
-}
-
-/* Ajuste extra para teléfonos muy pequeños (Menos de 480px) */
-@media screen and (max-width: 480px) {
-    .comentario-form {
-        width: 95% !important;
-        padding: 1rem !important;
-    }
-    
-    .comentario-form label {
-        font-size: 1rem;
+        width: 100% !important;
+        padding: 12px !important;
+        font-size: 0.85rem !important;
+        order: 2; /* Lo posiciona debajo del contador */
     }
 }
