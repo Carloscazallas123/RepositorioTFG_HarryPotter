@@ -12,7 +12,7 @@ const Footer = () => {
           <div className="social-links">
             <a href="https://www.facebook.com/harrypotter/" target='_blank'><img src="/Iconos/Facebook_Icono.png" alt="Facebook" className='ImagenesIconos'/></a>
             <a href="https://www.instagram.com/harrypotterspain/?hl=es" target='_blank'><img src="/Iconos/Instagram_Icono.png" alt="Instagram" className='ImagenesIconos'/></a>
-            <a href="https://www.youtube.com/@harrypotter" target='_blank'><img src="/Iconos/YouTube_Icono.png" alt="YouTube" className='ImagenesIconos'/></a>
+            <a href="https://www.youtube.com/@harrypotter" target='_blank'><img src="./../../public/Iconos/Youtube_Icono.png" alt="YouTube" className='ImagenesIconos'/></a>
           </div>
         </div>
 

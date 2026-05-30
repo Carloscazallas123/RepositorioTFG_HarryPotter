@@ -7,19 +7,12 @@ public class ObjetoTiendDTO {
 	private String nombre;
 	private String descripcion;
 	private int costo;
-	
-	
-	
-
-
 	public ObjetoTiendDTO(int id, String nombre, String descripcion, int costo) {
 		this.id = id;
 		this.nombre = nombre;
 		this.descripcion = descripcion;
 		this.costo = costo;
 	}
-
-
 	
 	public int getId() {
 		return id;
