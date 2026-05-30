@@ -24,7 +24,6 @@
 .ImagenesIconos {
   width: 95px;
   height: 75px;
-  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
