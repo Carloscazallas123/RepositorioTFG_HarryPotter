@@ -12,11 +12,14 @@ const Registrarse = () => {
     const [mostrarContraseña, setMostrarContraseña] = useState(false);
     const [mostrarRepcontraseña, setMostrarRepcontraseña] = useState(false);
     const navigate = useNavigate();
+
+    const toggleContraseña = () => { setMostrarContraseña(!mostrarContraseña);};
+    const toggleRepcontrasena = () => { setMostrarRepcontraseña(!mostrarRepcontraseña);};
+
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        const toggleContraseña = () => { setMostrarContraseña(!mostrarContraseña);};
-        const toggleRepcontraseña = () => { setMostrarRepcontraseña(!mostrarRepcontraseña);};
+        
 
         if (contraseña !== repcontraseña) {
             return alertaError('Las contraseñas no coinciden. ¡Revisa tu varita!');
@@ -94,7 +97,7 @@ const Registrarse = () => {
 
                         <button 
                         type="button"
-                        onClick={toggleRepcontraseña}
+                        onClick={toggleRepcontrasena}
                         style={{ position: 'absolute', right: '10px', top: '30%' }}
                         > {mostrarRepcontraseña ? "🙈" : "👁️"}
                         </button>
