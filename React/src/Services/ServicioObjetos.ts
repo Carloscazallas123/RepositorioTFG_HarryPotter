@@ -2,7 +2,7 @@ import { UsuarioFullDTO } from './../Type/Usuario';
 import { CompraDTO, ObjetoInvDTO, ObjetTiendDTO } from './../Type/Objeto';
 import { alertaError } from '../Utils/Alertas';
 // @ts-ignore
-const API_URL = `${import.meta.env.VITE_API_URL}/Objetos`;
+const API_URL = `${VITE_API_URL}/Objetos`;
 
 const ObjetoService = {
     getListaUsuario: async (): Promise<[ObjetoInvDTO]> => {
