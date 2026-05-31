@@ -8,12 +8,15 @@ const Registrarse = () => {
     const [nombre, setNombre] = useState('');
     const [email, setemail] = useState('');
     const [contraseña, setcontraseña] = useState('');
-    const [verPassword, setVerPassword] = useState(false);
     const [repcontraseña, setRepcontraseña] = useState('');
+    const [mostrarContraseña, setMostrarContraseña] = useState(false);
+    const [mostrarRepcontraseña, setMostrarRepcontraseña] = useState(false);
     const navigate = useNavigate();
     const handleSubmit = async (e) => {
         e.preventDefault();
 
+        const toggleContraseña = () => { setMostrarContraseña(!mostrarContraseña);};
+        const toggleRepcontraseña = () => { setMostrarRepcontraseña(!mostrarRepcontraseña);};
 
         if (contraseña !== repcontraseña) {
             return alertaError('Las contraseñas no coinciden. ¡Revisa tu varita!');
@@ -63,12 +66,19 @@ const Registrarse = () => {
                         <label>🔐 Contraseña</label>
                         <input 
                             type="password" 
+                            
                             name="contraseña" 
                             value={contraseña}
                             onChange={(e) => setcontraseña(e.target.value)} 
                             placeholder="••••••••"
                             required 
                         />
+                        <button 
+                        type="button" 
+                        onClick={toggleContraseña()} 
+                        style={{ position: 'absolute', right: '10px', top: '30%' }}>
+                        {mostrarContraseña ? "🙈" : "👁️"}
+                    </button>
                     </div>
 
                     <div className="form-group">
@@ -83,12 +93,11 @@ const Registrarse = () => {
                         />
 
                         <button 
-                        type="button" // Para que no envíe el formulario
-                        onClick={() => setVerPassword(!verPassword)} // 🌟 Al hacer clic, cambia el estado al revés (de true a false, o de false a true)
+                        type="button"
+                        onClick={toggleRepcontraseña()}
                         style={{ position: 'absolute', right: '10px', top: '30%' }}
-                        >
-                        {verPassword ? "🙈" : "👁️"} {/* Cambia el dibujito según corresponda */}
-        </button>
+                        > {mostrarRepcontraseña ? "🙈" : "👁️"}
+                        </button>
                     </div>
 
                     <button type="submit" className="register-button">
