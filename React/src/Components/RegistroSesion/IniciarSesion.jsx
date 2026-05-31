@@ -10,7 +10,7 @@ const IniciarSesion = () => {
     const [mostrarContraseña, setMostrarContraseña] = useState(false);
     const navigate = useNavigate();
 
-    const toggleContrasena = () => { setMostrarContraseña(!mostrarContraseña); };
+    const toggleContraseña = () => { setMostrarContraseña(!mostrarContraseña); };
 
     const manejarEnvio = async (e) => {
         e.preventDefault();
@@ -49,6 +49,12 @@ const IniciarSesion = () => {
                             onChange={(e) => setPass(e.target.value)} 
                             required
                         />
+                        <button 
+                        type="button" 
+                        onClick={toggleContraseña} 
+                        style={{ position: 'absolute', right: '10px', top: '30%' }}>
+                        {mostrarContraseña ? "🙈" : "👁️"}
+                        </button>
                     </div>
 
                     <button type="submit" className="login-button">
