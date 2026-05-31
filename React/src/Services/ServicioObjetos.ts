@@ -1,6 +1,6 @@
 import { UsuarioFullDTO } from './../Type/Usuario';
 import { CompraDTO, ObjetoInvDTO, ObjetTiendDTO } from './../Type/Objeto';
-import { alertaError } from '../Utils/Alertas';
+import { alertaError, alertaExito } from '../Utils/Alertas';
 // @ts-ignore
 const API_URL = `${import.meta.env.VITE_API_URL}/Objetos`;
 
@@ -40,6 +40,7 @@ const ObjetoService = {
 
     Comprar: async (id:number,costo:number): Promise<UsuarioFullDTO> => {
     const token = localStorage.getItem('usuario');
+    let comprado = true;
     if (!token) {
             throw new Error('Token de usuario no encontrado');
         }
@@ -48,13 +49,18 @@ const ObjetoService = {
     //Comprobacion para evitar numeros negativos
     if(usuario.puntos<costo){
       alertaError('No tienes suficientes puntos')
+      comprado = false;
     }
     //Comprobacion para que no repita objeto
     for (const numero of usuario.objetos) {
       if(Number(numero) === Number(id)){
         alertaError('Ya tienes este objeto');
+        comprado = false;
       }
     }
+    //Comprobacion para mostrar la alerta de producto comprado
+    if (comprado=== true){ alertaExito('Producto Comprado'); }
+
     
     const compra: CompraDTO = {
       usuario: usuario,

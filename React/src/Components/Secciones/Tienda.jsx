@@ -32,7 +32,6 @@ const Tienda = () => {
             const datos=await ObjetoService.Comprar(obj.id,obj.costo);
             localStorage.setItem('usuario',JSON.stringify(datos));
             console.log("¡Hechizo comprado directamente!");
-            alertaExito('Producto Comprado');
             console.log(datos);
             
     } else {
