@@ -19,10 +19,10 @@ const Footer = () => {
         {/* COLUMNA 2: CONTENIDO DE LA SAGA */}
         <div className="footer-column">
           <ul className="footer-list">
-            <li><a href="https://youtu.be/JahBsWRSfgw?si=k9beC0UQ5-6V6CVK" target='_blank'>Resumen de Películas</a></li>
-            <li><a href="https://youtu.be/AcuP_gASZRc?si=rssVUMBKFM9IVDis" target='_blank'>Curiosidades de la saga</a></li>
-            <li><a href="https://www.reddit.com/r/harrypotter/" target='_blank'>Reddit de la comunidad</a></li>
-            <li><a href="https://youtu.be/OtxWSFyruO4?si=3Wu3lEJW1JnBZhpw" target='_blank'>Harry Potter HBO</a></li>
+            <li><a href="https://youtu.be/JahBsWRSfgw?si=k9beC0UQ5-6V6CVK" target='_blank' className='LinkFooter'>Resumen de Películas</a></li>
+            <li><a href="https://youtu.be/AcuP_gASZRc?si=rssVUMBKFM9IVDis" target='_blank' className='LinkFooter'>Curiosidades de la saga</a></li>
+            <li><a href="https://www.reddit.com/r/harrypotter/" target='_blank' className='LinkFooter'>Reddit de la comunidad</a></li>
+            <li><a href="https://youtu.be/OtxWSFyruO4?si=3Wu3lEJW1JnBZhpw" target='_blank' className='LinkFooter' >Harry Potter HBO</a></li>
             <li> <Link to='/nosotros'>Acerca de Nosotros</Link></li>
           </ul>
         </div>
@@ -30,11 +30,11 @@ const Footer = () => {
         {/* COLUMNA 3: LEGAL Y GUÍAS */}
         <div className="footer-column divider-left">
           <ul className="footer-list mt-title">
-            <li><Link to='/accesibilidad'>Accesibilidad</Link></li>
-            <li><Link to='/intelectual'>Propiedad Intelectual</Link></li>
-            <li><Link to='/mapa'>Mapa del Sitio</Link></li>
-            <li><Link to='/estilo'>Guia de Estilo</Link></li>
-            <li><Link to='/cookies'>Politica de Cookies</Link></li>
+            <li><Link to='/accesibilidad' className='LinkFooter' >Accesibilidad</Link></li>
+            <li><Link to='/intelectual'   className='LinkFooter' >Propiedad Intelectual</Link></li>
+            <li><Link to='/mapa'          className='LinkFooter' >Mapa del Sitio</Link></li>
+            <li><Link to='/estilo'        className='LinkFooter' >Guia de Estilo</Link></li>
+            <li><Link to='/cookies'       className='LinkFooter' >Politica de Cookies</Link></li>
           </ul>
         </div>
 

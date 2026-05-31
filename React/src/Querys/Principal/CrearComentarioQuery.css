@@ -1,9 +1,7 @@
-/* ==========================================================================
-   RESET Y REPARACIÓN AGRESIVA PARA MÓVILES (Max-Width: 768px)
-   ========================================================================== */
+
 @media screen and (max-width: 768px) {
     
-    /* 1. Forzar que el body y el contenedor raíz permitan scroll normal y no rompan el ancho */
+
     html, body, #root {
         width: 100% !important;
         overflow-x: hidden !important;
@@ -11,31 +9,29 @@
         padding: 0 !important;
     }
 
-    /* 2. Limpieza total del contenedor del formulario */
     .comentario-form {
-        /* Desactivamos posicionamientos raros que lo manden a la izquierda */
         position: relative !important;
         left: auto !important;
         top: auto !important;
         transform: none !important;
         
-        /* Forzamos ancho fluido y centrado estricto */
+       
         width: 92% !important;
-        max-width: 420px !important; /* Ideal para la mayoría de teléfonos */
-        margin: 2rem auto !important; /* Centra horizontalmente sí o sí */
+        max-width: 420px !important; 
+        margin: 2rem auto !important; 
         
-        /* Ajuste de espaciados */
+       
         padding: 1.2rem !important;
         box-sizing: border-box !important;
         border-radius: 16px !important;
     }
 
-    /* Quitamos la línea decorativa superior si está descuadrando el diseño */
+    
     .comentario-form::before {
         display: none !important;
     }
 
-    /* 3. El cuadro de texto ("Escribe tu crónica...") no puede superar el ancho del padre */
+    
     .comentario-form textarea {
         width: 100% !important;
         min-height: 130px !important;
@@ -44,7 +40,7 @@
         font-size: 0.95rem !important;
     }
 
-    /* 4. Puntuación y estrellas: Todo en una sola columna limpia y centrada */
+    
     .valoracion-container {
         display: flex !important;
         flex-direction: column !important;
@@ -66,10 +62,10 @@
     }
 
     .star {
-        font-size: 1.6rem !important; /* Reducimos tamaño de estrellas */
+        font-size: 1.6rem !important; 
     }
 
-    /* 5. Pie de formulario: Mandamos el contador de caracteres arriba y el botón abajo */
+
     .form-footer {
         display: flex !important;
         flex-direction: column !important;
@@ -79,17 +75,17 @@
         width: 100% !important;
     }
 
-    /* El contador de caracteres (0 / 1000) */
+
     .form-footer span {
         font-size: 0.8rem !important;
-        order: 1; /* Lo posiciona primero */
+        order: 1;
     }
 
-    /* Botón mágico a pantalla completa en móvil */
+
     .magic-button {
         width: 100% !important;
         padding: 12px !important;
         font-size: 0.85rem !important;
-        order: 2; /* Lo posiciona debajo del contador */
+        order: 2;
     }
 }
