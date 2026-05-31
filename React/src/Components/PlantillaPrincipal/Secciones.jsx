@@ -1,5 +1,6 @@
 import React from 'react';
 import './../../Style/SinIniciarSesion/SeccionesCSS.css';
+import './../../Querys/Principal/SeccionesQuery.css'
 import { Link } from 'react-router-dom';
 const Secciones = () => {
 
