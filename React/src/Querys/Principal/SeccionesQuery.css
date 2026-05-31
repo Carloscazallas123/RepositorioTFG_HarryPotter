@@ -1,5 +1,8 @@
 @media (max-width: 768px) {
-    .imagenlibro{
-        display: none;
+    .imagenLibro{
+    display: none;
+    }
+    *{
+        background-color: black;
     }
 }
