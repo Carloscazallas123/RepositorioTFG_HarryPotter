@@ -8,12 +8,13 @@ const Registrarse = () => {
     const [nombre, setNombre] = useState('');
     const [email, setemail] = useState('');
     const [contraseña, setcontraseña] = useState('');
+    const [verPassword, setVerPassword] = useState(false);
     const [repcontraseña, setRepcontraseña] = useState('');
     const navigate = useNavigate();
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        // Validación mágica: ¿Coinciden los encantamientos?
+
         if (contraseña !== repcontraseña) {
             return alertaError('Las contraseñas no coinciden. ¡Revisa tu varita!');
         }
@@ -80,6 +81,14 @@ const Registrarse = () => {
                             placeholder="••••••••"
                             required 
                         />
+
+                        <button 
+                        type="button" // Para que no envíe el formulario
+                        onClick={() => setVerPassword(!verPassword)} // 🌟 Al hacer clic, cambia el estado al revés (de true a false, o de false a true)
+                        style={{ position: 'absolute', right: '10px', top: '30%' }}
+                        >
+                        {verPassword ? "🙈" : "👁️"} {/* Cambia el dibujito según corresponda */}
+        </button>
                     </div>
 
                     <button type="submit" className="register-button">

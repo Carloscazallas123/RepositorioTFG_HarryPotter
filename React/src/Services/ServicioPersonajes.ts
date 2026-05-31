@@ -15,7 +15,7 @@ const PersonajeService = {
             method: 'POST', // Si solo es lectura, GET está bien
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': `Bearer ${token}` // Enviamos el token para validar la sesión
+                'Authorization': `Bearer ${token}` 
             },
             body: JSON.stringify(usuario.personajes)
         });

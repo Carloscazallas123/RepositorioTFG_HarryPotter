@@ -19,8 +19,8 @@ const MinijuegoService = {
             const response = await fetch(`${API_URL}/Puntaje`, {
             method: 'POST',
             headers: {
-                'Authorization': `Bearer ${token}`, // El token va aquí (Header)
-                'Content-Type': 'application/json'  // Avisamos que enviamos JSON
+                'Authorization': `Bearer ${token}`, 
+                'Content-Type': 'application/json'  
                 },
             body: JSON.stringify(usuario) 
             });

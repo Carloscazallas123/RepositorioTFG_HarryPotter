@@ -5,7 +5,7 @@ const Secciones = () => {
 
   return (
     <section className="seccionesContainer">
-      {/* Encabezado con los libros */}
+
       <div className="tituloWrapper">
         <img src="/Iconos/Libro_Icono.png" alt="Libro mágico" className="imagenLibro" />
         <h2 className="tituloManual">Manual Orientativo</h2>
@@ -13,8 +13,7 @@ const Secciones = () => {
       </div>
 
       <div className="seccionesGrid">
-        
-        {/* SECCIÓN 1: CUESTIONARIO */}
+
         <Link to="/cuestionario" className="seccionLink">
         <div className="seccionCard">
           <div className="imageContainerSeccion">
@@ -27,7 +26,6 @@ const Secciones = () => {
         </div>
         </Link>
 
-        {/* SECCIÓN 2: MINIJUEGOS */}
         <Link to="/minijuegos" className="seccionLink" >
         <div className="seccionCard">
           <div className="imageContainerSeccion">
@@ -43,7 +41,7 @@ const Secciones = () => {
         </div>
         </Link>
 
-        {/* SECCIÓN 3: TIENDA */}
+
         <Link to="/tienda" className="seccionLink">
         <div className="seccionCard">
           <div className="imageContainerSeccion">

@@ -2,6 +2,7 @@
 import { alertaExito } from '../Utils/Alertas';
 import { ComentarDTO, ComentarioMostDTO } from './../Type/Comentario';
 import { UsuarioFullDTO } from './../Type/Usuario';
+
 // @ts-ignore
 const API_URL = `${import.meta.env.VITE_API_URL}/Comentarios`;
 const ComentarioService = {
@@ -32,8 +33,8 @@ const ComentarioService = {
       const response = await fetch(`${API_URL}/Comentar`, {
           method: 'POST',
           headers: {
-              'Authorization': `Bearer ${token}`, // El token va aquí (Header)
-              'Content-Type': 'application/json'  // Avisamos que enviamos JSON
+              'Authorization': `Bearer ${token}`, 
+              'Content-Type': 'application/json'  
               },
           body: JSON.stringify(comentario) 
           });

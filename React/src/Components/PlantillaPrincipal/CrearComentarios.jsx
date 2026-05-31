@@ -13,7 +13,7 @@ const FormularioComentario = () => {
     const [usuario, setUsuario] = useState();
     const navigate = useNavigate(); // Hook para redirigir
 
-    // Aqui se comprueba si el usuario ha iniciado sesion o no
+
     useEffect(() => {
         const token = localStorage.getItem('usuario');
         console.log("=== INSPECCIÓN DE VARITA (NAVBAR) ===");
@@ -21,7 +21,6 @@ const FormularioComentario = () => {
         if (token) {
             setUsuario(JSON.parse(token));
         } else {     
-            // Margen de 300m de la pagina principal y la pagina de inicio de sesion
             const timeoutRedireccion = setTimeout(() => {
                 const usuarioRechequeo = localStorage.getItem('usuario');
                 
@@ -35,7 +34,6 @@ const FormularioComentario = () => {
     }, [navigate]);
 
 
-    // Metodo para guardar/modificar el comentario
     const handleSubmit = async (e) => {
         e.preventDefault();
         

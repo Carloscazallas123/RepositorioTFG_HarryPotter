@@ -14,8 +14,8 @@ const ObjetoService = {
         const response = await fetch(`${API_URL}/Inventario`, {
         method: 'POST',
         headers: {
-            'Authorization': `Bearer ${token}`, // El token va aquí (Header)
-            'Content-Type': 'application/json'  // Avisamos que enviamos JSON
+            'Authorization': `Bearer ${token}`, 
+            'Content-Type': 'application/json'  
             },
         body: JSON.stringify(usuario.objetos) 
         });
@@ -64,8 +64,8 @@ const ObjetoService = {
       const response = await fetch(`${API_URL}/Comprar`, {
         method: 'POST',
         headers: {
-            'Authorization': `Bearer ${token}`, // El token va aquí (Header)
-            'Content-Type': 'application/json'  // Avisamos que enviamos JSON
+            'Authorization': `Bearer ${token}`, 
+            'Content-Type': 'application/json'  
             },
         body: JSON.stringify(compra) 
         });
