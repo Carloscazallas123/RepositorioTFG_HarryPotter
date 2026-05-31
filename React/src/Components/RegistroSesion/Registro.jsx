@@ -75,7 +75,7 @@ const Registrarse = () => {
                         />
                         <button 
                         type="button" 
-                        onClick={toggleContraseña()} 
+                        onClick={toggleContraseña} 
                         style={{ position: 'absolute', right: '10px', top: '30%' }}>
                         {mostrarContraseña ? "🙈" : "👁️"}
                     </button>
@@ -94,7 +94,7 @@ const Registrarse = () => {
 
                         <button 
                         type="button"
-                        onClick={toggleRepcontraseña()}
+                        onClick={toggleRepcontraseña}
                         style={{ position: 'absolute', right: '10px', top: '30%' }}
                         > {mostrarRepcontraseña ? "🙈" : "👁️"}
                         </button>
