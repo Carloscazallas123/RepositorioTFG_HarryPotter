@@ -16,9 +16,9 @@ import com.harry.paquetes.dtos.personajes.PersonajeMostDTO;
 import com.harry.paquetes.dtos.personajes.PersonajeVistDTO;
 import com.harry.paquetes.servicios.interfaces.InterfazPersonaje;
 
-@CrossOrigin(origins = "*")
 @RestController
-@RequestMapping("/Personajes")
+@RequestMapping("/Objetos")
+@CrossOrigin(origins = "*")
 public class ControladorPersonajes {
 
 	@Autowired

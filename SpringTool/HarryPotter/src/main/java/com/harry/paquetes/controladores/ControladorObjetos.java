@@ -18,9 +18,9 @@ import com.harry.paquetes.dtos.objeto.ObjetoTiendDTO;
 import com.harry.paquetes.dtos.usuario.UsuarioFullDTO;
 import com.harry.paquetes.servicios.interfaces.InterfazObjeto;
 
-@CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("/Objetos")
+@CrossOrigin(origins = "*")
 public class ControladorObjetos {
 	
 	@Autowired

@@ -16,9 +16,9 @@ import com.harry.paquetes.dtos.usuario.UsuarioFullDTO;
 import com.harry.paquetes.dtos.usuario.UsuarioPuntosDTO;
 import com.harry.paquetes.servicios.interfaces.InterfazUsuario;
 
-@CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("/Usuarios")
+@CrossOrigin(origins = "*")
 public class ControladorUsuarios {
 
 	@Autowired
