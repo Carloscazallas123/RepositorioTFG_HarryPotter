@@ -23,7 +23,7 @@ const Footer = () => {
             <li><a href="https://youtu.be/AcuP_gASZRc?si=rssVUMBKFM9IVDis" target='_blank' className='LinkFooter'>Curiosidades de la saga</a></li>
             <li><a href="https://www.reddit.com/r/harrypotter/" target='_blank' className='LinkFooter'>Reddit de la comunidad</a></li>
             <li><a href="https://youtu.be/OtxWSFyruO4?si=3Wu3lEJW1JnBZhpw" target='_blank' className='LinkFooter' >Harry Potter HBO</a></li>
-            <li> <Link to='/nosotros'>Acerca de Nosotros</Link></li>
+            <li> <Link to='/nosotros' className='LinkFooter' >Acerca de Nosotros</Link></li>
           </ul>
         </div>
 
