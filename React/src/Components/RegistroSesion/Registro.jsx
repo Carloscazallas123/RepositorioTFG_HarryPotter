@@ -68,8 +68,7 @@ const Registrarse = () => {
                     <div className="form-group">
                         <label>🔐 Contraseña</label>
                         <input 
-                            type="password" 
-                            
+                            type={mostrarContraseña ? "text" : "password"}
                             name="contraseña" 
                             value={contraseña}
                             onChange={(e) => setcontraseña(e.target.value)} 
@@ -87,7 +86,7 @@ const Registrarse = () => {
                     <div className="form-group">
                         <label>🔄 Repetir Contraseña</label>
                         <input 
-                            type="password" 
+                            type={mostrarRepcontraseña ? "text" : "password"}
                             name="repcontraseña" 
                             value={repcontraseña}
                             onChange={(e) => setRepcontraseña(e.target.value)} 
