@@ -20,7 +20,7 @@ const Reseñas = () => {
     console.log(listaComentarios);
     return (
         <section className="reseñasSection">
-            <h2 className="reseñasTitle">Reseñas de la Comunidad</h2>
+            <h2 className="reseñasTitle">Comentarios de la Comunidad</h2>
             
             <div className="reseñasGrid">
                 {cargando ? (
