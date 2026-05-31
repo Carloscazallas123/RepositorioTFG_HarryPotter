@@ -33,8 +33,13 @@ const Secciones = () => {
           <div className="imageContainerSeccion">
             <img src="/Imagenes/Minijuegos.png" alt="Minijuegos"/>
           </div>
+          <Link to="/minijuegos" className="seccionLink" >
             <h3>Minijuegos</h3>
-          <p>Gana puntos para tu casa superando desafíos únicos y duelos de magia.</p>
+          </Link>
+          <Link to="/minijuegos" className="seccionLink" >
+              <p>Gana puntos para tu casa superando desafíos únicos y duelos de magia.</p>
+          </Link>
+          
         </div>
         </Link>
 
