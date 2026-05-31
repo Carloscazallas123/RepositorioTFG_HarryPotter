@@ -7,7 +7,10 @@ import { alertaError, alertaExito } from '../../Utils/Alertas';
 const IniciarSesion = () => {
     const [nombre, setNombre] = useState('');
     const [pass, setPass] = useState('');
+    const [mostrarContraseña, setMostrarContraseña] = useState(false);
     const navigate = useNavigate();
+
+    const toggleContrasena = () => { setMostrarContraseña(!mostrarContraseña); };
 
     const manejarEnvio = async (e) => {
         e.preventDefault();
@@ -41,7 +44,7 @@ const IniciarSesion = () => {
                     <div className="form-group">
                         <label>🔐 Contraseña</label>
                         <input 
-                            type="password" 
+                            type={mostrarContraseña ? "text" : "password"}
                             placeholder="••••••••" 
                             onChange={(e) => setPass(e.target.value)} 
                             required
