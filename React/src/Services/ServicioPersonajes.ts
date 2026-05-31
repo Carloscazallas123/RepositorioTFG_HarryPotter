@@ -1,7 +1,7 @@
 import {PersonajeMostDTO, PersonajeVistDTO} from './../Type/Personaje';
 import { UsuarioFullDTO } from './../Type/Usuario';
 // @ts-ignore
-const API_URL = `${VITE_API_URL}/Personajes`;
+const API_URL = `${import.meta.env.VITE_API_URL}/Personajes`;
 
 const PersonajeService = {
     getListaPersonajes: async (): Promise<PersonajeMostDTO[]> => {

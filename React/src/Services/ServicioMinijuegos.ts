@@ -1,6 +1,6 @@
 import { UsuarioFullDTO, UsuarioPuntosDTO } from "../Type/Usuario";
 // @ts-ignore
-const API_URL = `${VITE_API_URL}/Usuarios`;
+const API_URL = `${import.meta.env.VITE_API_URL}/Usuarios`;
 
 const MinijuegoService = {
   getUsuarioActualizado: async (puntaje: number): Promise<[UsuarioFullDTO]> => {
