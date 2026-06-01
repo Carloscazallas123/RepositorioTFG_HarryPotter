@@ -96,7 +96,7 @@ const MinijuegoMemoria = ({ onVolver }) => {
     // Calculamos cuántos movimientos le quedan al mago
     const movimientosRestantes = MOVIMIENTOS_MAXIMOS - movimientos;
     // Si no hubo match y ya alcanzó el límite de movimientos, pierde
-    if (MOVIMIENTOS_MAXIMOS === 0 ) {
+    if (movimientosRestantes === 0 ) {
         setJuegoEstado('perdido');
         PartidaTerminada(puntaje);
     }
