@@ -3,7 +3,8 @@ import './../../../Style/Secciones/juegos/DueloMagosCSS.css';
 import MinijuegoService from '../../../Services/ServicioMinijuegos';
 import { alertaExito } from '../../../Utils/Alertas';
 import { Link } from 'react-router-dom';
-// Banco de palabras mágicas para el duelo
+
+
 const PALABRAS_MAGICAS = [
     "Expelliarmus", "Flipendo", "Alohomora", "Lumos", "Incendio", 
     "Riddikulus", "Crucio", "Accio", "Aguamenti", "Sectumsempra", 
