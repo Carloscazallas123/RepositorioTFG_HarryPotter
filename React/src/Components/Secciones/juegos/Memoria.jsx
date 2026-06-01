@@ -72,14 +72,14 @@ const MinijuegoMemoria = ({ onVolver }) => {
                     setPuntaje(0);
                 }
             } else { 
+                
                 //Para evitar numeros negativos
+                setPuntaje(puntaje-100);
+                console.log('Menos 100 puntos');
                 if(puntaje==0){
                     setPuntaje(0); 
                     console.log('0 puntos');
                 }
-
-                setPuntaje(puntaje-100);
-                console.log('Menos 100 puntos');
                 setTimeout(() => {
                     setSeleccionadas([]);
                     
