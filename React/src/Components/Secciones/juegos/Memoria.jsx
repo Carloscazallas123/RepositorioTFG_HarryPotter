@@ -12,7 +12,7 @@ const PERSONAJES_BASE = [
     { name: 'Draco Malfoy', emoji: '🍏' }
 ];
 
-const MOVIMIENTOS_MAXIMOS = 12; // Aquí puedes cambiar el límite de intentos
+let MOVIMIENTOS_MAXIMOS = 12; // Aquí puedes cambiar el límite de intentos
 
 const MinijuegoMemoria = ({ onVolver }) => {
     const [puntaje, setPuntaje] = useState(100);
@@ -94,9 +94,9 @@ const MinijuegoMemoria = ({ onVolver }) => {
     }
 
     // Calculamos cuántos movimientos le quedan al mago
-    const movimientosRestantes = MOVIMIENTOS_MAXIMOS - movimientos;
+    const MOVIMIENTOS_MAXIMOS = MOVIMIENTOS_MAXIMOS - movimientos;
     // Si no hubo match y ya alcanzó el límite de movimientos, pierde
-    if (movimientosRestantes === 0 ) {
+    if (MOVIMIENTOS_MAXIMOS === 0 ) {
         setJuegoEstado('perdido');
         PartidaTerminada(puntaje);
     }
