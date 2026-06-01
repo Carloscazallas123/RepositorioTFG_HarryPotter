@@ -81,12 +81,6 @@ const MinijuegoMemoria = ({ onVolver }) => {
                 console.log('Menos 100 puntos');
                 setTimeout(() => {
                     setSeleccionadas([]);
-                    
-                    // Si no hubo match y ya alcanzó el límite de movimientos, pierde
-                    if (elSiguienteMovimiento === 0 ) {
-                        setJuegoEstado('perdido');
-                        PartidaTerminada(puntaje);
-                    }
                 }, 1000);
             }
         }
@@ -101,6 +95,12 @@ const MinijuegoMemoria = ({ onVolver }) => {
 
     // Calculamos cuántos movimientos le quedan al mago
     const movimientosRestantes = MOVIMIENTOS_MAXIMOS - movimientos;
+    // Si no hubo match y ya alcanzó el límite de movimientos, pierde
+    if (MOVIMIENTOS_MAXIMOS === 0 ) {
+        setJuegoEstado('perdido');
+        PartidaTerminada(puntaje);
+    }
+
 
     return (
         <div className="juego-wrapper">
