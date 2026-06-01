@@ -83,7 +83,7 @@ const MinijuegoMemoria = ({ onVolver }) => {
                     setSeleccionadas([]);
                     
                     // Si no hubo match y ya alcanzó el límite de movimientos, pierde
-                    if (movimientosRestantes < 0 || nuevasEmparejadas.length < PERSONAJES_BASE.length) {
+                    if (movimientosRestantes <= 0 || nuevasEmparejadas.length < PERSONAJES_BASE.length) {
                         setJuegoEstado('perdido');
                         PartidaTerminada(puntaje);
                     }
