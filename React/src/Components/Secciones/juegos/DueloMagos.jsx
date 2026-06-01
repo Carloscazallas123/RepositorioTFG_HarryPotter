@@ -10,7 +10,7 @@ const PALABRAS_MAGICAS = [
     "Expecto Patronum", "Avada Kedavra", "Protego", "Stupefy"
 ];
 
-const TIEMPO_LIMITE_SEGUNDOS = 5; // Tiempo que tienes para escribir la palabra antes de que Draco ataque
+const TIEMPO_LIMITE_SEGUNDOS = 5; 
 
 const DueloMagos = ({ onVolver }) => {
     const [vidaHarry, setVidaHarry] = useState(100);
@@ -18,7 +18,7 @@ const DueloMagos = ({ onVolver }) => {
     const [palabraActual, setPalabraActual] = useState('');
     const [inputUsuario, setInputUsuario] = useState('');
     const [tiempoRestante, setTiempoRestante] = useState(TIEMPO_LIMITE_SEGUNDOS);
-    const [juegoEstado, setJuegoEstado] = useState('inicio'); // 'inicio', 'jugando', 'ganado', 'perdido'
+    const [juegoEstado, setJuegoEstado] = useState('inicio'); 
     const [mensajeFeedback, setMensajeFeedback] = useState('¡Prepara tus dedos!');
     const [puntaje, setPuntaje] = useState(100);
 
@@ -30,14 +30,14 @@ const DueloMagos = ({ onVolver }) => {
         estadoRef.current = juegoEstado;
     }, [juegoEstado]);
 
-    // Metodo para obtener una palabra aleatoriasacad de la Lista Palabras Magicas
+
     const obtenerPalabraAleatoria = () => {
         let nuevaPalabra = PALABRAS_MAGICAS[Math.floor(Math.random() * PALABRAS_MAGICAS.length)];
         setPalabraActual(nuevaPalabra);
         setInputUsuario('');
         setTiempoRestante(TIEMPO_LIMITE_SEGUNDOS);
     };
-    //Metodo para iniciar el duelo
+   
     const iniciarDuelo = () => {
         setVidaHarry(100);
         setVidaDraco(100);

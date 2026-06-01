@@ -63,7 +63,7 @@ const MinijuegoMemoria = ({ onVolver }) => {
                 setEmparejadas(nuevasEmparejadas);
                 setSeleccionadas([]);
                 if(puntaje<=0) setPuntaje(0);
-                setPuntaje(puntaje + 500);
+                setPuntaje(puntaje + 150);
                 console.log('+500 puntos');
                 // Verificar si ganó
                 if (nuevasEmparejadas.length === PERSONAJES_BASE.length) {
