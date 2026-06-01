@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import './../../Style/Secciones/MinijuegosCSS.css';
 
 const Minijuegos = () => {
+    const [JuegoActivo,setJuegoActivo]=useState('');
+    
     return (
     <div className="minijuegos-container">
 
