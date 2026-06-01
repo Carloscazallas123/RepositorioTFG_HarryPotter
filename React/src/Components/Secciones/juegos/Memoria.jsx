@@ -20,7 +20,8 @@ const MinijuegoMemoria = ({ onVolver }) => {
     const [seleccionadas, setSeleccionadas] = useState([]);
     const [emparejadas, setEmparejadas] = useState([]);
     const [movimientos, setMovimientos] = useState(0);
-    const [juegoEstado, setJuegoEstado] = useState('jugando'); // 'jugando', 'ganado', 'perdido'
+    const [juegoEstado, setJuegoEstado] = useState('jugando'); 
+    let nuevasEmparejadas = [];
     const inicializarJuego = () => {
         const cartasDuplicadas = [...PERSONAJES_BASE, ...PERSONAJES_BASE].map((personaje, index) => ({
             ...personaje,
@@ -58,7 +59,7 @@ const MinijuegoMemoria = ({ onVolver }) => {
 
             //Si acierta, se suman 500 puntos
             if (primera.name === segunda.name) {
-                const nuevasEmparejadas = [...emparejadas, primera.name];
+                nuevasEmparejadas = [...emparejadas, primera.name];
                 setEmparejadas(nuevasEmparejadas);
                 setSeleccionadas([]);
                 if(puntaje<=0) setPuntaje(0);
