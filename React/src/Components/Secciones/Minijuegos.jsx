@@ -3,15 +3,14 @@ import { Link } from 'react-router-dom';
 import './../../Style/Secciones/MinijuegosCSS.css';
 
 const Minijuegos = () => {
-    const [JuegoActivo,setJuegoActivo]=useState('');
-    
+
     return (
     <div className="minijuegos-container">
 
         <div className="juegos-grid">
             
             {/* MINIJUEGO 1: QUIDDITCH */}
-            <div className="juego-card" onClick={() => setJuegoActivo('quidditch')}>
+            <div className="juego-card">
                 <div className="juego-icono-wrapper">
                     <span className="juego-icono">✨</span>
                 </div>
@@ -30,7 +29,7 @@ const Minijuegos = () => {
             </div>
 
             {/* MINIJUEGO 2: CARRERA DE ESCOBAS */}
-            <div className="juego-card" onClick={() => setJuegoActivo('carrera')}>
+            <div className="juego-card">
                 <div className="juego-icono-wrapper">
                     <span className="juego-icono">🧹</span>
                 </div>
@@ -50,7 +49,7 @@ const Minijuegos = () => {
             </div>
 
             {/* MINIJUEGO 3: DUELO DE MAGOS */}
-            <div className="juego-card" onClick={() => setJuegoActivo('duelo')}>
+            <div className="juego-card">
                 <div className="juego-icono-wrapper">
                     <span className="juego-icono">🪄</span>
                 </div>
