@@ -20,7 +20,7 @@ import com.harry.paquetes.servicios.interfaces.InterfazObjeto;
 
 @RestController
 @RequestMapping("/Objetos")
-@CrossOrigin(origins = "*")
+@CrossOrigin(origins = "https://hogwartsweb.up.railway.app")
 public class ControladorObjetos {
 	
 	@Autowired

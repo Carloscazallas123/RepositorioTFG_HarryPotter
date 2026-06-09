@@ -16,9 +16,9 @@ import com.harry.paquetes.dtos.comentario.ComentarDTO;
 import com.harry.paquetes.dtos.comentario.ComentarioMostDTO;
 import com.harry.paquetes.servicios.interfaces.*;
 
-@CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("/Comentarios")
+@CrossOrigin(origins = "https://hogwartsweb.up.railway.app")
 public class ControladorComentarios {
 
 	@Autowired

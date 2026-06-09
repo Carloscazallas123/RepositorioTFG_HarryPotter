@@ -18,7 +18,7 @@ import com.harry.paquetes.servicios.interfaces.InterfazPersonaje;
 
 @RestController
 @RequestMapping("/Personajes")
-@CrossOrigin(origins = "*")
+@CrossOrigin(origins = "https://hogwartsweb.up.railway.app")
 public class ControladorPersonajes {
 
 	@Autowired

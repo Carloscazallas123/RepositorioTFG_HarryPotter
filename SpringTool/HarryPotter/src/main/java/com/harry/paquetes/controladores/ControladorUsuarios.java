@@ -18,7 +18,7 @@ import com.harry.paquetes.servicios.interfaces.InterfazUsuario;
 
 @RestController
 @RequestMapping("/Usuarios")
-@CrossOrigin(origins = "*")
+@CrossOrigin(origins = "https://hogwartsweb.up.railway.app")
 public class ControladorUsuarios {
 
 	@Autowired
