@@ -5,16 +5,14 @@
     min-height: 100vh;
 }
 
-/* Grid de 3 en 3 */
+
 .objetos-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    /* Ajustamos el gap a 40px para que no se vea tan disperso con el título más pequeño */
     gap: 40px; 
     max-width: 1000px;
     margin: 0 auto;
     perspective: 1500px;
-    /* Añadimos un poco de padding superior a la grid */
     padding-top: 10px;
 }
 
@@ -36,7 +34,7 @@
     transform: rotateY(180deg);
 }
 
-/* Estilo Común (Frente y Detrás) */
+
 .card-front, .card-back {
     position: absolute;
     width: 100%;
@@ -50,7 +48,7 @@
     outline-offset: -5px;
 }
 
-/* Cara Frontal (Estilo Pergamino Oscuro) */
+
 .card-front {
     background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
                 url('https://www.transparenttextures.com/patterns/dark-leather.png'), #1a1a1a;
@@ -80,11 +78,10 @@
     opacity: 0.7;
 }
 
-/* Cara Trasera (Pergamino Viejo) */
 .card-back {
-    background: #c5b358; /* Color oro viejo */
+    background: #c5b358; 
     background-image: url('https://www.transparenttextures.com/patterns/paper-fibers.png');
-    background-color: #896e26; /* Color pergamino */
+    background-color: #896e26; 
     color: #2c1e0f;
     transform: rotateY(180deg);
     padding: 25px;
@@ -143,7 +140,6 @@
     letter-spacing: 1px;
 }
 
-/* Media Queries para que siga siendo funcional */
 @media (max-width: 1024px) {
     .objetos-grid { grid-template-columns: repeat(2, 1fr); gap: 30px; }
 }

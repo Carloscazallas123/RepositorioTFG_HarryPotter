@@ -135,10 +135,9 @@
 }
 
 .register-link:hover {
-    color: #d4af37; /* Cambia a dorado al pasar el ratón */
+    color: #d4af37; 
     text-decoration: underline;
 }
-/* ... (mantiene todo lo anterior y añade esto) ... */
 
 .subtitle {
     color: #6d5d4b;

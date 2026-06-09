@@ -1,6 +1,3 @@
-/* ==========================================================================
-   CONTENEDOR DE LA SALA GENERAL (FONDO DE PANTALLA)
-   ========================================================================== */
 .minijuegos-container {
     padding: 120px 20px 60px 20px;
     background-color: #1a0a2e; /* Gris azulado muy oscuro para que los sobres resalten */
@@ -25,10 +22,6 @@
     margin-bottom: 60px;
     letter-spacing: 1px;
 }
-
-/* ==========================================================================
-   REJILLA DE TARJETAS (GRID)
-   ========================================================================== */
 .juegos-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr); 
@@ -38,13 +31,10 @@
     padding: 15px;
 }
 
-/* ==========================================================================
-   LAS TARJETAS: FORMATO SOBRE DE HOGWARTS
-   ========================================================================== */
 .juego-card {
-    background-color: #f2e6ce; /* Color pergamino real de la carta de Hogwarts */
-    border: 2px solid #dfcca3;  /* Borde sutil que simula el doblez del sobre */
-    border-radius: 4px;        /* Esquinas casi rectas, simulando un sobre físico */
+    background-color: #f2e6ce; 
+    border: 2px solid #dfcca3;  
+    border-radius: 4px;        
     padding: 45px 30px;
     display: flex;
     flex-direction: column;
@@ -88,9 +78,6 @@
     filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
 }
 
-/* ==========================================================================
-   TEXTOS EN TINTA ESMERALDA (ESTILO MINERVA MCCOGNAGALL)
-   ========================================================================== */
 .juego-info {
     text-align: center;
     width: 100%;
@@ -115,9 +102,6 @@
     text-align: center;
 }
 
-/* ==========================================================================
-   BOTÓN DE ACCIÓN: SELLO IMPRESO EN LA CARTA
-   ========================================================================== */
 .btn-jugar-magico {
     color: #f2e6ce;
     padding: 12px 0;
@@ -133,9 +117,6 @@
     box-shadow: 0 3px 6px rgba(0,0,0,0.2);
 }
 
-/* ==========================================================================
-   RESPONSIVO
-   ========================================================================== */
 @media (max-width: 1024px) {
     .juegos-grid {
         grid-template-columns: repeat(2, 1fr);

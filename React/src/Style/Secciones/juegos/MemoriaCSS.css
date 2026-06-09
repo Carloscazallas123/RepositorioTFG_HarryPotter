@@ -1,6 +1,3 @@
-/* ==========================================================================
-   CONTENEDOR GENERAL (ESTILO SOBRE)
-   ========================================================================== */
 .sobre-hogwarts-memoria {
     background-color: #1a0a2e; /* Pergamino */
     border: 2px solid #d4af37;
@@ -15,9 +12,6 @@
     cursor: default !important;
 }
 
-/* ==========================================================================
-   REJILLA DEL TABLERO (GRID 4x3)
-   ========================================================================== */
 .tablero-memoria {
     display: grid;
     grid-template-columns: repeat(4, 1fr); /* 4 columnas fijas */
@@ -26,9 +20,6 @@
     margin-top: 10px;
 }
 
-/* ==========================================================================
-   ESTRUCTURA MÁGICA 3D DE LAS CARTAS
-   ========================================================================== */
 .carta-slot {
     background-color: transparent;
     height: 130px;
@@ -47,12 +38,11 @@
     border-radius: 6px;
 }
 
-/* Activador del giro */
+
 .carta-slot.volteada .carta-interna {
     transform: rotateY(180deg);
 }
 
-/* Propiedades comunes de ambas caras */
 .carta-reverso, .carta-anverso {
     position: absolute;
     width: 100%;
@@ -67,7 +57,7 @@
     border: 2px solid #dfcca3;
 }
 
-/* --- REVERSO (Carta cerrada) --- */
+
 .carta-reverso {
     background-color: #9d3838; /* Un pergamino un poco más oscuro */
     box-shadow: inset 0 0 15px rgba(0,0,0,0.05);
@@ -78,7 +68,7 @@
     filter: drop-shadow(0 2px 4px rgba(0,0,0,0.15));
 }
 
-/* --- ANVERSO (Carta abierta / Personaje) --- */
+
 .carta-anverso {
     background-color: #faf4e8; /* Pergamino claro y limpio */
     color: #1c3b2b; /* Tinta esmeralda */
@@ -100,9 +90,7 @@
     line-height: 1.2;
 }
 
-/* ==========================================================================
-   PANTALLA DE VICTORIA
-   ========================================================================== */
+
 .pantalla-victoria-memoria {
     padding: 40px 20px;
     text-align: center;
