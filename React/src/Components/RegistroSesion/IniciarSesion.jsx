@@ -17,6 +17,10 @@ const IniciarSesion = () => {
         const datosParaEnviar = { nombre: nombre, contraseña: pass };
         try {
             const resultado = await loginUsuario(datosParaEnviar);
+            if(resultado===null){
+                alertaError('Cuenta existente');
+                navigate('/login');
+            }
             alertaExito('Bienvenido a HogwartsWeb');
             navigate('/home'); 
         } catch (err) {
