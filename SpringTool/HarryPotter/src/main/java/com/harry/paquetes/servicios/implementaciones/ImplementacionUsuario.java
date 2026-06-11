@@ -56,6 +56,7 @@ public class ImplementacionUsuario implements InterfazUsuario {
 		} else if (existente == true) { // Caso contrario, envia un DTO null para fallar
 			System.out.println("Usuario no encontrado");
 			usuario = null;
+			return usuario;
 		}
 
 		return usuario;
@@ -71,6 +72,8 @@ public class ImplementacionUsuario implements InterfazUsuario {
 
 		if (usuario == null) {
 			System.out.println("Usuario No encontrado");
+			usuario=null;
+			return usuario;
 		}
 
 		return usuario;

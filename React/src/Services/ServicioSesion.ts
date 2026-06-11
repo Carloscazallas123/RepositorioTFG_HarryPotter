@@ -1,4 +1,3 @@
-// src/Services/AuthService.ts
 import { alertaError } from '../Utils/Alertas';
 import { SesionDTO,RegistroDTO } from './../Type/Usuario';
 

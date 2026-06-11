@@ -30,7 +30,7 @@ const Registrarse = () => {
             await alertaExito('Tu nombre ya figura en el Libro de Escolarización ✍️');
             navigate('/home');
         } catch (err) {
-            alertaError('Maldición', err.message);
+            alertaError('Cuenta Ya existente');
         }
     };
 
