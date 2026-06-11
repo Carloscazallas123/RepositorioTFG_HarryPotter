@@ -21,6 +21,7 @@ const IniciarSesion = () => {
             navigate('/home'); 
         } catch (err) {
             await alertaError('No se pudo iniciar sesión. Por favor, inténtalo de nuevo.');
+            alertaError('Cuenta Inexistente');
         }
     };
 

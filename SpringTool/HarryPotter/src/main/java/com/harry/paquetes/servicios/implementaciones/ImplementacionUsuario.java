@@ -103,7 +103,6 @@ public class ImplementacionUsuario implements InterfazUsuario {
 				existe = true;
 				entidad = Lista.get(i);
 			}
-			existe = false;
 		}
 		// Si existe, crea el nuevoDTO
 		if (existe = true) {
